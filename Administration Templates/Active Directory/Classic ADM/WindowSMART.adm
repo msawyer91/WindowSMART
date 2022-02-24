@@ -1,0 +1,882 @@
+;
+; WindowSMART.adm
+;
+; WindowSMART 2013 Administrative Group Policy Object Template
+; Copyright (c) 2012 Dojo North Software
+;
+; Deploy this template by depositing in the %SystemRoot%\SYSVOL\domain\policies\{insert_guid_here}\Adm folder(s).
+; Substitute the appropriate GUID(s) for {insert_guid_here} where you would like to deploy this template.
+;
+;
+; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+; TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+; THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+; CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+; DEALINGS IN THE SOFTWARE.
+;
+; It is a violation of the license agreement, and therefore unlawful, to make any changes to this file.
+; Furthermore, making changes to this file could have unintended consequences and will likely break any
+; WindowSMART deployments that derive their settings from it.
+;
+; If you find a bug in this template, please email bugtraq@dojonorthsoftware.net and provide appropriate details.
+;
+
+CLASS MACHINE
+CATEGORY !!WsCategory
+	POLICY !!A_DiskPollingAnalysis
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		EXPLAIN !!DiskPollingAnalysisHelp
+		
+		VALUENAME "Dpa"
+		VALUEOFF NUMERIC 0
+		VALUEON NUMERIC 1
+		
+		PART !!DiskPollingInterval NUMERIC DEFAULT 600000 MIN 180000 MAX 648000000
+		VALUENAME "PollingInterval"
+		END PART
+		
+		PART !!RaiseWarningAlert DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "ReportWarning"
+		ITEMLIST
+			NAME !!RaiseWarningAlert_1 VALUE "True" DEFAULT
+			NAME !!RaiseWarningAlert_2 VALUE "False"
+		END ITEMLIST
+		END PART
+		
+		PART !!RaiseGeriatricAlert DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "ReportGeriatric"
+		ITEMLIST
+			NAME !!RaiseGeriatricAlert_1 VALUE "True" DEFAULT
+			NAME !!RaiseGeriatricAlert_2 VALUE "False"
+		END ITEMLIST
+		END PART
+	END POLICY
+	
+	POLICY !!B_Temperatures
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		EXPLAIN !!TemperaturesHelp
+		
+		VALUENAME "TempCtl"
+		VALUEOFF NUMERIC 0
+		VALUEON NUMERIC 1
+		
+		PART !!TemperatureDisplayPreference DROPDOWNLIST REQUIRED
+		VALUENAME "TemperaturePreference"
+		ITEMLIST
+			NAME !!TempDisplay_1 VALUE "C" DEFAULT
+			NAME !!TempDisplay_2 VALUE "F"
+			NAME !!TempDisplay_3 VALUE "K"
+		END ITEMLIST
+		END PART
+		
+		PART !!TempDisplayCritical NUMERIC DEFAULT 65 MIN 38 MAX 70
+		VALUENAME "CriticalTempThreshold"
+		END PART
+		
+		PART !!TempDisplayOverheated NUMERIC DEFAULT 55 MIN 37 MAX 69
+		VALUENAME "OverheatedTempThreshold"
+		END PART
+		
+		PART !!TempDisplayHot NUMERIC DEFAULT 50 MIN 36 MAX 68
+		VALUENAME "HotTempThreshold"
+		END PART
+		
+		PART !!TempDisplayWarm NUMERIC DEFAULT 42 MIN 35 MAX 67
+		VALUENAME "WarmTempThreshold"
+		END PART
+		
+		PART !!TempIgnoreHot DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "IgnoreHot"
+		ITEMLIST
+			NAME !!TempIgnoreHot_1 VALUE "True"
+			NAME !!TempIgnoreHot_2 VALUE "False" DEFAULT
+		END ITEMLIST
+		END PART
+		
+		PART !!TempIgnoreWarm DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "IgnoreWarm"
+		ITEMLIST
+			NAME !!TempIgnoreWarm_1 VALUE "True" DEFAULT
+			NAME !!TempIgnoreWarm_2 VALUE "False"
+		END ITEMLIST
+		END PART
+		
+		PART !!ThermalEmergencyShutdown DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "ThermalShutdown"
+		ITEMLIST
+			NAME !!ThermalShutdown_1 VALUE "True"
+			NAME !!ThermalShutdown_2 VALUE "False" DEFAULT
+		END ITEMLIST
+		END PART
+	END POLICY
+	
+	POLICY !!D_VirtualDisks
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!VirtualDisksHelp
+		
+		VALUENAME "VirtualIgnore"
+		VALUEOFF NUMERIC 0
+		VALUEON NUMERIC 1
+		
+		PART !!NeverEnumerateVDs DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "IgnoreVirtualDisks"
+		ITEMLIST
+			NAME !!NeverEnumerateVDs_1 VALUE "True" DEFAULT
+			NAME !!NeverEnumerateVDs_2 VALUE "False"
+		END ITEMLIST
+		END PART
+	END POLICY
+	
+	POLICY !!C_AllowIgnore
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+			
+		EXPLAIN !!AllowIgnoreHelp
+			
+		VALUENAME "AllowIgnoredItems"
+		VALUEOFF NUMERIC 0
+		VALUEON NUMERIC 1
+	END POLICY
+	
+	POLICY !!Q_BlockUI
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+			
+		EXPLAIN !!BlockUIHelp
+			
+		VALUENAME "UserInterfaceMode"
+		VALUEOFF NUMERIC 0
+		VALUEON NUMERIC 1
+	END POLICY
+	
+	POLICY !!E_EmailNotification
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+			
+		EXPLAIN !!EmailNotificationHelp
+		
+		VALUENAME "EmailNotificate"
+		VALUEOFF NUMERIC 0
+		VALUEON NUMERIC 1
+		
+		PART !!EmailEnable DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "MailAlertsEnabled"
+		ITEMLIST
+			NAME !!EmailEnable_1 VALUE "True"
+			NAME !!EmailEnable_2 VALUE "False" DEFAULT
+		END ITEMLIST
+		END PART
+		
+		PART !!EmailServerHost EDITTEXT
+		VALUENAME "MailServer"
+		END PART
+		
+		PART !!EmailServerPort NUMERIC DEFAULT 25 MIN 1 MAX 65535
+		VALUENAME "ServerPort"
+		END PART
+		
+		PART !!EmailUseSsl DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "UseSSL"
+		ITEMLIST
+			NAME !!UseSSL_1 VALUE "True"
+			NAME !!UseSSL_2 VALUE "False" DEFAULT
+		END ITEMLIST
+		END PART
+		
+		PART !!EmailSenderFriendly EDITTEXT
+		VALUENAME "SenderFriendly"
+		END PART
+		
+		PART !!EmailSenderAddress EDITTEXT
+		VALUENAME "SenderEmail"
+		END PART
+		
+		PART !!EmailUseAuthentication DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "AuthenticationEnabled"
+		ITEMLIST
+			NAME !!EmailUseAuthentication_1 VALUE "True"
+			NAME !!EmailUseAuthentication_2 VALUE "False" DEFAULT
+		END ITEMLIST
+		END PART
+		
+		PART !!EmailUserName EDITTEXT
+		VALUENAME "MailUser"
+		END PART
+		
+		PART !!EmailUserPassword EDITTEXT
+		VALUENAME "MailPassword"
+		END PART
+		
+		PART !!EmailRecipient1Friendly EDITTEXT
+		VALUENAME "RecipientFriendly"
+		END PART
+		
+		PART !!EmailRecipient1Address EDITTEXT
+		VALUENAME "RecipientEmail"
+		END PART
+		
+		PART !!EmailRecipient2Address EDITTEXT
+		VALUENAME "RecipientEmail2"
+		END PART
+		
+		PART !!EmailRecipient3Address EDITTEXT
+		VALUENAME "RecipientEmail3"
+		END PART
+	END POLICY
+	
+	POLICY !!F_BoxcarNotification
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!BoxcarNotificationHelp
+		
+		VALUENAME "BoxcarNotificate"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+				
+		PART !!BoxcarEnable DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "UseBoxcarNotificate"
+		ITEMLIST
+			NAME !!BoxcarEnable_1 VALUE "True"
+			NAME !!BoxcarEnable_2 VALUE "False" DEFAULT
+		END ITEMLIST
+		END PART
+		
+		PART !!BoxcarEmailAddress EDITTEXT
+		VALUENAME "BoxcarEmailAddress"
+		END PART
+	END POLICY
+	
+	POLICY !!G_ProwlNotification
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!ProwlNotificationHelp
+		
+		VALUENAME "ProwlNotificate"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+				
+		PART !!ProwlEnable DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "UseProwlNotificate"
+		ITEMLIST
+			NAME !!ProwlEnable_1 VALUE "True"
+			NAME !!ProwlEnable_2 VALUE "False" DEFAULT
+		END ITEMLIST
+		END PART
+		
+		PART !!ProwlApiKeychain EDITTEXT
+		VALUENAME "ProwlApiKeychain"
+		END PART
+	END POLICY
+	
+	POLICY !!H_NmaNotification
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!NmaNotificationHelp
+		
+		VALUENAME "NmaNotificate"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+				
+		PART !!NmaEnable DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "UseNmaNotificate"
+		ITEMLIST
+			NAME !!NmaEnable_1 VALUE "True"
+			NAME !!NmaEnable_2 VALUE "False" DEFAULT
+		END ITEMLIST
+		END PART
+		
+		PART !!NmaApiKeychain EDITTEXT
+		VALUENAME "NmaApiKeychain"
+		END PART
+	END POLICY
+	
+	POLICY !!I_ToastyNotification
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!ToastyNotificationHelp
+		
+		VALUENAME "ToastyNotificate"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+				
+		PART !!ToastyEnable DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "UseToastyNotificate"
+		ITEMLIST
+			NAME !!ToastyEnable_1 VALUE "True"
+			NAME !!ToastyEnable_2 VALUE "False" DEFAULT
+		END ITEMLIST
+		END PART
+		
+		PART !!ToastyApiKeychain EDITTEXT
+		VALUENAME "WindowsPhoneGuids"
+		END PART
+	END POLICY
+	
+	POLICY !!J_GrowlNotification
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!GrowlNotificationHelp
+		
+		VALUENAME "GrowlNotificate"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+				
+		PART !!GrowlEnable DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "UseGrowlNotificate"
+		ITEMLIST
+			NAME !!GrowlEnable_1 VALUE "True"
+			NAME !!GrowlEnable_2 VALUE "False" DEFAULT
+		END ITEMLIST
+		END PART
+		
+		PART !!GrowlRemoteEnable DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "UseGrowlRemoteNotificate"
+		ITEMLIST
+			NAME !!GrowlRemoteEnable_1 VALUE "True"
+			NAME !!GrowlRemoteEnable_2 VALUE "False" DEFAULT
+		END ITEMLIST
+		END PART
+		
+		PART !!GrowlRemotePC EDITTEXT
+		VALUENAME "GrowlRemoteMachine"
+		END PART
+		
+		PART !!GrowlRemotePrt NUMERIC DEFAULT 23053 MIN 1 MAX 65535
+		VALUENAME "GrowlRemotePort"
+		END PART
+		
+		PART !!GrowlRemotePDubya EDITTEXT
+		VALUENAME "GrowlPassword"
+		END PART
+	END POLICY
+	
+	POLICY !!K_SnarlNotification
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!SnarlNotificationHelp
+		
+		VALUENAME "SnarlNotificate"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+				
+		PART !!SnarlEnable DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "UseSnarlNotificate"
+		ITEMLIST
+			NAME !!SnarlEnable_1 VALUE "True"
+			NAME !!SnarlEnable_2 VALUE "False" DEFAULT
+		END ITEMLIST
+		END PART
+	END POLICY
+	
+	POLICY !!L_AdvancedSettings
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!AdvancedSettingsHelp
+		
+		VALUENAME "AdvancedSettings"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+			
+		PART !!DeleteStale DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "DeleteStale"
+		ITEMLIST
+			NAME !!DeleteStale_1 VALUE "True" DEFAULT
+			NAME !!DeleteStale_2 VALUE "False"
+		END ITEMLIST
+		END PART
+		
+		PART !!RestoreDefaults DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "RestoreDefaults"
+		ITEMLIST
+			NAME !!RestoreDefaults_1 VALUE "True" DEFAULT
+			NAME !!RestoreDefaults_2 VALUE "False"
+		END ITEMLIST
+		END PART
+		
+		PART !!ResetEverything DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "ResetEverything"
+		ITEMLIST
+			NAME !!ResetEverything_1 VALUE "True" DEFAULT
+			NAME !!ResetEverything_2 VALUE "False"
+		END ITEMLIST
+		END PART
+		
+		PART !!WmiFallback DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "FallbackToWmi"
+		ITEMLIST
+			NAME !!WmiFallback_1 VALUE "True" DEFAULT
+			NAME !!WmiFallback_2 VALUE "False"
+		END ITEMLIST
+		END PART
+		
+		PART !!ZeroThresh DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "SiIAdvanced"
+		ITEMLIST
+			NAME !!ZeroThresh_1 VALUE "True"
+			NAME !!ZeroThresh_2 VALUE "False" DEFAULT
+		END ITEMLIST
+		END PART
+	END POLICY
+	
+	POLICY !!M_Debugging
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!DebuggingHelp
+		
+		VALUENAME "DebuggingControl"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+
+		PART !!LogRequirement DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "LogRequirement"
+		ITEMLIST
+			NAME !!LogRequirement_1 VALUE "Allow" DEFAULT
+			NAME !!LogRequirement_2 VALUE "Mandatory"
+			NAME !!LogRequirement_3 VALUE "Forbidden"
+		END ITEMLIST
+		END PART
+		
+		PART !!LogLocation EDITTEXT REQUIRED
+		VALUENAME "SmartInspectDebugLogLocation"
+		END PART
+	END POLICY
+	
+	POLICY !!N_SolidState
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!SolidStateHelp
+		
+		VALUENAME "SSD"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+		
+		PART !!CriticalWearout NUMERIC DEFAULT 10 MIN 1 MAX 20
+		VALUENAME "SsdLifeLeftCritical"
+		END PART
+		
+		PART !!WarningWearout NUMERIC DEFAULT 30 MIN 21 MAX 50
+		VALUENAME "SsdLifeLeftWarning"
+		END PART
+		
+		PART !!CriticalRetirement NUMERIC DEFAULT 150 MIN 50 MAX 65535
+		VALUENAME "SsdRetirementCritical"
+		END PART
+		
+		PART !!WarningRetirement NUMERIC DEFAULT 50 MIN 5 MAX 65534
+		VALUENAME "SsdRetirementWarning"
+		END PART
+	END POLICY
+	
+	POLICY !!O_CheckForUpdates
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!CheckForUpdatesHelp
+		
+		VALUENAME "CheckForUpdates"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+	END POLICY
+	
+	POLICY !!P_UiTheme
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!UiThemeHelp
+		
+		VALUENAME "UiTheme"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+			
+		PART !!WindowBackground DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "WindowBackground"
+		ITEMLIST
+			NAME !!WindowBackground_1 VALUE NUMERIC 0 DEFAULT
+			NAME !!WindowBackground_2 VALUE NUMERIC 1
+			NAME !!WindowBackground_3 VALUE NUMERIC 2
+			NAME !!WindowBackground_4 VALUE NUMERIC 3
+		END ITEMLIST
+		END PART
+		
+		PART !!WindowHeaderColor DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "UseDefaultSkinning"
+		ITEMLIST
+			NAME !!HeaderColor_1 VALUE "True" DEFAULT
+			NAME !!HeaderColor_2 VALUE "False"
+		END ITEMLIST
+		END PART
+	END POLICY
+	
+	POLICY !!S_CustomSupportMessage
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!CustomSupportMessageHelp
+		
+		VALUENAME "UseSupportMessage"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+		
+		PART !!CustomMessageText EDITTEXT REQUIRED
+			VALUENAME "SupportMessage"
+			MAXLEN 256
+		END PART
+	END POLICY
+	
+	POLICY !!R_EmergencyBackup
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!EmergencyBackupHelp
+		
+		VALUENAME "UseEmergencyBackup"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+		
+		PART !!EnableEmergencyBackup DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "PerformEmergencyBackup"
+		ITEMLIST
+			NAME !!PerformEmergencyBackup_1 VALUE "True" DEFAULT
+			NAME !!PerformEmergencyBackup_2 VALUE "False"
+		END ITEMLIST
+		END PART
+		
+		PART !!HotBackup DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "NoHotBackup"
+		ITEMLIST
+			NAME !!PerformHotBackup_1 VALUE "True" DEFAULT
+			NAME !!PerformHotBackup_2 VALUE "False"
+		END ITEMLIST
+		END PART
+		
+		PART !!EmergencyBackupNetwork DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "BackupLocal"
+		ITEMLIST
+			NAME !!BackupLocal_1 VALUE "True" DEFAULT
+			NAME !!BackupLocal_2 VALUE "False"
+		END ITEMLIST
+		END PART
+		
+		PART !!BackupLocalPath EDITTEXT
+			VALUENAME "LocalBackupPath"
+			MAXLEN 256
+		END PART
+		
+		PART !!BackupRemotePath EDITTEXT
+			VALUENAME "UNCBackupPath"
+			MAXLEN 256
+		END PART
+		
+		PART !!RemoteBackupUser EDITTEXT
+			VALUENAME "BackupUser"
+			MAXLEN 256
+		END PART
+		
+		PART !!RemoteBackupPassword EDITTEXT
+			VALUENAME "BackupPass"
+			MAXLEN 256
+		END PART
+		
+		PART !!DoCustomBackup DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "PerformCustomBackup"
+		ITEMLIST
+			NAME !!PerformCustomBackup_1 VALUE "True" DEFAULT
+			NAME !!PerformCustomBackup_2 VALUE "False"
+		END ITEMLIST
+		END PART
+		
+		PART !!CustomProgram EDITTEXT
+			VALUENAME "CustomBackupProgram"
+			MAXLEN 256
+		END PART
+		
+		PART !!CustomArgs EDITTEXT
+			VALUENAME "CustomBackupArgs"
+			MAXLEN 256
+		END PART
+	END POLICY
+	
+	POLICY !!T_DiagnosticUpload
+		#if version >= 4
+			SUPPORTED !!Supported_Win
+		#endif
+		KEYNAME "Software\Dojo North Software\HomeServerSMART\Configuration"
+		
+		EXPLAIN !!DiagnosticUploadHelp
+		
+		VALUENAME "UseDiagnostics"
+			VALUEOFF NUMERIC 0
+			VALUEON NUMERIC 1
+			
+		PART !!AllowDiagnosticReport DROPDOWNLIST NOSORT REQUIRED
+		VALUENAME "NoDiagnostics"
+		ITEMLIST
+			NAME !!AllowDiagnosticReport_1 VALUE "False" DEFAULT
+			NAME !!AllowDiagnosticReport_2 VALUE "True" 
+		END ITEMLIST
+		END PART
+		
+		PART !!FtpServer EDITTEXT REQUIRED
+			VALUENAME "DebuggingTarget"
+			MAXLEN 256
+		END PART
+		
+		PART !!FtpUser EDITTEXT REQUIRED
+			VALUENAME "DebuggingAuth1"
+			MAXLEN 256
+		END PART
+		
+		PART !!FtpPass EDITTEXT REQUIRED
+			VALUENAME "DebuggingAuth2"
+			MAXLEN 256
+		END PART
+	END POLICY
+END CATEGORY
+
+[strings]
+WsCategory="WindowSMART 2013 Configuration"
+Supported_Win="At least Microsoft Windows XP Professional with SP2 or Windows Server 2003 family with SP1"
+
+A_DiskPollingAnalysis="Disk Polling and Analysis"
+DiskPollingAnalysisHelp="Configures settings which specify how often WindowSMART 2013 should poll disks in the computer, and for which types of conditions alerts should be raised.\n\nWARNING: Do NOT disable this policy item. Disabling this policy item removes critical Registry entries that WindowSMART uses, and WindowSMART will automatically recreate default values. If you want to lock down these settings and prevent users from changing them, please set the policy to Enabled and specify the desired values."
+DiskPollingInterval="Disk Polling Interval for SMART Data (milliseconds - 180000 = 3 minutes, 600000 = 10 minutes, 3600000 = 1 hour, 86400000 = 1 day, 648000000 = 1 week)"
+RaiseWarningAlert="Notify if a disk generates a Warning alert"
+RaiseWarningAlert_1="Notify the user"
+RaiseWarningAlert_2="Ignore the alert"
+RaiseGeriatricAlert="Notify if a disk generates a Geriatric alert"
+RaiseGeriatricAlert_1="Notify the user"
+RaiseGeriatricAlert_2="Ignore the alert"
+
+Q_BlockUI="Block Users from Running WindowSMART Client"
+BlockUIHelp="Configures whether or not users are allowed to run the WindowSMART client (user interface). If this policy is disabled or not configured, users may run the client (provided they have sufficient perms to run an application in elevated mode). If this policy is enabled, users (including administrators) are forbidden from running the UI. This policy has no effect on the WindowSMART Lightweight Client, which has no UI."
+
+B_Temperatures="Disk Temperature Preferences and Alerts"
+TemperaturesHelp="Configures the display preference of temperatures in the WindowSMART user interface. You can also specify the temperature thresholds (in Celsius) for Critical, Overheated, Hot and Warm, and also specify whether Hot and Warm alerts should be reported. If you specify that Hot alerts should be ignored but not Warm alerts, a policy error occurs. It is also a policy error to set a more severe temperature threshold less than that of a less severe temperature (i.e. setting 55 for Critical and 56 for Overheated).\n\nWARNING: Do NOT disable this policy item. Disabling this policy item removes critical Registry entries that WindowSMART uses, and WindowSMART will automatically recreate default values. If you want to lock down these settings and prevent users from changing them, please set the policy to Enabled and specify the desired values.\n\nIf you choose to have the computer shut down in a thermal emergency (a disk remains overheated or critically hot for 3 or more consecutive polling intervals), your disk polling interval should be set in the range of 5-20 minutes)."
+TemperatureDisplayPreference="Temperature Display Preference"
+TempDisplay_1="Celsius"
+TempDisplay_2="Fahrenheit"
+TempDisplay_3="Kelvin"
+TempDisplayCritical="Critical Temperature Threshold"
+TempDisplayOverheated="Overheated Temperature Threshold"
+TempDisplayHot="Hot Temperature Threshold"
+TempDisplayWarm="Warm Temperature Threshold"
+TempIgnoreHot="When a hot disk is detected"
+TempIgnoreHot_1="Ignore hot disks"
+TempIgnoreHot_2="Generate an alert"
+TempIgnoreWarm="When a warm disk is detected"
+TempIgnoreWarm_1="Ignore warm disks"
+TempIgnoreWarm_2="Generate an alert"
+ThermalEmergencyShutdown="Action to take in a thermal emergency - a disk remains overheated or critically hot for 3 or more consecutive polling intervals"
+ThermalShutdown_1="Alert and shut down the computer"
+ThermalShutdown_2="Alert, but do not shut down"
+
+D_VirtualDisks="Virtual Disk Enumeration"
+VirtualDisksHelp="This setting specifies whether you want to ignore virtual disks. Ignoring virtual disks is rcommended. Virtual disks do not possess SMART data and in many cases present erroneous data to WindowSMART. Ignoring them prevents their appearance in the UI, and prevents the service from processing them."
+NeverEnumerateVDs="Virtual disk behavior"
+NeverEnumerateVDs_1="Never enumerate known virtual disks (recommended)"
+NeverEnumerateVDs_2="Enumerate them as a real disk"
+
+C_AllowIgnore="Allow Users to Ignore Problems"
+AllowIgnoreHelp="This setting specifies whether users are allowed to ignore problems on disks such as bad sectors. If this policy is not configured or enabled, users can ignore problems. If this policy is disabled, users cannot ignore problems. This does not preclude users from ignoring entire disks, since some disks like flash drives and media cards are known to report erroneous data that trigger false alerts."
+
+E_EmailNotification="Email Notifications"
+EmailNotificationHelp="You can have WindowSMART send disk health alerts and product update alerts to up to three unique email addresses, which can be individuals or distribution lists. You need to provide at a minimum the email server settings and at least one recipient, but in most cases you must also provide authentication credentials. The credentials, if provided here, must be provided in their encrypted format, not their plaintext format. It is recommended you configure WindowSMART on an administrator's PC, then copy those settings as appropriate. MAKE SURE TO TEST these settings prior to deploying them across your domain(s).\n\nThe best way to test is to configure these settings on a test PC, validate that they work and then export the Registry settings. For the username and password, if authentication is used, you must copy the ENCRYPTED username and password, or else the authentication will fail."
+EmailEnable="Email alerts are"
+EmailEnable_1="Enabled"
+EmailEnable_2="Disabled"
+EmailServerHost="Server Hostname"
+EmailServerPort="Server Port"
+EmailUseSsl="Use SSL"
+UseSSL_1="Send email using SSL"
+UseSSL_2="Send email in plaintext"
+EmailSenderFriendly="Sender Friendly Name"
+EmailSenderAddress="Sender Email Address"
+EmailUseAuthentication="Server authentication"
+EmailUserName="Username (paste encrypted value)"
+EmailUserPassword="Password (paste encrypted value)"
+EmailRecipient1Friendly="Recipient Friendly Name"
+EmailRecipient1Address="Recipient Email Address"
+EmailRecipient2Address="Recipient 2 Address (optional)"
+EmailRecipient3Address="Recipient 3 Address (optional)"
+EmailUseAuthentication_1="Use credentials when sending mail"
+EmailUseAuthentication_2="No credentials"
+
+F_BoxcarNotification="iOS (iPhone/iPad/iPod Touch) Notification Via Boxcar"
+BoxcarNotificationHelp="This setting specifies settings for sending alert notifications via Boxcar to Applie iOS devices. Boxcar is supported on iPhone, iPad and iPod Touch.. If this policy is enabled, the Boxcar notifications are administrator defined and cannot be changed by the user. If this policy is disabled, Boxcar notifications are disabled and cannot be enabled or changed by the user. If this policy is not configured, users are free to configure the Boxcar settings."
+BoxcarEnable="Send disk health alerts via Boxcar"
+BoxcarEnable_1="Enabled"
+BoxcarEnable_2="Disabled"
+BoxcarEmailAddress="Email Address(es) (separate multiple addresses by commas, no spaces)"
+
+G_ProwlNotification="iOS (iPhone/iPad/iPod Touch) Notification Via Prowl"
+ProwlNotificationHelp="This setting specifies settings for sending alert notifications via Prowl to Apple iOS devices. Prowl is supported on iPhone, iPad and iPod Touch. If this policy is enabled, the Prowl notifications are administrator defined and cannot be changed by the user. If this policy is disabled, Prowl notifications are disabled and cannot be enabled or changed by the user. If this policy is not configured, users are free to configure the Prowl settings."
+ProwlEnable="Send disk health alerts via Prowl"
+ProwlEnable_1="Enabled"
+ProwlEnable_2="Disabled"
+ProwlApiKeychain="Prowl API Keychain (up to 5 values, separated by commas, no spaces)"
+
+H_NmaNotification="Android Notification Via NMA"
+NmaNotificationHelp="This setting specifies settings for sending alert notifications via Notify My Android to Android devices. NMA is supported on many/most Android phones and tablets. If this policy is enabled, the NMA notifications are administrator defined and cannot be changed by the user. If this policy is disabled, NMA notifications are disabled and cannot be enabled or changed by the user. If this policy is not configured, users are free to configure the NMA settings."
+NmaEnable="Send disk health alerts via NMA"
+NmaEnable_1="Enabled"
+NmaEnable_2="Disabled"
+NmaApiKeychain="NMA API Keychain (up to 5 values, separated by commas, no spaces)"
+
+I_ToastyNotification="Windows Phone Notification Via Toasty"
+ToastyNotificationHelp="This setting specifies settings for sending alert notifications via Toasty to Windows Phone devices. Toasty is supported on Windows Phone 7 devices (and possibly Windows Phone 8). If this policy is enabled, the Toasty notifications are administrator defined and cannot be changed by the user. If this policy is disabled, Toasty notifications are disabled and cannot be enabled or changed by the user. If this policy is not configured, users are free to configure the Toasty settings."
+ToastyEnable="Send disk health alerts via Toasty"
+ToastyEnable_1="Enabled"
+ToastyEnable_2="Disabled"
+ToastyApiKeychain="Toasty Device IDs (up to 5 GUIDs, separated by commas, no curly braces or spaces)"
+
+J_GrowlNotification="Desktop Notification Via Growl"
+GrowlNotificationHelp="This setting specifies settings for sending alert notifications to the Growl desktop client. You can send Growl notifications to the local machine or to a remote machine running Growl, including a Mac running Growl. If this policy is enabled, the Growl notifications are administrator defined and cannot be changed by the user. If this policy is disabled, Growl notifications are disabled and cannot be enabled or changed by the user. If this policy is not configured, users are free to configure the Growl settings.\n\nIf sending Growl alerts to a remote machine, you MUST paste the ENCRYPTED password value. The easiest way to set this up is to install WindowSMART on an administrator's PC, customize as desired and then export the Registry settings. You will need to copy the GrowlPassword registry value."
+GrowlEnable="Send disk health alerts via Growl"
+GrowlEnable_1="Enabled"
+GrowlEnable_2="Disabled"
+GrowlRemoteEnable="Send alerts to remote computer instead of local"
+GrowlRemoteEnable_1="Send alerts to REMOTE computer"
+GrowlRemoteEnable_2="Keep alerts on LOCAL computer"
+GrowlRemotePrt="Remote computer port (default 23053)"
+GrowlRemotePC="Remote computer name"
+GrowlRemotePDubya="Remote computer password (paste encrypted value)"
+
+K_SnarlNotification="Desktop Notification Via Snarl"
+SnarlNotificationHelp="This setting specifies settings for sending alert notifications to the Snarl desktop client. You can send Snarl notifications to the local machine. If this policy is enabled, the Snarl notifications are administrator defined and cannot be changed by the user. If this policy is disabled, Snarl notifications are disabled and cannot be enabled or changed by the user. If this policy is not configured, users are free to configure the Snarl settings."
+SnarlEnable="Send disk health alerts via Snarl"
+SnarlEnable_1="Enabled"
+SnarlEnable_2="Disabled"
+
+L_AdvancedSettings="Advanced Configuration Settings"
+AdvancedSettingsHelp="These settings allow you to control which options on the Advanced tab are available to users. Items include deletion of stale disk data, resetting defaults and debug log configuration. If this policy is enabled, the options you specify are enforced on the user. If this policy is disabled, all advanced options are disabled and unavailable to the user. If this policy is not configured, all advanced options are available to the user. (If the user resets settings, any other configured WindowSMART policies will be reapplied on the next policy refresh.)"
+DeleteStale="Allow user to delete stale disk data (recommended)"
+DeleteStale_1="Deletes allowed"
+DeleteStale_2="Deletes forbidden"
+RestoreDefaults="Allow user to restore default settings"
+RestoreDefaults_1="Allowed"
+RestoreDefaults_2="Forbidden"
+ResetEverything="Allow user to reset everything"
+ResetEverything_1="Allowed"
+ResetEverything_2="Forbidden"
+WmiFallback="When P/Invoke call fails to get disk data"
+WmiFallback_1="Fall back to WMI (recommended)"
+WmiFallback_2="Allow the call to fail (not recommended)"
+ZeroThresh="Try zero-threshold method on SiI if primary method fails"
+ZeroThresh_1="Use zero-threshold method"
+ZeroThresh_2="Do not use zero-threshold method"
+
+M_Debugging="Debug Logging"
+DebuggingHelp="These settings allow you to control whether or not users can create SmartInspect debug logs. If this policy is enabled, you can control whether logging is allowed, mandatory or forbidden, as well as the debug location. If this policy is disabled, logs are never generated. If this policy is not configured, the user has full control over the logging, including the log location.\n\nSet the 'SmartInspect Debug Logging is' field to Allow for the user to decide whether to enable logging, Mandatory to always generate logs or Forbidden to never create logs.\n\nThe SmartInspect Debug Log Location field is always required, even if logging is forbidden. If unsure of a location, specify %DEFAULT% to let the operating system use its default location (i.e. C:\ProgramData), or specify a custom path."
+LogRequirement="SmartInspect Debug Logging is"
+LogRequirement_1="Allowed"
+LogRequirement_2="Mandatory"
+LogRequirement_3="Forbidden"
+LogLocation="SmartInspect Debug Log Location (required)"
+
+N_SolidState="SSD-Specific Settings"
+SolidStateHelp="These settings allow you to control alert thresholds for Solid State Disks (SSDs). If this policy is enabled, the alert thresholds are administrator-set and cannot be changed by the user. If this policy is disabled or not configured, the user is able to change the alert thresholds."
+CriticalWearout="Critical Wearout/Life Left Threshold"
+WarningWearout="Warning Wearout/Life Left Threshold"
+CriticalRetirement="Critical Sector Retirement Threshold"
+WarningRetirement="Warning Sector Retirement Threshold"
+
+O_CheckForUpdates="Allow user to check for updates"
+CheckForUpdatesHelp="Set this policy to Disabled to prevent the user from checking for product updates. Set this policy to Enabled or leave at Not Configured to allow the user to check for updates."
+
+P_UiTheme="User interface theme"
+UiThemeHelp="Allows you to specify whether the user can customize the WindowSMART client UI. If this policy is enabled, the settings you select are enforced and cannot be changed by the user. If this policy is disabled, the main window background is set to No Texture and window header color is set to Green (default), and cannot be changed. If this policy is not configured, the user can change both theme settings."
+WindowBackground="Main Window Background"
+WindowBackground_1="Metal Grate"
+WindowBackground_2="Lightning"
+WindowBackground_3="Cracked Glass"
+WindowBackground_4="No Texture"
+WindowHeaderColor="Window Header/Help About Dialogue Color"
+HeaderColor_1="Green"
+HeaderColor_2="Blue"
+
+S_CustomSupportMessage="Custom support message"
+CustomSupportMessageHelp="Sets a custom support message for users. If your environment is configured such that end users can receive WindowSMART alerts, they may be frightened or unsure of what action to take. Here you can specify a custom support message with instructions on what they should so, such as, 'Please contact the Helpdesk at +1-999-555-1111, option 4 for further assistance.' There is a 256-character limit to the message.\n\nIf this policy is enabled, you must define the support message. If this policy is disabled, no custom support message is ever appended to alerts. If this policy is not configured, the support message can be configured through the use of the WindowSMART Enterprise Management command line tool."
+CustomMessageText="Support message text"
+
+R_EmergencyBackup="Emergency backup when disk failure is detected"
+EmergencyBackupHelp="Controls whether or not WindowSMART will run an emergency backup if a disk failure condition is detected. WindowSMART can run an emergency backup either to a local drive or to a shared drive over the network, and can also run a third-party program. If this policy is enabled, the settings you select are enforced and cannot be changed by the user. If this policy is disabled, an emergency backup will never run. If this policy is not configured, users are free to customize emergency backup settings.\n\nIf backing up over the network, you MUST specify a username and password. The password is stored encrypted, so you MUST paste the ENCRYPTED password value. The easiest way to set this up is to install WindowSMART on an administrator's PC, customize as desired and then export the Registry settings. You will need to copy the BackupPass registry value.\n\nWhen specifying directories to include in a backup, enter them one per line. Note that an emergency backup will attempt to determine the drive letter(s) of a failing disk(s), so an emergency backup will only back up data from drive letter(s) on failing disks, not all of the specified folders. If the drive letters cannot be determined, all specified folders will be backed up.\n\nExcluding items: To exclude items, you need to specify the pattern to exclude. If you want to exclude files or folders containing the term 'helloworld' then specify 'helloworld'. To exclude folders (and their contents) that start with the name 'helloworld' specify '\helloworld'. To exclude files with a .TMP extension specify '.tmp'. Do NOT use wildcard characters (* or ?) in your exclude items.\n\nIf running a third-party backup program, you can specify the arguments {PHYSICALDISKS} and {DRIVELETTERS} to pass a comma-separated list of failing disk numbers and letters, respectively, to the backup program."
+EnableEmergencyBackup="Emergency backup behavior if disk reports failure (TEC)
+PerformEmergencyBackup_1="Run emergency backup"
+PerformEmergencyBackup_2="Do not run emergency backup"
+HotBackup="Emergency backup behavior if TEC is on temperature or airflow temperature"
+PerformHotBackup_1="Do not run emergency backup"
+PerformHotBackup_2="Run emergency backup anyway"
+EmergencyBackupNetwork="Emergency backup target"
+BackupLocal_1="Local Path"
+BackupLocal_2="Network Shared Drive"
+BackupLocalPath="Local backup target (i.e. D:\Backups)"
+BackupRemotePath="Shared drive target (i.e. \\backupserver\backups)"
+RemoteBackupUser="Username for remote backup (required for network backup) - specify in format domain\username or user@domain"
+RemoteBackupPassword="Password for remote backup user (paste encrypted value)"
+ItemsToInclude="Directories to include in the backup (one per line) (Example: D:\\Users\\John)"
+ItemsToExclude="Items to exclude (one per line) (Example: .tmp)
+DoCustomBackup="Run a third-party backup program (or other tool)"
+PerformCustomBackup_1="Run third-party backup"
+PerformCustomBackup_2="Do not run third-party backup"
+CustomProgram="Full path and executable of third-party program"
+CustomArgs="Optional program arguments"
+
+T_DiagnosticUpload="Developer diagnostic debugging upload"
+DiagnosticUploadHelp="Controls whether or not end users are allowed to generate and upload a diagnostic debugging report. Such a report contains details about the computer, debug logs (if they are available) and a free-form text field where users can type details about a problem they've experienced. If this policy is enabled, you can customize whether users can generate such reports and, if they are allowed, you can specify an alternate FTP server (with credentials) where they should be sent. The credentials are not encrypted. If this policy is enabled, debugging report uploads are controlled by the settings you specify. If this policy is disabled, users cannot generate debugging reports. If this policy is not configured, users can generate debug reports and they will be sent to Dojo North Software.\n\nNOTE: If you want to have reports uploaded to an internal server, you MUST specify values for ALL three FTP fields: server, username and password. If any are left blank, all will be ignored."
+AllowDiagnosticReport="Allow diagnostic reports to be created and sent"
+AllowDiagnosticReport_1="Allowed (recommended)"
+AllowDiagnosticReport_2="Forbidden"
+FtpServer="Corporate FTP Server"
+FtpUser="FTP username"
+FtpPass="FTP password (not encrypted)"

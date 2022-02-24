@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<title>All About Bad Sectors</title>
+</head>
+
+<body>
+<p class="PageTitle">All About Bad Sectors</p>
+<p class="BodyText">What is a <em>bad sector</em>? In the simplest definition, a bad sector is a   sector on the disk surface that is no longer usable. The read/write and   error-checking mechanisms of the disk have detected one or more errors reading   from or writing to the sector that were deemed significant enough that the sector should no longer be used for storage.</p>
+<p class="BodyText">Please note that the majority of this help topic deals with bad sectors on Hard Disk Drives (HDDs). Please see the section <em>Sector Retirement on Solid State Disks </em>at the bottom of this help topic for information specific to SSDs.</p>
+<p class="BodyText">On the disk surface there are microscopic magnetic particles which are   manipulated by the read/write heads. Each magnetic particle represents a bit (a   0 or a 1), and these particles in their arrangement within the sector represent   valid data.</p>
+<p class="BodyText">It is possible that when the disk was manufactured, some of the magnetic   particles did not get correctly organized on the disk. Sometimes during the lifetime of the disk, a sector can get &quot;worn out&quot; after repeated reads and   writes, and the particles may no longer be properly aligned. In more serious cases, the read/write head could touch, or scrape, the disk surface while the   disk is spinning--a catastrophic condition known as a <em>head crash</em>.</p>
+<p class="BodyText">For those familiar with legacy hard disks, and the need to low-level format them prior to use, you probably recall the list of bad sectors printed on a label on the disk. This was also known as the flag track log, primary list, bad sector map or PLIST. These were known at the time of manufacture and should NOT pose any operational problems. Modern hard disks have PLISTs but their contents are normally not visible, especially since modern hard disks are low-level formatted at the factory. There is no reason an end user should ever attempt to low-level format a modern hard disk. Some SSDs possess a SMART attribute which reports how many bad sectors were present at time of manufacture. These too should pose no problem. Only &quot;grown&quot; bad sectors--known in legacy disk speak as the GLIST (grown list or grown defect list)--will pose potential problems.</p>
+<p class="BodyText">Whatever the case may be, the disk's internal error-checking mechanisms may   decide that a sector is no longer suitable for use. If the disk detects prolems   reading from or writing to a sector, one of two actions will be taken against the sector by the disk's firmware:</p>
+<ul>
+  <li><span class="UnorderedListHeader"><strong>Probation</strong> - </span><span class="UnorderedListItem">The sector is placed &quot;on probation&quot; and flagged   as a <em>pending bad sector</em>. For each sector that is pending, the raw data   for the pending bad sector's attribute is increased by one. The sector is <em>not</em> considered bad at this point, and the sector is not reallocated. A   sector is put on probation only on read operations; a reallocation never occurs   on a read operation since it is possible the data may be readable later. If   subsequent read and write operations on the sector complete successfully without any problems, the sector comes off probation, and the raw data count for pending bad sectors is decreased by one. If subsequent write operations on the sector   result in errors, the sector is <em>reallocated</em> (see next item), and the   raw data count for pending bad sectors is decreased by one. </span></li>
+  <li><span class="UnorderedListHeader"><strong>Reallocated</strong> - </span><span class="UnorderedListItem">When a sector is <em>reallocated</em>, the   sector in question has the following actions taken against it:
+    </span>
+    <ul>
+      <li class="UnorderedListItem">The sector is flagged as a <em>bad sector</em>. It will never again be used   for storage, nor will it ever be reconsidered for future use. This is a   permanent operation. </li>
+      <li class="UnorderedListItem">The disk will attempt to recover data from the sector. </li>
+      <li class="UnorderedListItem">Whether or not data recovery is successful, the sector in question is <em>reallocated</em> (sometimes called <em>remapped</em>) to a sector in a   special area of the disk known as the <em>spare area</em>. The spare area is an   area of the disk with many spare, unused sectors that are used solely for the   purpose of reallocations. All future requests to use the sector in question are   transparently routed to the newly reallocated (or remapped) sector. </li>
+      <li class="UnorderedListItem">Any data recovered from the bad sector is written to the newly reallocated   sector. </li>
+      <li class="UnorderedListItem">The <em>Reallocation Event Count</em> attribute is increased by one. </li>
+      <li><span class="UnorderedListItem">The <em>Reallocated Sectors Count</em> attribute is increased by one.
+        </span>
+        <ul>
+          <li class="UnorderedListItem">If multiple bad sectors are detected and reallocated in a single operation,   the Bad Sectors Count will be increased by the number of affected sectors, but   the Reallocation Event Count will only increase by one. </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p class="BodyText">There is no requirement for a sector to go on probation before being   classified as a bad sector. It is perfectly valid for a sector to go from a   &quot;good&quot; sector directly to being a &quot;bad&quot; one. Some sectors go from being &quot;good&quot;   sectors to being &quot;on probation&quot; before becoming &quot;bad;&quot; others go directly from   &quot;good&quot; to &quot;bad.&quot;</p>
+<p class="BodyText">The <em>Reallocation Event Count</em> field is a counter of reallocation <em>attempts</em>, whether or not the sector reallocation attempt was   successful. Reallocations can fail, particularly if the spare area's supply of   spare sectors is exhausted, or if the sectors in the spare area themselves are   bad.</p>
+<p class="BodyText">If you see the reallocation event and reallocated sector counts possessing   the same values, or similar values, more likely than not there are bad sectors   scattered around the disk. However, if you see a reallocated sector count that   is significantly higher than the reallocation event count, it is likely that the   bad sectors form contiguous areas, since many sectors were likely reallocated in   a single reallocation event. For example, if 13 bad sectors are detected during   a write operation, the disk will reallocate them all at one time. The result   will be an increase in the reallocated sector count by 13, but the reallocation   event count will only increase by one.</p>
+<p class="SubTitle">How Serious is It?</p>
+<p class="BodyText">When bad sectors start making an appearance on a disk, the inevitable   question is this: how serious is it?</p>
+<p class="BodyText">Obviously bad sectors are not a good thing--that's why they're called <em>bad </em>sectors. But does their appearance mean that your disk is going to die   soon? Maybe, but maybe not.</p>
+<p class="BodyText">If the bad sector(s) are the result of a manufacturing defect, there is a   reasonable chance that your disk will continue to function normally for years   without any additional fuss or trouble. But if the bad sector(s) are the result   of some kind of electromechanical failure or a head crash, your disk is in   serious trouble, and the end is likely near for the disk. Unfortunately, there   is no sure-fire way to ascertain whether the appearance of a bad sector is   simply a flawed area of the disk surface (manufacturing defect) or a true   electromechanical failure (serious problem).</p>
+<p class="BodyText">If your disk is within its warranty period, you should contact the   manufacturer (many have RMA procedures you can carry out online) to seek an   in-warranty replacement. Many times manufacturers will require you to run their   own diagnostic tools before accepting the return; others will simply accept   SMART results. Be sure to adhere to the manufacturer's protocol, and   definitely seek the warranty replacement. In most cases, the warranty   replacement will occur 100% free of charge, with the exception of you possibly   needing to pay shipping to send in the bad one (many manufacturers send you a   free return waybill).</p>
+<p class="BodyText">If the disk is out of warranty, you may be tempted to take a gamble and see   if the disk will survive. Here are some suggestions to help you decide on   whether it is worth continuing to use the disk or if you should replace it right   away. These are not necessarily the actions you should take, but rather   suggestions to help you decide. The ultimate decision on whether or not to   replace the disk rests with you. <strong>If the disk in question is the System   disk, don't fool around. Back it up and replace it with a new one!</strong></p>
+<p><span class="BodyText"><em>Cases where it may be worth continuing to use the drive (but keeping a   close eye on it) - a concept known as &quot;watchful waiting.&quot; Note that if you can afford to replace the disk, you probably   should.</em></span><br />
+</p>
+<ul>
+  <li class="UnorderedListItem">The drive is otherwise functioning normally, with no degradations of any   other SMART attributes. </li>
+  <li class="UnorderedListItem">The drive is <strong>not</strong> making any unusual noises. Clicking,   grinding, scraping, high-pitched squealing and whining are all bad. </li>
+  <li class="UnorderedListItem">Only one bad sector has appeared, and a few weeks have elapsed since the bad   sector appeared. The disk has been used extensively (plenty of I/O on the disk)   since the bad sector appeared. </li>
+  <li><span class="UnorderedListItem">Multiple bad sectors appeared, but on a <em>single </em>reallocation   operation. A few weeks have elapsed since the bad sectors appeared, and no new   problems have surfaced. There is a reasonable chance that the bad sectors are   the result of a manufacturing defect.
+    </span>
+    <ul>
+      <li class="UnorderedListItem">If more bad sectors start popping up, replace the disk. </li>
+    </ul>
+  </li>
+</ul>
+<p class="BodyText"><em>Cases where you should replace the disk as soon as possible:</em></p>
+<ul>
+  <li class="UnorderedListItem">The disk is in warranty. </li>
+  <li class="UnorderedListItem">The disk is making clicking, grinding, scraping, high-pitched squealing or   whining noises. (The disk may already be failed at this point.) </li>
+  <li class="UnorderedListItem">Bad sectors continue popping up after the first reallocation. This is likely   a failure, not a simple manufacturing surface defect. </li>
+  <li class="UnorderedListItem">Any other attribute(s) start degrading. </li>
+  <li class="UnorderedListItem">Sectors go on and off probation, even if they &quot;clear&quot; probation (change from   a &quot;pending&quot; back to a &quot;good&quot; sector). </li>
+</ul>
+<p class="BodyText">Google has conducted research that suggests that 64% of hard disks are likely   to fail within 30 days after the first bad sector appears; that number is   significantly higher if two or more bad sectors are detected, especially if they   are detected as part of separate reallocation events. If it is financially   practical for you to replace the disk, regardless of the set of circumstances   above, you should probably do so, rather than taking a chance on jeopardizing   data.  Google's research paper can be found here:  <a href="http://labs.google.com/papers/disk_failures.pdf">http://labs.google.com/papers/disk_failures.pdf</a> </p>
+<p class="SubTitle">Sector Retirement on Solid State Disks</p>
+<p class="BodyText">The appearance of &quot;bad&quot; sectors on a Solid State Disk (SSD) is nowhere near as serious as their appearance on HDDs. Because HDDs are mechanical, the presence of bad sectors often indicate a problem with the mechanics of the disk or their very existence could lead to mechanical problems. On an SSD, there are no moving parts, so a &quot;bad&quot; sector on an SSD should not directly lead to other bad sectors or outright drive failure.</p>
+<p class="BodyText">On an SSD, many manufacturers do not call failed sectors &quot;bad.&quot; Instead, they use the term &quot;retired.&quot; Oftentimes you will see terms such as &quot;retired sector count&quot; or &quot;retired block count.&quot;</p>
+<p class="BodyText">Unlike HDDs, which can be read, written and rewritten tens of millions of times (theoretically), SSDs have a much more finite limit to how many times they can be written. The flash memory in SSDs can typically be read an unlimited number of times, again theoretically. However, a flash memory cell (sector) can only be written X number of times. This number X is 1-5 million times, and as SSDs evolve and improve, this number will likely increase.</p>
+<p class="BodyText">As an SSD ages and sectors have been written and rewritten many times, sectors will begin to &quot;wear out.&quot; Once the SSD controller detects that a sector is no longer suitable to store data, it will reallocate the sector. SSDs have spare sectors just like HDDs, and will dip into the pool of spares as needed. The reallocated sector is considered to be <em>retired</em>, and will no longer be used. Some SSDs will, to help distribute writes (a concept called <em>wear-leveling</em>), always make use of all sectors, including spares. These SSDs don't present this &quot;extra&quot; capacity to the operating system. Rather, they manage it internally so when a sector is retired, the capacity of the disk will not actually decrease. Other SSDs never use their spares until a sector is actually retired.</p>
+<p class="BodyText">Some SSDs place sectors on probation (pending sectors), much like HDDs; others will remand sectors directly to retirement without ever placing them on probation. This practice varies between SSD controller manufacturers.</p>
+<p class="BodyText">Many SSDs also have additional attributes such as Media Wearout Indicator, SSD Life Left, Good Block Rate and Life Curve Status. These, in conjunction with Retired Sectors, give an overall picture of how much life the SSD is projected to have. SSDs used in write-intensive situations will likely have much shorter lives than those used in situations that are less write intensive.</p>
+<p class="BodyText">If you plan to use an SSD, some thoughts to bear in mind to help lessen the number of writes and increase the drive's life:</p>
+<ul>
+  <li class="BodyText">SSDs are great for running the operating system and application binaries.</li>
+  <li class="BodyText">Move write-intensive applications to HDDs, such as the Windows paging file.</li>
+  <li class="BodyText">Move user data directories (i.e. C:\Users) to HDDs. User activity generates lots of temporary files, and file creation, modification and deletion all contribute to high write activity.</li>
+  <li class="BodyText">Do not unnecessarily defragment SSDs. SSDs do not require defragmentation like HDDs, and defragmentation operations are extremely write intensive.. If you choose to defragment them, select an intelligent SSD-aware defragmentation tool such as Diskeeper with HyperFast (the HyperFast component is designed specifically to work with SSDs).</li>
+  <li class="BodyText">Select SSDs that are TRIM capable, and ensure your disk controller and controller driver support TRIM. TRIM is a capability of SSDs that works with the operating system to help improve drive performance and lessen unnecessary writes, thereby extending SSD life. Most SSDs available on the market today support TRIM.</li>
+</ul>

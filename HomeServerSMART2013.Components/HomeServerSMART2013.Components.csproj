@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5A2F6A04-592D-4FD1-AAF5-E22445F7AA41}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DojoNorthSoftware.WindowsServerSolutions.HomeServerSMART2013.Components</RootNamespace>
+    <AssemblyName>HomeServerSMART2013.Components</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>HomeServerSMART2013.Components.Key.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\HomeServerSMART2013.Components.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\HomeServerSMART2013.Components.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\HomeServerSMART2013.Components.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\HomeServerSMART2013.Components.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChilkatDotNet4" Condition="'$(Platform)' == 'x86'">
+      <HintPath>..\ReferenceAssemblies\ChilkatDotNet4.dll</HintPath>
+    </Reference>
+    <Reference Include="ChilkatDotNet4" Condition="'$(Platform)' == 'x64'">
+      <HintPath>..\ReferenceAssemblies64\ChilkatDotNet4.dll</HintPath>
+    </Reference>
+    <Reference Include="Growl.Connector">
+      <HintPath>..\ReferenceAssemblies\Growl.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="Growl.CoreLibrary">
+      <HintPath>..\ReferenceAssemblies\Growl.CoreLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Gurock.SmartInspect, Version=3.3.3.72, Culture=neutral, PublicKeyToken=a78b0a9303ab7a7c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferenceAssemblies\Gurock.SmartInspect.dll</HintPath>
+    </Reference>
+    <Reference Include="NMALib">
+      <HintPath>..\ReferenceAssemblies\NMALib.dll</HintPath>
+    </Reference>
+    <Reference Include="ProviderFramework">
+      <HintPath>..\ReferenceAssemblies\ProviderFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Prowl">
+      <HintPath>..\ReferenceAssemblies\Prowl.dll</HintPath>
+    </Reference>
+    <Reference Include="Pushover">
+      <HintPath>..\ReferenceAssemblies\Pushover.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\ReferenceAssemblies\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SnarlInterface">
+      <HintPath>..\ReferenceAssemblies\SnarlInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WssgCommon, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\WssgCommon\v4.0_6.1.0.0__31bf3856ad364e35\WssgCommon.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.dojonorthsoftware.net/HssUpdateService/HssUpdateService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\HssUpdate\</RelPath>
+      <UpdateFromURL>http://www.dojonorthsoftware.net/HssUpdateService/HssUpdateService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>HomeServerConsoleTab_HomeServerSMART_HssUpdate_HssUpdate</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitLocker\UtilityMethods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cryptography\DoubleEncryptor.cs" />
+    <Compile Include="Cryptography\XmlManager.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdAdataDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdBarefoot3Definitions.cs" />
+    <Compile Include="DiskEnumerator\SiIDisk.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdKingSpecDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdKingstonDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdLamdDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdMarvellDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdSanDiskDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdSkHynixDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdSmartbuyDefinitiions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdToshibaDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdTranscendDefinitions.cs" />
+    <Compile Include="Licensing\Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licensing\Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mexi-Sexi\Enterprise.cs" />
+    <Compile Include="ServiceHelper\DailySummary.cs" />
+    <Compile Include="ServiceHelper\ServiceStaticMethods.cs" />
+    <Compile Include="UserControls\ReviewInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\ReviewInfo.Designer.cs">
+      <DependentUpon>ReviewInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\AssemblyInformation.cs" />
+    <Compile Include="Utilities\CheckForUpdates.cs" />
+    <Compile Include="Utilities\DebugDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilities\DebugDialogue.Designer.cs">
+      <DependentUpon>DebugDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\GrowlNotificationTypes.cs" />
+    <Compile Include="Utilities\LogPruner.cs" />
+    <Compile Include="Utilities\NetworkDrives.cs" />
+    <Compile Include="Utilities\OSInfo.cs" />
+    <Compile Include="Utilities\ReapSystemData.cs" />
+    <Compile Include="Utilities\SilvermistBackup.cs" />
+    <Compile Include="Utilities\SnarlNotifications.cs" />
+    <Compile Include="Utilities\UpdateInfo.cs" />
+    <Compile Include="Utilities\Utility.cs" />
+    <Compile Include="Utilities\VersionInfo.cs" />
+    <Compile Include="DiskEnumerator\DiskInfo.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdGenericDefinitions.cs" />
+    <Compile Include="DiskEnumerator\DiskIdentityData.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdEverestDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdMicronDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdIntelDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdJMicronDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdSamsungDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdSmartModularDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdStecDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdIndilinxDefinitions.cs" />
+    <Compile Include="DiskEnumerator\DiskEnumerator.cs" />
+    <Compile Include="DiskEnumerator\FeverishDisk.cs" />
+    <Compile Include="DiskEnumerator\GlobalConstants.cs" />
+    <Compile Include="DiskEnumerator\IdentifySsdManufacturer.cs" />
+    <Compile Include="DiskEnumerator\InteropSmart.cs" />
+    <Compile Include="DiskEnumerator\KnownVirtualDisks.cs" />
+    <Compile Include="DiskEnumerator\Settings.cs" />
+    <Compile Include="DiskEnumerator\SmartData.cs" />
+    <Compile Include="DiskEnumerator\SmartDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartHddDefinitions.cs" />
+    <Compile Include="DiskEnumerator\SmartMethods.cs" />
+    <Compile Include="DiskEnumerator\SmartSsdSandForceDefinitions.cs" />
+    <Compile Include="DiskEnumerator\Structures.cs" />
+    <Compile Include="Licensing\LegacyOs.cs" />
+    <Compile Include="Licensing\License.cs" />
+    <Compile Include="Licensing\OperatingSystem.cs" />
+    <Compile Include="Licensing\XmlSerializer.cs" />
+    <Compile Include="Mexi-Sexi\MexiSexi.cs" />
+    <Compile Include="ObfuscationSettings.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reboot\RebootServer.cs" />
+    <Compile Include="UserControls\Aero.cs" />
+    <Compile Include="UserControls\UserObject.cs" />
+    <Compile Include="Web References\HssUpdate\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsEventLogger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceHelper\HssServiceHelper.cs" />
+    <Compile Include="WmiServiceInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Wmi\WmiData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HomeServerSMART2013.Components.Key.pfx" />
+    <None Include="Web References\HssUpdate\HssUpdateService.wsdl" />
+    <None Include="Web References\HssUpdate\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Licensing\Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ReviewInfo.resx">
+      <DependentUpon>ReviewInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilities\DebugDialogue.resx">
+      <DependentUpon>DebugDialogue.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_blank_16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\HssUpdate\HssUpdateService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\NotifyMyAndroid.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\Prowl.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\Email.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BiohazardOrange128.png" />
+    <Content Include="BiohazardRed128.png" />
+    <Content Include="Healthy128.png" />
+    <Content Include="RadiationNew128.png" />
+    <Content Include="SkullAndCrossbones128.png" />
+    <Content Include="SkullAndCrossbonesRed128.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>@echo Securing...
+if /I "$(ConfigurationName)" == "Release" Eazfuscator.NET.exe "$(TargetPath)" --msbuild-project-path "$(ProjectPath)" --msbuild-project-configuration "$(ConfigurationName)" -n --newline-flush
+@echo Herbie Hancocking...
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe" sign /v /n "Dojo North Software LLC" /d "WindowSMART Common Components Module" /du "http://www.dojonorthsoftware.net" /t "http://timestamp.verisign.com/scripts/timstamp.dll" "$(TargetPath)"
+@echo Copying autographed file to OBJ dir...
+copy "$(TargetPath)" "$(ProjectDir)\obj\Release"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

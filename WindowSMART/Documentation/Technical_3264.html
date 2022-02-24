@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<title>32- or 64-bit?</title>
+</head>
+
+<body>
+<p class="PageTitle">32- or 64-bit?</p>
+<p class="BodyText">WindowSMART 2015 is written using mostly Microsoft C#, specifically under the Microsoft .NET Framework 4.0. All of the modules were compiled in a mode called MSIL, known in the development environment as &quot;Any CPU.&quot; This means that the modules will happily run in 32- and 64-bit versions of Microsoft Windows, and will adapt themselves to whichever bit level Windows is running. If Windows is 64-bit, WindowSMART will run as 64-bit.</p>
+<p class="BodyText">Not all of the code was written in C#, however. Some of it was written in &quot;unmanaged&quot; or &quot;native&quot; code, specifically using Microsoft Visual C++ 2010. C++ code cannot be compiled into MSIL or Any CPU. You must choose whether to compile as 32- or 64-bit. For this reason, the bit level of the C++ modules must match the bit level of the C# modules. Since MSIL modules run at the bit level of the OS, the C++ must match them, otherwise they will not communicate with each other.</p>
+<p class="BodyText">That said, you should make sure if you are running 64-bit Windows that you choose the 64-bit installer for WindowSMART 2015. It is technically possible to install the 32-bit version, and it may appear to work correctly, but in fact it is not. It is impossible to install the 64-bit version on 32-bit Windows.</p>
+<p class="BodyText">If you install the 32-bit version of WindowSMART 2015 on 64-bit Windows, the following behaviors will be evident due to the failure of WindowSMART's communications with the 32-bit C++ library:</p>
+<ul>
+  <li class="UnorderedListItem">Identification of SSDs will fail; all SSDs will be treated as HDDs
+    <ul>
+      <li>Incorrect attributes will be reported for SSDs</li>
+      <li>SSDs will, at best, show a health status of Geriatric</li>
+    </ul>
+  </li>
+  <li class="UnorderedListItem">SMART data will not be available for any USB or FireWire devices</li>
+  <li class="UnorderedListItem">SMART data that is available will be entirely retrieved through WMI fallback mode</li>
+  <li class="UnorderedListItem">Debug logs, if enabled, will be littered with HRESULT exceptions on all P/Invoke calls</li>
+</ul>
+<p class="BodyText">If you notice the above described behavior, please uninstall WindowSMART 2015, download the 64-bit version and reinstall.</p>

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<title>Automatic Disk Health Monitoring and Alerting</title>
+</head>
+
+<body>
+<p class="PageTitle">Automatic Disk Health Monitoring and Alerting</p>
+<p class="BodyText">When you install WindowSMART 2015, a special component called a <em>Windows Service </em>is installed. Windows services are special applications that are designed to run at computer boot-time, and run continuously, whether or not a user is logged on. The WindowSMART 2015 Service starts automatically each time your computer is rebooted, and runs continuously without any intervention on your part.
+<p class="BodyText">The Home Server SMART Service polls your disks at a predefined interval, by default every three minutes. You can adjust the interval to as little as once per minute to as high as once per week (10800 minutes). Be careful about using large time intervals. Some people prefer longer intervals to allow their drives to sleep (go into power-save mode) for extended periods, since SMART polling will awaken a sleeping disk. Large intervals, however, could potentially allow a serious problem to fester for days before it is detected and reported.
+<p class="BodyText">The service performs four major operations at each polling interval:
+<ul>
+  <li class="UnorderedListItem">Collect data about each disk and write it to the Registry. This allows the information to be processed later as well as provides fast access from the UI. This information includes SMART data, whether the disk is an SSD, capacity, etc.</li>
+  <li class="UnorderedListItem">Examine the data stored in the Registry to check for disk health problems. If any problems are detected, they are added to the alert message queue. Problems that no longer exist are flagged for removal from the queue.</li>
+  <li class="UnorderedListItem">Clear stale disk alerts from the message queue. A disk is considered stale if it has been removed from the computer. WindowSMART does not delete this disk's saved information, since the disk may be added back later. But if there are any active alerts for this disk, they can be cleared since the disk is removed.</li>
+  <li class="UnorderedListItem">Process the alert message queue. New problems, as well as existing problems with changes, generate notificaton alerts via email, Prowl and/or NMA, if they are configured. Problems that have cleared, including stale disk events being removed, also will generate a notification indicating the problem has gone away. Existing items with no changes do not generate notifications.</li>
+</ul>
+<p class="BodyText">The below screen capture shows a computer with a pair of unhealthy disks. The highlighted disk has generated 253 Ultra DMA CRC errors. While the disk has not yet violated any SMART thresholds, Ultra DMA CRC Error Count is often an indicator of a bad data cable or potentially a faulty USB enclosure. Double-clicking on any attribute will bring up a dialogue that explains the attribute in further detail.</p>
+<p class="BodyText"><img src="overview.png" alt="Pair of Unhealthy Disks" width="1008" height="604" /></p>
+<p class="BodyText">Below is a sample email that indicates the problem detected. The alert provides information so you can readily identify which disk is the guilty party.</p>
+<p class="BodyText"><img src="overview_alert.png" alt="Sample alert email" width="901" height="526" /></p>
+</body>
+</html>

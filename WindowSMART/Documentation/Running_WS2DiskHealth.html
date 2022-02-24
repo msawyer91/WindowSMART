@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<title>WindowSMART Disk Health</title>
+</head>
+
+<body>
+<p class="PageTitle">WindowSMART Disk Health</p>
+<p class="BodyText">WindowSMART takes several variables into consideration when calculating   a disk's health:</p>
+<ul>
+  <li class="UnorderedListItem">Whether or not any<em> </em>SMART attribute value has   fallen less than or equal to its threshold. Even attributes that are Advisory (as opposed to Pre-Fail) can fail if their threshold is greater than zero. Attributes with zero thresholds cannot technically fail.</li>
+  <li><span class="UnorderedListItem">Whether or not any of the <em>super-critical </em>attributes has reached a <em>degraded</em> state (value is still greater than threshold, but Raw Data   shows a potential problem). The <em>super-critical</em> attributes are, and they can  reach a <em>degraded</em> state when as few as one event is detected (if a threshold   is violated, the attribute is set to <em>fail</em>). Items marked with an asterisk (*) are found only on SSDs and vary by SSD controller manufacturer.</span>
+    <ul>
+      <li><span class="UnorderedListItem">05 - Reallocated (Bad) Sector Count
+      (HDD) / Retired Sector Count (SSD)</span> </li>
+      <li><span class="UnorderedListItem">0A - Spin Retry Count</span> </li>
+      <li><span class="UnorderedListItem">B8 - End-to-End Error (exceedingly rare, but severe)</span> </li>
+      <li><span class="UnorderedListItem">C4 - Reallocation Event Count</span> </li>
+      <li><span class="UnorderedListItem">C5 - Pending Sector Count</span> </li>
+      <li><span class="UnorderedListItem">C6 - (Offline) Uncorrectable Sector Count</span> </li>
+      <li><span class="UnorderedListItem">C7 - Ultra DMA CRC Error Count (least serious of all <em>super-criticals</em> - no starburst icon)</span></li>
+      <li class="BodyText">E6 - Life Curve Status*</li>
+      <li class="BodyText">E7 - SSD Life Left*</li>
+      <li class="BodyText">E8 - Endurance Remaining*</li>
+      <li class="BodyText">E9 - Available Reserved Space / Media Wearout Indicator*</li>
+      <li class="BodyText">EB - Good Block Rate*</li>
+      <li class="BodyText">FB - Minimum Spares Remaining*</li>
+    </ul>
+  </li>
+  <li class="UnorderedListItem">Raw Read and Seek Error Rate are also shown in the UI as being <em>super   critical</em> but unfortunately these attributes vary widely between disk   manufacturers and I haven't found a solid guideline for these and so I don't   flag them at this time. </li>
+  <li class="UnorderedListItem">Whether or not a disk temperature has reached extreme (critical) or hot   (warning) levels. </li>
+  <li class="UnorderedListItem">Whether or not an attribute is <em>geriatric</em>. </li>
+  <li class="UnorderedListItem">For disks that do not report S.M.A.R.T. data, whether or not the storage   driver (WMI) failure prediction flag is set to <em>True</em>. </li>
+</ul>
+<p class="BodyText">Home Server SMART specifies the following precedence for disk health:</p>
+<ol>
+  <li class="UnorderedListItem">Critical </li>
+  <li class="UnorderedListItem">Warning </li>
+  <li class="UnorderedListItem">Geriatric </li>
+  <li class="UnorderedListItem">Unknown </li>
+  <li class="UnorderedListItem">Healthy </li>
+</ol>
+<p class="BodyText">In other words, if Home Server SMART detects even a single attribute that   causes a disk's health to be Critical, it doesn't matter if all of the other   attributes are perfectly healthy. The disk is still critical. If there is a   combination of Critical, Warning and Healthy, the overall status is still   Critical. Put simply, in order to provide the best level of protection (advance   warning), the <em>worst status prevails</em>.</p>
+<p class="BodyText">A disk will possess a health status of <em>Unknown</em> if the the disk does   not report S.M.A.R.T. data. This lack of reporting may be due to a USB bridge   chip in an external enclosure that doesn't support it, or it may be because the   disk is part of a hardware RAID or attached to a SCSI controller.</p></body>
+</html>

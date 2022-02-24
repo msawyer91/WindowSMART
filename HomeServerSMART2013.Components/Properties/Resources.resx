@@ -1,0 +1,1137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="RegistryConfigIsProwlEnabled" xml:space="preserve">
+    <value>UseProwlNotificate</value>
+  </data>
+  <data name="SnarlNotificateAppWarning" xml:space="preserve">
+    <value>Application Warning</value>
+  </data>
+  <data name="FeverishExplanationSsdLowLifeLeft" xml:space="preserve">
+    <value>The estimated SSD life left is 30% or less, but greater than 10%. Depending on how heavily you write to this disk, you may want to consider replacing it soon.</value>
+  </data>
+  <data name="SmartWindowStatusTitleLargeUncorrectable" xml:space="preserve">
+    <value>Large Uncorrectable Sector Count</value>
+  </data>
+  <data name="RegistryConfigIsNmaEnabled" xml:space="preserve">
+    <value>UseNmaNotificate</value>
+  </data>
+  <data name="SmartWindowStatusMsgHealthHealthy" xml:space="preserve">
+    <value>Your disk is healthy. Bad or troublesome sectors were not detected, and there are no spin-up, end-to-end or data transfer errors.</value>
+  </data>
+  <data name="RegistryConfigMailServer" xml:space="preserve">
+    <value>MailServer</value>
+  </data>
+  <data name="RegistryConfigUseDefaultSkinning" xml:space="preserve">
+    <value>UseDefaultSkinning</value>
+  </data>
+  <data name="ErrorMessageWorkerProcessStartFail" xml:space="preserve">
+    <value>Cannot start worker process: </value>
+    <comment>Trailing space included.</comment>
+  </data>
+  <data name="SettingsDegreesF" xml:space="preserve">
+    <value> °F</value>
+    <comment>Leading space included.</comment>
+  </data>
+  <data name="ErrorMessageInvalidEmailConfig" xml:space="preserve">
+    <value>Your email configuration is invalid. Email alerts will not be available until your email settings are corrected.</value>
+  </data>
+  <data name="EventLogJoshua" xml:space="preserve">
+    <value>WindowSMART-E</value>
+  </data>
+  <data name="SmartWindowStatusTitleOverheated" xml:space="preserve">
+    <value>Overheated Disk</value>
+  </data>
+  <data name="RegistryConfigBitLockerHideTab" xml:space="preserve">
+    <value>HideBitLockerTab</value>
+  </data>
+  <data name="RegistryDojoNorthRootKey" xml:space="preserve">
+    <value>SOFTWARE\Dojo North Software\HomeServerSMART</value>
+  </data>
+  <data name="SmartTemperatureStatusAbsurd" xml:space="preserve">
+    <value>Invalid</value>
+  </data>
+  <data name="RegistryConfigGpoFve" xml:space="preserve">
+    <value>SOFTWARE\Policies\Microsoft\FVE</value>
+  </data>
+  <data name="SmartAttributeVendorSpecific" xml:space="preserve">
+    <value>Vendor-Specific Attribute</value>
+  </data>
+  <data name="RegistryConfigSsdLifeLeftCritical" xml:space="preserve">
+    <value>SsdLifeLeftCritical</value>
+  </data>
+  <data name="RegistryConfigBitLockerShowAllDrives" xml:space="preserve">
+    <value>BitLockerShowAllDrives</value>
+  </data>
+  <data name="FeverishSmartStatusTemperatureCritical" xml:space="preserve">
+    <value>Disk Temperature Critical</value>
+  </data>
+  <data name="ResourceUrlText" xml:space="preserve">
+    <value>Home Server SMART Homepage</value>
+  </data>
+  <data name="RegistryConfigRecipientFriendly" xml:space="preserve">
+    <value>RecipientFriendly</value>
+  </data>
+  <data name="DedicationBanner" xml:space="preserve">
+    <value>Dedicated in Memory of Joseph B. Sawyer</value>
+  </data>
+  <data name="DiskPoolProviderDriveBender" xml:space="preserve">
+    <value>DriveBender</value>
+  </data>
+  <data name="RegistryConfigGpoNmaNotificate" xml:space="preserve">
+    <value>NmaNotificate</value>
+  </data>
+  <data name="LabelZero" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SmartWindowStatusMsgEndToEndMajor" xml:space="preserve">
+    <value>End-to-end errors have been detected on the disk. End-to-end errors are exceedingly rare, but are severe if they appear.</value>
+  </data>
+  <data name="WindowTitleWarning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="ActiveAlertsXml" xml:space="preserve">
+    <value>activeAlerts.xml</value>
+  </data>
+  <data name="RegistryConfigGpoRestoreDefaults" xml:space="preserve">
+    <value>RestoreDefaults</value>
+  </data>
+  <data name="HssBugTrackUrl" xml:space="preserve">
+    <value>https://www.dojonorthsoftware.net/bugtraq</value>
+  </data>
+  <data name="SmartWindowStatusTitleUncorrectable" xml:space="preserve">
+    <value>Uncorrectable Sectors Detected</value>
+  </data>
+  <data name="ToastyApiUri" xml:space="preserve">
+    <value>http://api.supertoasty.com/notify/</value>
+  </data>
+  <data name="WindowTitleHealthy" xml:space="preserve">
+    <value>Healthy</value>
+  </data>
+  <data name="FeverishExplanationSsdNoLifeLeft" xml:space="preserve">
+    <value>The estimated SSD life left is 10% or less. The SSD may no longer allow writing in order to preserve the integrity of the data on the disk. You should make a backup of the data on the disk, and replace the disk as soon as possible.</value>
+  </data>
+  <data name="FeverishExplanationSsdThrottled" xml:space="preserve">
+    <value>The SSD life curve status of the disk has been set to throttled. This is done by the SSD when the life curve suggests the writing to the disk will violate the warranty terms.</value>
+  </data>
+  <data name="FeverishSmartStatusTemperatureWarm" xml:space="preserve">
+    <value>Warm Disk</value>
+  </data>
+  <data name="ToastyParamDeviceID" xml:space="preserve">
+    <value>?deviceID=</value>
+  </data>
+  <data name="FeverishSmartStatusWarningBadSectors" xml:space="preserve">
+    <value>Bad Sectors Detected</value>
+  </data>
+  <data name="RegistryConfigServerPort" xml:space="preserve">
+    <value>ServerPort</value>
+  </data>
+  <data name="SmartWindowStatusTitleLowLifeLeft" xml:space="preserve">
+    <value>SSD Life Remaining Low</value>
+  </data>
+  <data name="FeverishSmartStatusCriticalReallocations" xml:space="preserve">
+    <value>High Reallocation Event Count</value>
+  </data>
+  <data name="GrowlNotificateAppWarning" xml:space="preserve">
+    <value>Application Warning</value>
+  </data>
+  <data name="FeverishSmartStatusDiskGeezer" xml:space="preserve">
+    <value>Geriatric Disk</value>
+  </data>
+  <data name="ExceptionMessage" xml:space="preserve">
+    <value>Unhandled exception has occurred. The administrative Console will be closed. </value>
+  </data>
+  <data name="SmartWindowStatusMsgHealthWarning" xml:space="preserve">
+    <value>The health of this disk is questionable. It is recommended that you keep a close eye on it. If its health degrades further, you should replace it.</value>
+  </data>
+  <data name="RegistryConfigSsdRetirementCritical" xml:space="preserve">
+    <value>SsdRetirementCritical</value>
+  </data>
+  <data name="IconAlertHyperfatal" xml:space="preserve">
+    <value>SkullAndCrossbonesRed128.png</value>
+  </data>
+  <data name="ItemNotApplicable" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="ErrorMessageTitleSevere" xml:space="preserve">
+    <value>Severe</value>
+  </data>
+  <data name="RegistryConfigGrowlRemotePort" xml:space="preserve">
+    <value>GrowlRemotePort</value>
+  </data>
+  <data name="SmartWindowStatusMsgEndToEndMinor" xml:space="preserve">
+    <value>One end-to-end error has been detected on the disk. End-to-end errors are exceedingly rare, but are severe.</value>
+  </data>
+  <data name="LabelTemperatureF" xml:space="preserve">
+    <value> °F</value>
+    <comment>Leading space included.</comment>
+  </data>
+  <data name="ResourceUrlAsp" xml:space="preserve">
+    <value>http://www.asp-software.org</value>
+  </data>
+  <data name="WindowTitleCritical" xml:space="preserve">
+    <value>Critical</value>
+  </data>
+  <data name="SmartWindowStatusTitleLargePending" xml:space="preserve">
+    <value>Large Pending Bad Sector Count</value>
+  </data>
+  <data name="ErrorMessageWorkerProcessWmiFail" xml:space="preserve">
+    <value>WMI worker process encountered an exception: </value>
+    <comment>Trailing space included.</comment>
+  </data>
+  <data name="SmartAttributeStatusHealthy" xml:space="preserve">
+    <value>Healthy</value>
+  </data>
+  <data name="FeverishExplanationHotTemperature" xml:space="preserve">
+    <value>Disk temperature is hot. Long-term operation of a hot disk may cause permanent damage. Check fans and airflow for obstructions and proper operation.</value>
+  </data>
+  <data name="DiskPoolProviderDrivePool" xml:space="preserve">
+    <value>DrivePoolService</value>
+  </data>
+  <data name="SettingsDegreesC" xml:space="preserve">
+    <value>°C</value>
+    <comment>No leading space!</comment>
+  </data>
+  <data name="RegistryConfigIsBoxcarEnabled" xml:space="preserve">
+    <value>UseBoxcarNotificate</value>
+  </data>
+  <data name="ErrorMessageRegistryWriteFailed" xml:space="preserve">
+    <value>Unable to write to the Registry. </value>
+    <comment>Trailing space included.</comment>
+  </data>
+  <data name="LabelReallocationEvents" xml:space="preserve">
+    <value>Reallocation Events: </value>
+    <comment>Trailing space included.</comment>
+  </data>
+  <data name="FeverishSmartStatusWarningCrcErrors" xml:space="preserve">
+    <value>CRC Errors Detected</value>
+  </data>
+  <data name="RegistryConfigGpoUseSupportMessage" xml:space="preserve">
+    <value>UseSupportMessage</value>
+  </data>
+  <data name="WindowTitleUnknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="HssBuildCode" xml:space="preserve">
+    <value>I Prevail</value>
+  </data>
+  <data name="RegistryConfigSiIAdvanced" xml:space="preserve">
+    <value>SiIAdvanced</value>
+  </data>
+  <data name="SmartWindowStatusTitleThirdLifeLeft" xml:space="preserve">
+    <value>SSD Life Remaining Decreasing</value>
+  </data>
+  <data name="RegistryConfigGpoCheckForUpdates" xml:space="preserve">
+    <value>CheckForUpdates</value>
+  </data>
+  <data name="SnarlNotificateGeneral" xml:space="preserve">
+    <value>General Notification</value>
+  </data>
+  <data name="ErrorMessageDiskNotAvailable" xml:space="preserve">
+    <value>The selected disk is no longer available. Click "Refresh Disks" to get the current list of available disks.</value>
+  </data>
+  <data name="FeverishSmartStatusWarningSpinRetries" xml:space="preserve">
+    <value>Spin Retries Detected</value>
+  </data>
+  <data name="SmartTemperatureStatusWarm" xml:space="preserve">
+    <value>Caution</value>
+  </data>
+  <data name="FeverishSmartStatusSsdThrottled" xml:space="preserve">
+    <value>SSD Life Curve Status - Throttled</value>
+  </data>
+  <data name="SmartWindowStatusMsgThresholdExceeded" xml:space="preserve">
+    <value>At least one S.M.A.R.T. threshold has been met or exceeded. Your hard drive could fail very soon, if it has not already failed.</value>
+  </data>
+  <data name="ListViewDiskInfoTitle" xml:space="preserve">
+    <value>Physical Disk Information</value>
+  </data>
+  <data name="RemoteNotifyIconGeneral" xml:space="preserve">
+    <value>http://www.dojonorthsoftware.net/images/DiskHeartbeat128x128.png</value>
+  </data>
+  <data name="ApplicationTitleWindowSmart" xml:space="preserve">
+    <value>WindowSMART 24/7</value>
+  </data>
+  <data name="ResourceDonationQuestion" xml:space="preserve">
+    <value>Like this Add-in?</value>
+  </data>
+  <data name="RegistryConfigGrowlRemoteMachine" xml:space="preserve">
+    <value>GrowlRemoteMachine</value>
+  </data>
+  <data name="SmartAttributeStatusFailed" xml:space="preserve">
+    <value>Fail</value>
+  </data>
+  <data name="SmartWindowStatusTitleGeriatric" xml:space="preserve">
+    <value>Geriatric Disk</value>
+  </data>
+  <data name="ApplicationEventLog" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="FeverishSmartStatusCriticalUncorrectableSectors" xml:space="preserve">
+    <value>High Uncorrectable Sector Count</value>
+  </data>
+  <data name="RegistryConfigGpoBoxcarNotificate" xml:space="preserve">
+    <value>BoxcarNotificate</value>
+  </data>
+  <data name="RegistryConfigCustomSupportMessage" xml:space="preserve">
+    <value>SupportMessage</value>
+  </data>
+  <data name="SmartWindowStatusTitleCriticalAirflow" xml:space="preserve">
+    <value>Critical Airflow Temperature</value>
+  </data>
+  <data name="RegistryConfigFallbackToWmi" xml:space="preserve">
+    <value>FallbackToWmi</value>
+  </data>
+  <data name="RegistryConfigReportWarning" xml:space="preserve">
+    <value>ReportWarning</value>
+  </data>
+  <data name="SmartWindowStatusTitleLifeCurveThrottled" xml:space="preserve">
+    <value>Life Curve Throttled</value>
+  </data>
+  <data name="FeverishExplanationWarningEndToEndErrors" xml:space="preserve">
+    <value>At least one end-to-end error has been detected on the disk. End-to-end errors indicate data corruption in the disk's cache RAM. These errors are exceedingly rare, but are severe if they appear.</value>
+  </data>
+  <data name="ErrorMessageTitleInvalidEmail" xml:space="preserve">
+    <value>Invalid Email Configuration</value>
+  </data>
+  <data name="FeverishExplanationHealthGeriatric" xml:space="preserve">
+    <value>At least one S.M.A.R.T. attribute value has reached zero. The disk may be reaching the end of its life. If no other problems are reported, a geriatric disk is not usually a problem.</value>
+  </data>
+  <data name="SmartWindowStatusMsgHotAirflow" xml:space="preserve">
+    <value>Your disk is running hot, based on airflow temperature. Check fans, enclosures and airflow. Excessive heat can damage the disk.</value>
+  </data>
+  <data name="FeverishExplanationWarmTemperature" xml:space="preserve">
+    <value>Disk may be getting hot. Keep a close eye on it. Check fans and airflow for obstructions and proper operation.</value>
+  </data>
+  <data name="SettingsDegreesK" xml:space="preserve">
+    <value> °K</value>
+    <comment>Leading space included.</comment>
+  </data>
+  <data name="SmartTemperatureStatusOverheated" xml:space="preserve">
+    <value>Overheated</value>
+  </data>
+  <data name="RegistryConfigNmaApiKeychain" xml:space="preserve">
+    <value>NmaApiKeychain</value>
+  </data>
+  <data name="RegistryConfigEnableDebugLogging" xml:space="preserve">
+    <value>EnableDebugLogging</value>
+  </data>
+  <data name="SmartWindowStatusTitleReallocations" xml:space="preserve">
+    <value>Reallocation Events Detected</value>
+  </data>
+  <data name="FeverishSmartStatusThresholdExceeded" xml:space="preserve">
+    <value>SMART Threshold Exceeded</value>
+  </data>
+  <data name="InstallLocationPfSubtree" xml:space="preserve">
+    <value>Dojo North Software\Home Server SMART 2012</value>
+  </data>
+  <data name="RegistryConfigGpoResetEverything" xml:space="preserve">
+    <value>ResetEverything</value>
+  </data>
+  <data name="ToastyParamSender" xml:space="preserve">
+    <value>&amp;sender=WindowSMART+2013</value>
+  </data>
+  <data name="RegistryConfigReportCritical" xml:space="preserve">
+    <value>ReportCritical</value>
+  </data>
+  <data name="FeverishExplanationHealthCritical" xml:space="preserve">
+    <value>The health of this disk is Critical. It is recommended that you replace it as soon as possible, or if the problem(s) are correctable (such as temperature), correct the problems immediately.</value>
+  </data>
+  <data name="RegistryConfigGpoFips" xml:space="preserve">
+    <value>SYSTEM\CurrentControlSet\Control\Lsa\FipsAlgorithmPolicy</value>
+  </data>
+  <data name="FeverishExplanationOverheatedTempterature" xml:space="preserve">
+    <value>Disk temperature is overheated. Cool the disk immediately. Long-term operation of an overheated disk will cause permanent damage.</value>
+  </data>
+  <data name="SnarlNotificateCritical" xml:space="preserve">
+    <value>Critical Health Alert</value>
+  </data>
+  <data name="RegistryConfigGpoAllowServiceControl" xml:space="preserve">
+    <value>AllowServiceControl</value>
+  </data>
+  <data name="SmartWindowStatusTitleBadSectors" xml:space="preserve">
+    <value>Bad Sectors Detected</value>
+  </data>
+  <data name="BoxcarApiPerms" xml:space="preserve">
+    <value>C7Eby33IHN4M4Mxd2nDuGmtbKAMk6vr4eAWGKLo</value>
+  </data>
+  <data name="RegistryConfigGpoDebuggingControl" xml:space="preserve">
+    <value>DebuggingControl</value>
+  </data>
+  <data name="RegistryConfigGrowlPassword" xml:space="preserve">
+    <value>GrowlPassword</value>
+  </data>
+  <data name="GrowlNotificateCritical" xml:space="preserve">
+    <value>Critical Health Alert</value>
+  </data>
+  <data name="SmartWindowStatusTitleWmiFailFalse" xml:space="preserve">
+    <value>WMI Failure Predicted: False</value>
+  </data>
+  <data name="RegistryConfigGpoAllowShutdownReboot" xml:space="preserve">
+    <value>AllowShutdownReboot</value>
+  </data>
+  <data name="IconAlertCleared" xml:space="preserve">
+    <value>Healthy128.png</value>
+  </data>
+  <data name="ResourceDonationUrl" xml:space="preserve">
+    <value>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=11344152</value>
+  </data>
+  <data name="RegistryConfigMailAlertsEnabled" xml:space="preserve">
+    <value>MailAlertsEnabled</value>
+  </data>
+  <data name="FeverishSmartStatusCriticalBadSectorsSsd" xml:space="preserve">
+    <value>High SSD Retired Block Count</value>
+  </data>
+  <data name="RegistryConfigOverheatedTempThreshold" xml:space="preserve">
+    <value>OverheatedTempThreshold</value>
+  </data>
+  <data name="ResourceUrlWikipedia" xml:space="preserve">
+    <value>http://en.wikipedia.org/wiki/S.M.A.R.T.</value>
+  </data>
+  <data name="ToastyParamImage" xml:space="preserve">
+    <value>&amp;image=</value>
+  </data>
+  <data name="SmartWindowStatusMsgWmiFailFalse" xml:space="preserve">
+    <value>The Microsoft storage driver is reporting False over WMI for the flag "failure predicted." The storage driver is not detecting any problems.</value>
+  </data>
+  <data name="SmartAttributeStatusGeriatric" xml:space="preserve">
+    <value>Geriatric</value>
+  </data>
+  <data name="RegistryConfigBitLockerPreventLocking" xml:space="preserve">
+    <value>BitLockerPreventLocking</value>
+  </data>
+  <data name="RegistryConfigSsdRetirementWarning" xml:space="preserve">
+    <value>SsdRetirementWarning</value>
+  </data>
+  <data name="ListViewPhysicalDisksTitle" xml:space="preserve">
+    <value>Select a Disk to View</value>
+  </data>
+  <data name="ExplanationTextPreFail" xml:space="preserve">
+    <value>This is a Pre-Fail attribute, which means if the Current Value drops below the Threshold, the attribute is considered to have failed and the disk should be replaced as soon as possible.</value>
+  </data>
+  <data name="ErrorMessageRegistryReadsFailedWarn" xml:space="preserve">
+    <value>Warnings occurred reading data from the Registry. Unreadable values have been reset to their defaults.</value>
+  </data>
+  <data name="EventLogTaryn" xml:space="preserve">
+    <value>WindowSMART-W</value>
+  </data>
+  <data name="FeverishSmartStatusThresholdMet" xml:space="preserve">
+    <value>SMART Threshold Met</value>
+  </data>
+  <data name="RegistryConfigGpoDeleteStale" xml:space="preserve">
+    <value>DeleteStale</value>
+  </data>
+  <data name="RegistryConfigLogLocation" xml:space="preserve">
+    <value>SmartInspectDebugLogLocation</value>
+  </data>
+  <data name="SmartWindowStatusTitleHealthCritical" xml:space="preserve">
+    <value>Disk Health: Critical</value>
+  </data>
+  <data name="SmartWindowStatusTitleSpinRetries" xml:space="preserve">
+    <value>Spin Retries Detected</value>
+  </data>
+  <data name="SmartWindowStatusTitleHealthUnknown" xml:space="preserve">
+    <value>Disk Health: Unknown</value>
+  </data>
+  <data name="FeverishSmartStatusWarningPendingSectors" xml:space="preserve">
+    <value>Pending Sectors Detected</value>
+  </data>
+  <data name="RegistryConfigDiskPoolProvider" xml:space="preserve">
+    <value>DiskPoolProvider</value>
+  </data>
+  <data name="ListViewSmartInfoTitle" xml:space="preserve">
+    <value>S.M.A.R.T. Details</value>
+  </data>
+  <data name="ResourceUrlWs2" xml:space="preserve">
+    <value>http://www.dojonorthsoftware.net/TBM/WindowSMART.aspx</value>
+  </data>
+  <data name="RegistryConfigSenderFriendly" xml:space="preserve">
+    <value>SenderFriendly</value>
+  </data>
+  <data name="RegistryConfigGpoProwlNotificate" xml:space="preserve">
+    <value>ProwlNotificate</value>
+  </data>
+  <data name="WindowTitleConfirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="ConfirmResetDefaults" xml:space="preserve">
+    <value>Are you sure you want to reset all configuration values to their defaults?</value>
+  </data>
+  <data name="ProwlApiKeyWs2" xml:space="preserve">
+    <value>9c08d245894cf6620062aac184d936ee1ab5a86f</value>
+  </data>
+  <data name="FeverishSmartStatusCriticalSpinRetries" xml:space="preserve">
+    <value>High Spin Retry Count</value>
+  </data>
+  <data name="FeverishSmartStatusTemperatureOverheated" xml:space="preserve">
+    <value>Overheated Disk</value>
+  </data>
+  <data name="FeverishSmartStatusWarningUncorrectableSectors" xml:space="preserve">
+    <value>Uncorrectable Sectors Detected</value>
+  </data>
+  <data name="RegistryMonitoredDisksKey" xml:space="preserve">
+    <value>MonitoredDisks</value>
+  </data>
+  <data name="RemoteNotifyIconCleared" xml:space="preserve">
+    <value>http://www.dojonorthsoftware.net/images/Healthy128.png</value>
+  </data>
+  <data name="RegistryConfigIsToastyEnabled" xml:space="preserve">
+    <value>UseToastyNotificate</value>
+  </data>
+  <data name="ServiceNameHssFveHelper" xml:space="preserve">
+    <value>dnhsSmartFvePoolHelper</value>
+  </data>
+  <data name="RegistryConfigIsGrowlRemoteEnabled" xml:space="preserve">
+    <value>UseGrowlRemoteNotificate</value>
+  </data>
+  <data name="SmartWindowStatusMsgOverheatedAirflow" xml:space="preserve">
+    <value>Your disk is overheated, based on airflow temperature. Check fans, enclosures and airflow as soon as possible. Excessive heat can damage the disk.</value>
+  </data>
+  <data name="SmartWindowStatusTitleLargeCrc" xml:space="preserve">
+    <value>Large CRC Error Count</value>
+  </data>
+  <data name="SnarlNotificateWarning" xml:space="preserve">
+    <value>Warning Health Alert</value>
+  </data>
+  <data name="SmartWindowStatusMsgOverheatedTemperature" xml:space="preserve">
+    <value>Your disk is overheated. Check fans, enclosures and airflow as soon as possible. Excessive heat can damage the disk.</value>
+  </data>
+  <data name="RegistryConfigGpoTempCtl" xml:space="preserve">
+    <value>TempCtl</value>
+  </data>
+  <data name="RegistryConfigGpoDpa" xml:space="preserve">
+    <value>Dpa</value>
+  </data>
+  <data name="SmartWindowStatusMsgHealthUnknown" xml:space="preserve">
+    <value>S.M.A.R.T. status is unknown. The disk may be connected via a USB or IEEE 1394 interface, is part of a hardware or software RAID volume, or the disk itself does not support S.M.A.R.T. monitoring.</value>
+  </data>
+  <data name="SnarlNotificateCleared" xml:space="preserve">
+    <value>Disk Health Alert Cleared</value>
+  </data>
+  <data name="FeverishSmartStatusWarningReallocations" xml:space="preserve">
+    <value>Reallocation Events Detected</value>
+  </data>
+  <data name="FeverishExplanationCriticalTemperature" xml:space="preserve">
+    <value>Your disk temperature is critical. Check fans, enclosures and airflow, and get the disk cooled NOW. Continued operation at such an extreme temperature can destroy the disk, even if it's only for a short period.</value>
+  </data>
+  <data name="FeverishSmartStatusSsdNoLifeLeft" xml:space="preserve">
+    <value>SSD Life Left - 0-10%</value>
+  </data>
+  <data name="RegistryConfigLastUpdateCheck" xml:space="preserve">
+    <value>LastUpdateCheck</value>
+  </data>
+  <data name="RegistryConfigLogRequirement" xml:space="preserve">
+    <value>LogRequirement</value>
+  </data>
+  <data name="RegistryConfigGpoEmailNotificate" xml:space="preserve">
+    <value>EmailNotificate</value>
+  </data>
+  <data name="RegistryConfigIgnoreHot" xml:space="preserve">
+    <value>IgnoreHot</value>
+  </data>
+  <data name="LabelPendingSectors" xml:space="preserve">
+    <value>Pending Bad Sectors: </value>
+    <comment>Trailing space included.</comment>
+  </data>
+  <data name="RegistryConfigIsGrowlEnabled" xml:space="preserve">
+    <value>UseGrowlNotificate</value>
+  </data>
+  <data name="SmartWindowStatusGeneral" xml:space="preserve">
+    <value>ySUX+hpCoPmAtXipA1Bo/y+/CJ7orNmeRHvAqPYxeGAfyoJkUbeaooo7a5YQ2LNhQXfhlRLWB4oEbOH6kM42UMhv2DVKV3+c8k6S0Qgkz2fd2p5l0atw+rPr7PQmp2HPc3fOb0XOUtwxu+lBSBKHnL0yl0QqFuwoSEdWkPCLYSVgJke4979HQWdkcmqFEcvpCREuLrnYAOPo0ZWpYZLNPBmwIkZ/aLgDVUrtoau86iN8TWEdA51CbpLkQiy5wZmXUdTGjgUAqkepk=</value>
+  </data>
+  <data name="RegistryConfigWindowsPhoneGuids" xml:space="preserve">
+    <value>WindowsPhoneGuids</value>
+  </data>
+  <data name="BoxcarApiKey" xml:space="preserve">
+    <value>BHL46yMgGPQJZW9iKVhA</value>
+  </data>
+  <data name="RegistryConfigSsdLifeLeftWarning" xml:space="preserve">
+    <value>SsdLifeLeftWarning</value>
+  </data>
+  <data name="RemoteNotifyIconWarningRaised" xml:space="preserve">
+    <value>http://www.dojonorthsoftware.net/images/BiohazardOrange128.png</value>
+  </data>
+  <data name="SmartWindowStatusTitleHealthHealthy" xml:space="preserve">
+    <value>Disk Health: Healthy</value>
+  </data>
+  <data name="RegistryConfigWindowBackground" xml:space="preserve">
+    <value>WindowBackground</value>
+  </data>
+  <data name="RemoteNotifyIconWarning" xml:space="preserve">
+    <value>http://www.dojonorthsoftware.net/images/RadiationNew128.png</value>
+  </data>
+  <data name="SmartWindowStatusTitleEndToEndErrors" xml:space="preserve">
+    <value>End-to-End Errors Detected</value>
+  </data>
+  <data name="FeverishSmartStatusCriticalPendingSectors" xml:space="preserve">
+    <value>High Pending Sector Count</value>
+  </data>
+  <data name="FeverishSmartStatusWarningEndToEndErrors" xml:space="preserve">
+    <value>End-to-End Errors Detected</value>
+  </data>
+  <data name="RegistryConfigIsSnarlEnabled" xml:space="preserve">
+    <value>UseSnarlNotificate</value>
+  </data>
+  <data name="ServiceNameHss" xml:space="preserve">
+    <value>dnhsSmart</value>
+  </data>
+  <data name="RemoteNotifyIconCritical" xml:space="preserve">
+    <value>http://www.dojonorthsoftware.net/images/BiohazardRed128.png</value>
+  </data>
+  <data name="FeverishSmartStatusWarningBadSectorsSsd" xml:space="preserve">
+    <value>SSD Retired Blocks Detected</value>
+  </data>
+  <data name="SmartWindowStatusMsgCriticalTemperature" xml:space="preserve">
+    <value>Your disk temperature is critical. Check fans, enclosures and airflow, and get the disk cooled NOW. Excessive heat can damage the disk.</value>
+  </data>
+  <data name="SmartWindowStatusMsgHotTemperature" xml:space="preserve">
+    <value>Your disk is running hot. Check fans, enclosures and airflow. Excessive heat can damage the disk.</value>
+  </data>
+  <data name="RegistryConfigIsTwitterEnabled" xml:space="preserve">
+    <value>UseTwitterNotificate</value>
+  </data>
+  <data name="RegistryConfigGpoUiTheme" xml:space="preserve">
+    <value>UiTheme</value>
+  </data>
+  <data name="LabelTemperature" xml:space="preserve">
+    <value>Temperature: </value>
+    <comment>Trailing space included.</comment>
+  </data>
+  <data name="ResourceDonationText" xml:space="preserve">
+    <value>Treat me to a Starbucks Frappuccino!</value>
+  </data>
+  <data name="ResourceUrlPcTechGuide" xml:space="preserve">
+    <value>http://www.pctechguide.com/hard-disks/hard-disk-smart-drives</value>
+  </data>
+  <data name="SmartWindowStatusMsgWarmAirflow" xml:space="preserve">
+    <value>Your disk could be getting hot, based on airflow temperature. Keep a close eye on the temperature. Check fans, enclosures and airflow. Excessive heat can damage the disk.</value>
+  </data>
+  <data name="LabelTemperatureC" xml:space="preserve">
+    <value> °C</value>
+    <comment>Leading space included.</comment>
+  </data>
+  <data name="RegistryConfigIgnoreVirtualDisks" xml:space="preserve">
+    <value>IgnoreVirtualDisks</value>
+  </data>
+  <data name="RegistryConfigAuthenticationEnabled" xml:space="preserve">
+    <value>AuthenticationEnabled</value>
+  </data>
+  <data name="GrowlNotificateCleared" xml:space="preserve">
+    <value>Disk Health Alert Cleared</value>
+  </data>
+  <data name="ExplanationTextSuperCriticalYes" xml:space="preserve">
+    <value>considers this a super-critical attribute. Even slight changes in this attribute are likely to negatively impact the disk's health rating.</value>
+  </data>
+  <data name="SnarlNotificateHyperfatal" xml:space="preserve">
+    <value>Fatal Alert</value>
+  </data>
+  <data name="RegistryConfigGpoFveCurrentControlSet" xml:space="preserve">
+    <value>SYSTEM\CurrentControlSet\Policies\Microsoft\FVE</value>
+  </data>
+  <data name="SmartWindowStatusTitleThresholdExceeded" xml:space="preserve">
+    <value>S.M.A.R.T. Threshold(s) Exceeded!</value>
+  </data>
+  <data name="RegistryConfigTemperaturePreference" xml:space="preserve">
+    <value>TemperaturePreference</value>
+  </data>
+  <data name="ErrorMessageWorkerProcessWmiNotSupported" xml:space="preserve">
+    <value>None of the disks in your Server are exposing SMART data via WMI. Display of SMART data or analysis is not available for all non-USB disks. SMART data for USB disks may still be available.</value>
+  </data>
+  <data name="FeverishExplanationHealthWarning" xml:space="preserve">
+    <value>The health of this disk is questionable. It is recommended that you keep a close eye on it. If its health degrades further, you should replace it. If the problem(s) are correctable (such as temperature), correct the problems as soon as possible.</value>
+  </data>
+  <data name="FeverishSmartStatusCriticalBadSectors" xml:space="preserve">
+    <value>High Bad Sector Count</value>
+  </data>
+  <data name="SmartWindowStatusMsgAbsurdTemperature" xml:space="preserve">
+    <value>The disk temperature or airflow temperature sensor appears to be reporting an anomalous temperature. Such a temperature is far in excess of the limits of most computer hardware, and thus it is assumed that the temperature sensor is incorrect. </value>
+  </data>
+  <data name="FeverishExplanationThresholdMet" xml:space="preserve">
+    <value>SMART value is equal to the non-zero threshold for one or more values. If the value drops any further, a Threshold Exceeded Condition (TEC) will exist, which indicates imminent failure. You should keep a very close eye on this disk; you may want to consider replacing it now. If the failing attribute is temperature-related, cooling the disk may correct this problem.</value>
+  </data>
+  <data name="SmartWindowStatusTitleHealthWarning" xml:space="preserve">
+    <value>Disk Health: Warning</value>
+  </data>
+  <data name="ExplanationTextAdvisory" xml:space="preserve">
+    <value>This is an Advisory attribute, which normally do not fail (super-critical attributes can fail). Instead it is an indicator of a drive's age. Drives that reach the zero threshold are considered Geriatric.</value>
+  </data>
+  <data name="GrowlNotificateWarning" xml:space="preserve">
+    <value>Warning Health Alert</value>
+  </data>
+  <data name="ErrorMessageGeneral" xml:space="preserve">
+    <value>Exceptions were detected: </value>
+    <comment>Trailing space included.</comment>
+  </data>
+  <data name="ToastyParamText" xml:space="preserve">
+    <value>&amp;text=</value>
+  </data>
+  <data name="IconAlertAppWarning" xml:space="preserve">
+    <value>BiohazardOrange128.png</value>
+  </data>
+  <data name="RegistryConfigMailPassword" xml:space="preserve">
+    <value>MailPassword</value>
+  </data>
+  <data name="RegistryConfigWarmTempThreshold" xml:space="preserve">
+    <value>WarmTempThreshold</value>
+  </data>
+  <data name="RegistryConfigMailUser" xml:space="preserve">
+    <value>MailUser</value>
+  </data>
+  <data name="RegistryConfigReportGeriatric" xml:space="preserve">
+    <value>ReportGeriatric</value>
+  </data>
+  <data name="LabelZeroTemperature" xml:space="preserve">
+    <value>0 °C</value>
+  </data>
+  <data name="ProwlApiKeyHss" xml:space="preserve">
+    <value>669a448635ef5e2d2bc59f4bed23b3f6ca240e32</value>
+  </data>
+  <data name="RegistryConfigRecipientEmail" xml:space="preserve">
+    <value>RecipientEmail</value>
+  </data>
+  <data name="FeverishSmartStatusSsdLowLifeLeft" xml:space="preserve">
+    <value>SSD Life Left - 10-30%</value>
+  </data>
+  <data name="SmartWindowStatusTitleLargeReallocation" xml:space="preserve">
+    <value>Large Reallocation Event Count</value>
+  </data>
+  <data name="IconAlertWarning" xml:space="preserve">
+    <value>RadiationNew128.png</value>
+  </data>
+  <data name="SmartTemperatureStatusHot" xml:space="preserve">
+    <value>Hot</value>
+  </data>
+  <data name="SmartWindowStatusTitleWmiFailTrue" xml:space="preserve">
+    <value>WMI Failure Predicted: True</value>
+  </data>
+  <data name="RegistryConfigPreserveOnUninstall" xml:space="preserve">
+    <value>PreserveOnUninstall</value>
+  </data>
+  <data name="RegistryConfigGpoAllowIgnoredItems" xml:space="preserve">
+    <value>AllowIgnoredItems</value>
+  </data>
+  <data name="SmartWindowStatusTitleHighSpinRetry" xml:space="preserve">
+    <value>High Spin Retry Count</value>
+  </data>
+  <data name="GrowlNotificateGeneral" xml:space="preserve">
+    <value>General Notification</value>
+  </data>
+  <data name="RegistryConfigSenderEmail" xml:space="preserve">
+    <value>SenderEmail</value>
+  </data>
+  <data name="PurchaseUrl" xml:space="preserve">
+    <value>https://www.dojonorthsoftware.net/WSPurchase.html</value>
+  </data>
+  <data name="SmartWindowStatusMsgCriticalAirflow" xml:space="preserve">
+    <value>Your disk airflow temperature is critical. Check fans, enclosures and airflow, and get the disk cooled NOW. Excessive heat can damage the disk.</value>
+  </data>
+  <data name="IconAlertCritical" xml:space="preserve">
+    <value>BiohazardRed128.png</value>
+  </data>
+  <data name="FeverishSmartStatusDiskWarning" xml:space="preserve">
+    <value>Disk Health Warning</value>
+  </data>
+  <data name="SmartWindowStatusTitlePending" xml:space="preserve">
+    <value>Pending Bad Sectors Detected</value>
+  </data>
+  <data name="RegistryConfigurationKey" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="FeverishSmartStatusTemperatureHot" xml:space="preserve">
+    <value>Hot Disk</value>
+  </data>
+  <data name="SmartWindowStatusTitleHot" xml:space="preserve">
+    <value>Hot Disk</value>
+  </data>
+  <data name="RemoteNotifyIconHyperfatal" xml:space="preserve">
+    <value>http://www.dojonorthsoftware.net/images/SkullAndCrossbonesRed128.png</value>
+  </data>
+  <data name="FeverishExplanationThresholdExceeded" xml:space="preserve">
+    <value>SMART Threshold Exceeded Condition (TEC) has occurred on one or more attributes. This indicates imminent failure (may be less than 24 hours). Back up the data on the disk and replace the disk as soon as possible. If the failing attribute is temperature-related, cooling the disk may correct this problem.</value>
+  </data>
+  <data name="RegistryConfigUseSSL" xml:space="preserve">
+    <value>UseSSL</value>
+  </data>
+  <data name="RegistryConfigProwlApiKeychain" xml:space="preserve">
+    <value>ProwlApiKeychain</value>
+  </data>
+  <data name="LabelBadSectors" xml:space="preserve">
+    <value>Bad Sectors: </value>
+    <comment>Trailing space included.</comment>
+  </data>
+  <data name="GrowlNotificateHyperfatal" xml:space="preserve">
+    <value>Fatal Alert</value>
+  </data>
+  <data name="SmartWindowStatusMsgHealthCritical" xml:space="preserve">
+    <value>The health of this disk is Critical. It is recommended that you replace it as soon as possible.</value>
+  </data>
+  <data name="FeverishExplanationCriticalEndToEndErrors" xml:space="preserve">
+    <value>Multiple end-to-end errors have been detected on the disk. End-to-end errors indicate data corruption in the disk's cache RAM. These errors are exceedingly rare, but are severe if they appear.</value>
+  </data>
+  <data name="RegistryConfigGpoAdvancedSettings" xml:space="preserve">
+    <value>AdvancedSettings</value>
+  </data>
+  <data name="RegistryConfigIsEmailConfigValid" xml:space="preserve">
+    <value>IsEmailConfigValid</value>
+  </data>
+  <data name="SmartWindowStatusTemperatureAbsurd" xml:space="preserve">
+    <value>Invalid Temperature Reading</value>
+  </data>
+  <data name="ResourceUrl" xml:space="preserve">
+    <value>http://www.dojonorthsoftware.net/Freebies/HomeServerSMART2013.aspx</value>
+  </data>
+  <data name="RegistryConfigCriticalTempThreshold" xml:space="preserve">
+    <value>CriticalTempThreshold</value>
+  </data>
+  <data name="WindowTitleWelcome" xml:space="preserve">
+    <value>Welcome!</value>
+  </data>
+  <data name="RegistryConfigBoxcarEmailAddress" xml:space="preserve">
+    <value>BoxcarEmailAddress</value>
+  </data>
+  <data name="FeverishSmartStatusCriticalEndToEndErrors" xml:space="preserve">
+    <value>End-to-End Errors Detected</value>
+  </data>
+  <data name="SmartWindowStatusTitleCriticalTemp" xml:space="preserve">
+    <value>Critical Temperature</value>
+  </data>
+  <data name="WindowTitleGeriatric" xml:space="preserve">
+    <value>Geriatric</value>
+  </data>
+  <data name="RegistryConfigBaronessTbm" xml:space="preserve">
+    <value>SOFTWARE\Dojo North Software\Taryn BitLocker Manager</value>
+  </data>
+  <data name="SmartWindowStatusTitleWarm" xml:space="preserve">
+    <value>Warm Disk</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="icon_blank_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_blank_16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LabelTemperatureK" xml:space="preserve">
+    <value> °K</value>
+    <comment>Leading space included.</comment>
+  </data>
+  <data name="RegistryConfigIgnoreWarm" xml:space="preserve">
+    <value>IgnoreWarm</value>
+  </data>
+  <data name="SmartWindowStatusMsgWmiFailTrue" xml:space="preserve">
+    <value>The Microsoft storage driver is reporting TRUE over WMI for the flag "failure predicted." The storage driver has detected problems. You should take the disk offline and test it with a manufacturer-supplied diagnostic utility, if available, or install the disk as a directly-connected volume (not via USB, IEEE 1394 or RAID) to examine the S.M.A.R.T. information in more detail.</value>
+  </data>
+  <data name="HssBugTrackEmail" xml:space="preserve">
+    <value>bugtraq@dojonorthsoftware.net</value>
+  </data>
+  <data name="RegistryConfigGpoWindowsPhoneNotificate" xml:space="preserve">
+    <value>WindowsPhoneNotificate</value>
+  </data>
+  <data name="SmartAttributeStatusDegraded" xml:space="preserve">
+    <value>Degraded</value>
+  </data>
+  <data name="RegistryConfigHotTempThreshold" xml:space="preserve">
+    <value>HotTempThreshold</value>
+  </data>
+  <data name="SmartWindowStatusMsgWarmTemperature" xml:space="preserve">
+    <value>Your disk could be getting hot. Keep a close eye on the temperature. Check fans, enclosures and airflow. Excessive heat can damage the disk.</value>
+  </data>
+  <data name="SmartTemperatureStatusCritical" xml:space="preserve">
+    <value>Critical</value>
+  </data>
+  <data name="SmartWindowStatusTitleRetiredBlocks" xml:space="preserve">
+    <value>SSD Retired Blocks Detected</value>
+  </data>
+  <data name="RegistryConfigPollingInterval" xml:space="preserve">
+    <value>PollingInterval</value>
+  </data>
+  <data name="RegistryConfigUseHelperService" xml:space="preserve">
+    <value>UseHelperService</value>
+  </data>
+  <data name="RegistryConfigGpoSSD" xml:space="preserve">
+    <value>SSD</value>
+  </data>
+  <data name="ExplanationTextSuperCriticalNo" xml:space="preserve">
+    <value>does not regard this as a super-critical attribute. Minor, or even large changes, may not impact the disk's health rating unless the Threshold is violated.</value>
+  </data>
+  <data name="ErrorMessageTitleDiskNotAvailable" xml:space="preserve">
+    <value>Disk Not Available</value>
+  </data>
+  <data name="RegistryConfigGpoVirtualIgnore" xml:space="preserve">
+    <value>VirtualIgnore</value>
+  </data>
+  <data name="FeverishSmartStatusDiskCritical" xml:space="preserve">
+    <value>Disk Health Critical</value>
+  </data>
+  <data name="SmartWindowStatusMsgHealthGeriatric" xml:space="preserve">
+    <value>At least one S.M.A.R.T. attribute value has reached zero. The disk may be reaching the end of its life. If no other problems are reported, a geriatric disk is not usually a problem.</value>
+  </data>
+  <data name="RegistryConfigRecipientEmail3" xml:space="preserve">
+    <value>RecipientEmail3</value>
+  </data>
+  <data name="IconAlertGeneral" xml:space="preserve">
+    <value>DiskHeartbeat128.png</value>
+  </data>
+  <data name="ApplicationTitleHss" xml:space="preserve">
+    <value>Home Server SMART 24/7</value>
+  </data>
+  <data name="ToastyParamTitle" xml:space="preserve">
+    <value>&amp;title=</value>
+  </data>
+  <data name="RegistryConfigRecipientEmail2" xml:space="preserve">
+    <value>RecipientEmail2</value>
+  </data>
+  <data name="TwitterCallbackUri" xml:space="preserve">
+    <value>http://www.dojonorthsoftware.net/TBM/Twitter.aspx</value>
+  </data>
+  <data name="TwitterConsumerToken" xml:space="preserve">
+    <value>s4Q0CCT571HAXFg4qc4g</value>
+  </data>
+  <data name="RegistryConfigUpdateRef" xml:space="preserve">
+    <value>UpdateRefGuid</value>
+  </data>
+  <data name="WmiQueryStringNonWin8" xml:space="preserve">
+    <value>select * from Win32_DiskDrive</value>
+  </data>
+  <data name="WmiQueryStringWin8" xml:space="preserve">
+    <value>select * from MSFT_PhysicalDisk</value>
+  </data>
+  <data name="WmiQueryScope" xml:space="preserve">
+    <value>Root\Microsoft\Windows\Storage</value>
+  </data>
+  <data name="WmiQueryScopeDefault" xml:space="preserve">
+    <value>root\cimv2</value>
+  </data>
+  <data name="RegistryConfigBackupLocal" xml:space="preserve">
+    <value>BackupLocal</value>
+  </data>
+  <data name="RegistryConfigLocalBackupPath" xml:space="preserve">
+    <value>LocalBackupPath</value>
+  </data>
+  <data name="RegistryConfigNoHotBackup" xml:space="preserve">
+    <value>NoHotBackup</value>
+  </data>
+  <data name="RegistryConfigPerformEmergencyBackup" xml:space="preserve">
+    <value>PerformEmergencyBackup</value>
+  </data>
+  <data name="RegistryConfigThermalShutdown" xml:space="preserve">
+    <value>ThermalShutdown</value>
+  </data>
+  <data name="RegistryConfigUncBackupPassword" xml:space="preserve">
+    <value>BackupPass</value>
+  </data>
+  <data name="RegistryConfigUncBackupPath" xml:space="preserve">
+    <value>UNCBackupPath</value>
+  </data>
+  <data name="RegistryConfigUncBackupUser" xml:space="preserve">
+    <value>BackupUser</value>
+  </data>
+  <data name="RegistryConfigCustomBackupProgram" xml:space="preserve">
+    <value>CustomBackupProgram</value>
+  </data>
+  <data name="RegistryConfigPerformCustomBackup" xml:space="preserve">
+    <value>PerformCustomBackup</value>
+  </data>
+  <data name="RegistryConfigExcludeItems" xml:space="preserve">
+    <value>ExcludeItems</value>
+  </data>
+  <data name="RegistryConfigIncludeDirectories" xml:space="preserve">
+    <value>IncludeDirectories</value>
+  </data>
+  <data name="RegistryConfigDoDebugBackup" xml:space="preserve">
+    <value>DebugBackup</value>
+  </data>
+  <data name="FeverishExplanationCriticalRuntimeBadBlock" xml:space="preserve">
+    <value>A high number of bad blocks have been detected on the SSD during runtime. This could indicate a problem writing to the SSD media, or the SSD media is wearing out.</value>
+  </data>
+  <data name="FeverishExplanationWarningRuntimeBadBlock" xml:space="preserve">
+    <value>Bad blocks have been detected on the SSD during runtime. This could indicate a problem writing to the SSD media, or the SSD media is wearing out.</value>
+  </data>
+  <data name="FeverishSmartStatusCriticalRuntimeBadBlock" xml:space="preserve">
+    <value>Runtime Bad Blocks Detected</value>
+  </data>
+  <data name="FeverishSmartStatusWarningRuntimeBadBlocks" xml:space="preserve">
+    <value>Runtime Bad Blocks Detected</value>
+  </data>
+  <data name="Registration" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Registration.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigCustomBackupArgs" xml:space="preserve">
+    <value>CustomBackupArgs</value>
+  </data>
+  <data name="RegistryConfigDoDebugCustomBackup" xml:space="preserve">
+    <value>DebugCustomBackup</value>
+  </data>
+  <data name="RegistryConfigDebugBadDisks" xml:space="preserve">
+    <value>DebugBadDisks</value>
+  </data>
+  <data name="RegistryConfigGpoEmergencyBackup" xml:space="preserve">
+    <value>UseEmergencyBackup</value>
+  </data>
+  <data name="RegistryConfigGpoGrowlNotificate" xml:space="preserve">
+    <value>GrowlNotificate</value>
+  </data>
+  <data name="RegistryConfigGpoSnarlNotificate" xml:space="preserve">
+    <value>SnarlNotificate</value>
+  </data>
+  <data name="DailySummaryXml" xml:space="preserve">
+    <value>dailySummary.xml</value>
+  </data>
+  <data name="RegistryConfigSendDailySummary" xml:space="preserve">
+    <value>SendDailySummary</value>
+  </data>
+  <data name="FeverishSmartStatusPhantomMessage" xml:space="preserve">
+    <value>The system detected one or more phantom disks. This occurs when a physical disk participating in a Windows 8 Storage Space has been removed from the system, but the disk's record is still a part of the Storage Space. The disk may have failed, or has been removed without its record being removed from the Storage Space. Please check your Storage Spaces and ensure all disks are present and online. This text may help you identify the disk(s) in question:</value>
+  </data>
+  <data name="FeverishSmartStatusPhantomTitle" xml:space="preserve">
+    <value>Phantom Disk(s) Detected</value>
+  </data>
+  <data name="PhantomDiskGuid" xml:space="preserve">
+    <value>8400dcb3-4772-4a40-b9b7-ee0f99017036</value>
+  </data>
+  <data name="RegistryConfigSendPlaintext" xml:space="preserve">
+    <value>EmailSendPlaintext</value>
+  </data>
+  <data name="PushoverApiToken" xml:space="preserve">
+    <value>5o2vFpjLhJV13gySPAbcvSSnXVVdW7</value>
+  </data>
+  <data name="RegistryConfigGpoPushoverNotificate" xml:space="preserve">
+    <value>PushoverNotificate</value>
+  </data>
+  <data name="RegistryConfigIsPushoverEnabled" xml:space="preserve">
+    <value>UsePushoverNotificate</value>
+  </data>
+  <data name="RegistryConfigPushoverClearedSound" xml:space="preserve">
+    <value>PushoverClearedSound</value>
+  </data>
+  <data name="RegistryConfigPushoverCriticalSound" xml:space="preserve">
+    <value>PushoverCriticalSound</value>
+  </data>
+  <data name="RegistryConfigPushoverDeviceTarget" xml:space="preserve">
+    <value>PushoverSingleDevice</value>
+  </data>
+  <data name="RegistryConfigPushoverKey" xml:space="preserve">
+    <value>PushoverUserKey</value>
+  </data>
+  <data name="RegistryConfigPushoverWarningSound" xml:space="preserve">
+    <value>PushoverWarningSound</value>
+  </data>
+  <data name="RegistryConfigNotifyFilthyShutdown" xml:space="preserve">
+    <value>NotifyFilthyShutdown</value>
+  </data>
+  <data name="RegistryConfigNotifyPowerChange" xml:space="preserve">
+    <value>NotifyPowerChange</value>
+  </data>
+</root>

@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label2.Text" xml:space="preserve">
+    <value>To encrypt a Windows Server data volume, please comlete the information requested below. If an option is dimmed, it is not available to you because of Group Policy settings defined by your system administrator. If a checkbox is both checked and dimmed, the item is required by policy and cannot be unselected. If the encrypted volume is NTFS, you will not be able to use it with Windows Vista or Server 2008.</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Volumes encrypted in Windows 7 or Server 2008 R2 cannot be unlocked by BitLocker in Windows Vista or Server 2008. FAT, FAT32 and exFAT volumes can be unlocked in earlier Windows versions with the BitLocker To Go Reader; this access is read-only.</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAMAEBAQAAEABAAoAQAANgAAABAQAAABAAgAaAUAAF4BAAAQEAAAAQAgAGgEAADGBgAAKAAAABAA
+        AAAgAAAAAQAEAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAIAAAACAgACAAAAAgACAAICA
+        AACAgIAAwMDAAAAA/wAA/wAAAP//AP8AAAD/AP8A//8AAP///wAAAAcAAAAAAAAAeHAAAAAAAAh3AAAA
+        AAAAB3hwAAADNwAIdwAAADeJAAd4cAADewAACHhAADe3AAAHeHADewAAAHiPhze1AAAHiIiIWDgAAAf4
+        //hosAAAB4CHCFtwAAAH9od4eLAAAAB4c3cDgAAAAICId7gAAAAAiIgAAAAAAPv/AADx/wAA4/8AAOH4
+        AADj8AAA4eMAAOHDAADhjwAAwA8AAIAPAACAHwAAkh8AAIAfAADAnwAA0D8AAMP/AAAoAAAAEAAAACAA
+        AAABAAgAAAAAAAABAAAAAAAAAAAAAAABAAAAAQAAAAAAAFpRSwBcUEsAf3FmAH5ybQB9eHIAjYF9ACtt
+        qQBjdIAAZHeDAHaGkwB8i5QAMYPGAE6NwQBCruUAR7HiAGbR/gCYiYQAmIyJAJqRjgCHkJcAopOOAKaZ
+        jwCnmZYArp+aAKqengCqoZ8AqqShAK6logC4pqEAtqipAL6uqQC+ubcAwLSxAMe4twDMuLcAz769AN++
+        uACNq8gAg7jIAIm43gCSveEAn8ztAI/s/gCg4/4Ay8TBANTFxQDewMAA18nGANjRzwDl0s0A49XVAO/Y
+        1gDh2toA8+LjAP/o7ADy9PkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAEwAAAAAAAAAAAAAAAAAABCQCAAAA
+        AAAAAAAAAAAAHAQXAAAAAAAAAAAAAAAAABoGLgIAAAAAAAAHBwcAAAAaBBkAAAAAAAAHDBAMAAAAGgQi
+        AgAAAAAHDA8AAAAAABoGMwIAAAAHDBAMAAAAAAASEiMCAAAHDA4AAAAAAAAVIi82NAIHDBAMAAAAAAAR
+        Ii8vLzQlAhAMJgAAAAAAETIyODg3JQIrDAAAAAAAABEyACoUAB0CLAwAAAAAAAARMgInCQUfHBAMAAAA
+        AAAAABkgCwkDHgAMKQAAAAAAAAATADEWCg0MKAAAAAAAAAAALSEwNQAAAAAAAAAAAAD7/wAA8f8AAOP/
+        AADh+AAA4/AAAOHjAADhwwAA4Y8AAMAPAACADwAAgB8AAJIfAACAHwAAwJ8AANA/AADD/wAAKAAAABAA
+        AAAgAAAAAQAgAAAAAABABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhMSgaFeXU7fXFtw1tP
+        SmoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC0qadFfnJt/8++
+        vf9cUEv/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAloqHxH5y
+        bf+ll5T5XFBLcQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJeL
+        ic6NgX3/08PD9FxQS/8AAAAAAAAAAAAAAAAAAAAAAAAAACttqTYrban/K22p/yttqf8AAAAAAAAAAAAA
+        AACXi4nOfnJt/5+RkeBaTkpoAAAAAAAAAAAAAAAAAAAAACttqTYrban/MYPG/2bR/v8xg8b/AAAAAAAA
+        AAAAAAAAl4uJzn5ybf/HuLf/XFBL/wAAAAAAAAAAAAAAACttqTYrban/MYPG/0ex4v8rbal7JWqkdgAA
+        AAAAAAAAAAAAAJeLic6NgX3/49XV/1xQS/8AAAAAAAAAACttqTYrban/MYPG/2bR/v8xg8b/NnOqLgAA
+        AAAAAAAAAAAAAAAAAACYjIr/mY2J/8y4t/9cUEv/H0t0ASttqTcrban/MYPG/0Ku5f8rbal7LnKsUDZ8
+        swIAAAAAAAAAAAAAAACik47/x7i3/97AwP/z4uP/79jW/1xQS/8rban/MYPG/2bR/v8xg8b/Lm+mKgAA
+        AAAAAAAAAAAAAAAAAACYiYT/x7i3/97AwP/ewMD/3sDA/+/Y1v/fvrj/XFBL/2bR/v8xg8b/LGOZiQAA
+        AAAAAAAAAAAAAAAAAAAAAAAAmImE/+XSzf/l0s3/8vT5//L0+f//6Oz/3764/1xQS/+P7P7/MYPG/wAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAJiJhP/l0s3/c29te5vK7fN4gorhd3Nwd62Yk9xcUEv/oOP+/zGD
+        xv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACYiYT/5dLN/y8kHcp8tMXwQlpo0UM8NLC5p6LqnpeU3mbR
+        /v8xg8b/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa19bQ66fmv+6tbPwcYKL61psefB8bmL4ppaX0S9D
+        ZWQxg8b/MYPGhgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIV5ckGVjIfyAAAAANXOy+ummY//doaT/02N
+        wf0xg8b/MYPGkQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACnoZkMpJeRj7SlotTMurbHy7+/kQAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADh/wAA4f8AAOH/AADh8AAA4eAAAOHA
+        AADhgQAA4AEAAMAHAACADwAAgB8AAIAfAACAHwAAgB8AAJA/AACD/wAA
+</value>
+  </data>
+</root>

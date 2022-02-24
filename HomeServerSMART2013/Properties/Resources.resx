@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="RegistryConfigUseHelperService1" xml:space="preserve">
+    <value>UseHelperService</value>
+  </data>
+  <data name="ResourceUrlPcTechGuide" xml:space="preserve">
+    <value>http://www.pctechguide.com/hard-disks/hard-disk-smart-drives</value>
+  </data>
+  <data name="ApplicationEventLog" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="RegistryConfigSsdLifeLeftCritical" xml:space="preserve">
+    <value>SsdLifeLeftCritical</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ShieldQuestion16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldQuestion16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigReportCritical" xml:space="preserve">
+    <value>ReportCritical</value>
+  </data>
+  <data name="RegistryConfigDiskPoolProvider" xml:space="preserve">
+    <value>DiskPoolProvider</value>
+  </data>
+  <data name="ResourceDonationText" xml:space="preserve">
+    <value>Treat me to a Starbucks Frappuccino!</value>
+  </data>
+  <data name="RegistryConfigUseSSL" xml:space="preserve">
+    <value>UseSSL</value>
+  </data>
+  <data name="ServiceNameHssFveHelper" xml:space="preserve">
+    <value>dnhsSmartFvePoolHelper</value>
+  </data>
+  <data name="ShieldGreen16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldGreen16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourceDonationUrl" xml:space="preserve">
+    <value>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=11344152</value>
+  </data>
+  <data name="RegistryConfigSsdRetirementWarning1" xml:space="preserve">
+    <value>SsdRetirementWarning</value>
+  </data>
+  <data name="ErrorMessageWorkerProcessWmiFail" xml:space="preserve">
+    <value>WMI worker process encountered an exception: </value>
+    <comment>Trailing space included.</comment>
+  </data>
+  <data name="RegistryConfigTemperaturePreference" xml:space="preserve">
+    <value>TemperaturePreference</value>
+  </data>
+  <data name="ResourceUrl" xml:space="preserve">
+    <value>http://www.dojonorthsoftware.net/Freebies/HomeServerSMART2013.aspx</value>
+  </data>
+  <data name="RegistryConfigMailPassword" xml:space="preserve">
+    <value>MailPassword</value>
+  </data>
+  <data name="MetalGrate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MetalGrate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigRecipientFriendly" xml:space="preserve">
+    <value>RecipientFriendly</value>
+  </data>
+  <data name="ShieldYellow24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldYellow24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigPreserveOnUninstall" xml:space="preserve">
+    <value>PreserveOnUninstall</value>
+  </data>
+  <data name="Unlock24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unlock24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ErrorMessageTitleInvalidEmail" xml:space="preserve">
+    <value>Invalid Email Configuration</value>
+  </data>
+  <data name="ShieldMulti24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldMulti24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Encrypt48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Encrypt48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WindowTitleConfirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="ErrorMessageRegistryReadsFailedWarn" xml:space="preserve">
+    <value>Warnings occurred reading data from the Registry. Unreadable values have been reset to their defaults.</value>
+  </data>
+  <data name="Cert16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cert16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogfileExtension" xml:space="preserve">
+    <value>.sil</value>
+  </data>
+  <data name="RegistryConfigIgnoreWarm" xml:space="preserve">
+    <value>IgnoreWarm</value>
+  </data>
+  <data name="ErrorMessageDiskNotAvailable" xml:space="preserve">
+    <value>The selected disk is no longer available. Click "Refresh Disks" to get the current list of available disks.</value>
+  </data>
+  <data name="DedicationBanner" xml:space="preserve">
+    <value>Dedicated in Memory of Joseph B. Sawyer</value>
+  </data>
+  <data name="RegistryConfigurationPoolHelperKey" xml:space="preserve">
+    <value>PoolHelperService</value>
+  </data>
+  <data name="RegistryConfigSsdLifeLeftWarning1" xml:space="preserve">
+    <value>SsdLifeLeftWarning</value>
+  </data>
+  <data name="Information16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Information16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigGpoFips" xml:space="preserve">
+    <value>SYSTEM\CurrentControlSet\Control\Lsa\FipsAlgorithmPolicy</value>
+  </data>
+  <data name="ResourceUrlWikipedia" xml:space="preserve">
+    <value>http://en.wikipedia.org/wiki/S.M.A.R.T.</value>
+  </data>
+  <data name="Exclamation48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Exclamation48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotifyMyAndroid32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NotifyMyAndroid32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigIgnoreHot" xml:space="preserve">
+    <value>IgnoreHot</value>
+  </data>
+  <data name="RegistryConfigRecipientEmail2" xml:space="preserve">
+    <value>RecipientEmail2</value>
+  </data>
+  <data name="server_backup_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\server_backup_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigPollingInterval" xml:space="preserve">
+    <value>PollingInterval</value>
+  </data>
+  <data name="Email32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Email32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SettingsDegreesC" xml:space="preserve">
+    <value>°C</value>
+    <comment>No leading space!</comment>
+  </data>
+  <data name="RegistryServiceStartFlag" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stopwatch_with_Arrows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stopwatch with Arrows.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigSenderEmail" xml:space="preserve">
+    <value>SenderEmail</value>
+  </data>
+  <data name="bar_icon_delete_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bar_icon_delete_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EventLogTaryn" xml:space="preserve">
+    <value>WindowSMART-W</value>
+  </data>
+  <data name="Healthy16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Healthy16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DiskPoolProviderDriveBender" xml:space="preserve">
+    <value>DriveBender</value>
+  </data>
+  <data name="hard_drive_repair_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hard_drive_repair_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SetupApi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SetupApi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigIsProwlEnabled" xml:space="preserve">
+    <value>UseProwlNotificate</value>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>Home Server SMART 24/7</value>
+  </data>
+  <data name="DiskPoolProviderDrivePool" xml:space="preserve">
+    <value>DrivePoolService</value>
+  </data>
+  <data name="RegistryConfigOverheatedTempThreshold" xml:space="preserve">
+    <value>OverheatedTempThreshold</value>
+  </data>
+  <data name="Reboot16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Reboot16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourceDonationQuestion" xml:space="preserve">
+    <value>Like this Add-in?</value>
+  </data>
+  <data name="RegistryConfigSsdRetirementCritical" xml:space="preserve">
+    <value>SsdRetirementCritical</value>
+  </data>
+  <data name="Change" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Change.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ErrorMessageTitleSevere" xml:space="preserve">
+    <value>Severe</value>
+  </data>
+  <data name="ErrorMessageGeneral" xml:space="preserve">
+    <value>Exceptions were detected: </value>
+    <comment>Trailing space included.</comment>
+  </data>
+  <data name="RegistryConfigMailServer" xml:space="preserve">
+    <value>MailServer</value>
+  </data>
+  <data name="Updates16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Updates16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigEnableDebugLogging" xml:space="preserve">
+    <value>EnableDebugLogging</value>
+  </data>
+  <data name="Starbux" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Starbux.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigUseHelperService" xml:space="preserve">
+    <value>UseHelperService</value>
+  </data>
+  <data name="RegistryConfigReportWarning" xml:space="preserve">
+    <value>ReportWarning</value>
+  </data>
+  <data name="Keyboard48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Keyboard48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShieldGreen24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldGreen24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RefreshDisk24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RefreshDisk24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigSsdRetirementWarning" xml:space="preserve">
+    <value>SsdRetirementWarning</value>
+  </data>
+  <data name="RegistryConfigSsdLifeLeftWarning" xml:space="preserve">
+    <value>SsdLifeLeftWarning</value>
+  </data>
+  <data name="ShieldMulti16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldMulti16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigMailUser" xml:space="preserve">
+    <value>MailUser</value>
+  </data>
+  <data name="EventLogJoshua" xml:space="preserve">
+    <value>WindowSMART-E</value>
+  </data>
+  <data name="RegistryDojoNorthRootKey1" xml:space="preserve">
+    <value>SOFTWARE\Dojo North Software\HomeServerSMART</value>
+  </data>
+  <data name="Keyboard16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Keyboard16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Blue_Gradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Blue Gradient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigHotTempThreshold" xml:space="preserve">
+    <value>HotTempThreshold</value>
+  </data>
+  <data name="ErrorMessageRegistryWriteFailed" xml:space="preserve">
+    <value>Unable to write to the Registry. </value>
+    <comment>Trailing space included.</comment>
+  </data>
+  <data name="Subtract" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Subtract.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigIsEmailConfigValid" xml:space="preserve">
+    <value>IsEmailConfigValid</value>
+  </data>
+  <data name="ShieldRed24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldRed24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigSenderFriendly" xml:space="preserve">
+    <value>SenderFriendly</value>
+  </data>
+  <data name="RegistryConfigBaronessTbm" xml:space="preserve">
+    <value>SOFTWARE\Dojo North Software\Taryn BitLocker Manager</value>
+  </data>
+  <data name="Decrypt48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Decrypt48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigMailAlertsEnabled" xml:space="preserve">
+    <value>MailAlertsEnabled</value>
+  </data>
+  <data name="ErrorMessageTitleDiskNotAvailable" xml:space="preserve">
+    <value>Disk Not Available</value>
+  </data>
+  <data name="RegistryConfigGpoFve" xml:space="preserve">
+    <value>SOFTWARE\Policies\Microsoft\FVE</value>
+  </data>
+  <data name="Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Prowl32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Prowl32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CrackedGlassThumb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CrackedGlassThumb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigIgnoreVirtualDisks" xml:space="preserve">
+    <value>IgnoreVirtualDisks</value>
+  </data>
+  <data name="RegistryConfigSsdRetirementCritical1" xml:space="preserve">
+    <value>SsdRetirementCritical</value>
+  </data>
+  <data name="Help16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unlock16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unlock16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Keyboard32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Keyboard32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="status_warning_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\status_warning_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigProwlApiKeychain" xml:space="preserve">
+    <value>ProwlApiKeychain</value>
+  </data>
+  <data name="RegistryConfigServerPort" xml:space="preserve">
+    <value>ServerPort</value>
+  </data>
+  <data name="RegistryConfigurationKey" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="CopyrightBanner" xml:space="preserve">
+    <value>Copyright © 24/7 Dojo North Software</value>
+  </data>
+  <data name="HunkaHunkaMcBabyMcOrneryMcSlabMcHandsomeMcBabyMcGoodLookingMcSlabMcFlawlessMcSlabMcBaby" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunkaHunkaMcBabyMcOrneryMcSlabMcHandsomeMcBabyMcGoodLookingMcSlabMcFlawlessMcSlabMcBaby.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DriveBender16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DriveBender16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigSiIAdvanced" xml:space="preserve">
+    <value>SiIAdvanced</value>
+  </data>
+  <data name="DiskHeartBeat48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DiskHeartBeat48x48.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ErrorMessageWorkerProcessWmiNotSupported" xml:space="preserve">
+    <value>None of the disks in your Server are exposing SMART data via WMI. Display of SMART data or analysis is not available for all non-USB disks. SMART data for USB disks may still be available.</value>
+  </data>
+  <data name="RegistryConfigCriticalTempThreshold" xml:space="preserve">
+    <value>CriticalTempThreshold</value>
+  </data>
+  <data name="ResourceUrlText" xml:space="preserve">
+    <value>Home Server SMART Homepage</value>
+  </data>
+  <data name="RegistryConfigSsdLifeLeftCritical1" xml:space="preserve">
+    <value>SsdLifeLeftCritical</value>
+  </data>
+  <data name="RegistryConfigUseSSL1" xml:space="preserve">
+    <value>UseSSL</value>
+  </data>
+  <data name="IgnoreProblem48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IgnoreProblem48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ErrorMessageWorkerProcessStartFail" xml:space="preserve">
+    <value>Cannot start worker process: </value>
+    <comment>Trailing space included.</comment>
+  </data>
+  <data name="DriveLetterNa" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="ShieldQuestion24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldQuestion24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigBitLockerPreventLocking" xml:space="preserve">
+    <value>BitLockerPreventLocking</value>
+  </data>
+  <data name="ShutDown16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShutDown16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigRecipientEmail3" xml:space="preserve">
+    <value>RecipientEmail3</value>
+  </data>
+  <data name="SettingsDegreesF" xml:space="preserve">
+    <value> °F</value>
+    <comment>Leading space included.</comment>
+  </data>
+  <data name="Resume" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Resume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigWarmTempThreshold" xml:space="preserve">
+    <value>WarmTempThreshold</value>
+  </data>
+  <data name="Ignore16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ignore16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigBitLockerHideTab" xml:space="preserve">
+    <value>HideBitLockerTab</value>
+  </data>
+  <data name="Pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigFallbackToWmi" xml:space="preserve">
+    <value>FallbackToWmi</value>
+  </data>
+  <data name="RegistryConfigWindowBackground" xml:space="preserve">
+    <value>WindowBackground</value>
+  </data>
+  <data name="RegistryConfigWarmTempThreshold1" xml:space="preserve">
+    <value>WarmTempThreshold</value>
+  </data>
+  <data name="RegistryConfigNmaApiKeychain" xml:space="preserve">
+    <value>NmaApiKeychain</value>
+  </data>
+  <data name="ShieldYellow16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldYellow16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShieldRed16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldRed16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryMonitoredDisksKey" xml:space="preserve">
+    <value>MonitoredDisks</value>
+  </data>
+  <data name="RegistryDojoNorthRootKey" xml:space="preserve">
+    <value>SOFTWARE\Dojo North Software\HomeServerSMART</value>
+  </data>
+  <data name="RegistryConfigurationKey1" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="RegistryMonitoredDisksKey1" xml:space="preserve">
+    <value>MonitoredDisks</value>
+  </data>
+  <data name="Warning16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Warning16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lock24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lock24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Help48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PolicyWithToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PolicyWithToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SettingsDegreesK" xml:space="preserve">
+    <value> °K</value>
+    <comment>Leading space included.</comment>
+  </data>
+  <data name="RegistryConfigRecipientEmail" xml:space="preserve">
+    <value>RecipientEmail</value>
+  </data>
+  <data name="RegistryConfigLogLocation" xml:space="preserve">
+    <value>SmartInspectDebugLogLocation</value>
+  </data>
+  <data name="WindowTitleWarning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="RegistryConfigIsNmaEnabled" xml:space="preserve">
+    <value>UseNmaNotificate</value>
+  </data>
+  <data name="RegistryConfigAuthenticationEnabled" xml:space="preserve">
+    <value>AuthenticationEnabled</value>
+  </data>
+  <data name="ConfirmResetDefaults" xml:space="preserve">
+    <value>Are you sure you want to reset all configuration values to their defaults?</value>
+  </data>
+  <data name="Policy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Policy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FlashDrive48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FlashDrive48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigTemperaturePreference1" xml:space="preserve">
+    <value>TemperaturePreference</value>
+  </data>
+  <data name="BitLocker48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BitLocker48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigServiceHelperKey" xml:space="preserve">
+    <value>SYSTEM\CurrentControlSet\Services\dnhsSmartFvePoolHelper</value>
+  </data>
+  <data name="RegistryConfigUseDefaultSkinning" xml:space="preserve">
+    <value>UseDefaultSkinning</value>
+  </data>
+  <data name="RegistryConfigBitLockerShowAllDrives" xml:space="preserve">
+    <value>BitLockerShowAllDrives</value>
+  </data>
+  <data name="RegistryConfigGpoFveCurrentControlSet" xml:space="preserve">
+    <value>SYSTEM\CurrentControlSet\Policies\Microsoft\FVE</value>
+  </data>
+  <data name="RegistryConfigSiIAdvanced1" xml:space="preserve">
+    <value>SiIAdvanced</value>
+  </data>
+  <data name="ErrorMessageInvalidEmailConfig" xml:space="preserve">
+    <value>Your email configuration is invalid. Email alerts will not be available until your email settings are corrected.</value>
+  </data>
+  <data name="LogfilePrefix" xml:space="preserve">
+    <value>HssUiLog_</value>
+  </data>
+  <data name="ServiceNameHss" xml:space="preserve">
+    <value>dnhsSmart</value>
+  </data>
+  <data name="Green_Gradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Green Gradient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Critical16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Critical16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LightningThumb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LightningThumb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistryConfigReportGeriatric" xml:space="preserve">
+    <value>ReportGeriatric</value>
+  </data>
+  <data name="WmiQueryStringNonWin8" xml:space="preserve">
+    <value>select * from Win32_DiskDrive</value>
+  </data>
+  <data name="WmiQueryStringWin8" xml:space="preserve">
+    <value>select * from MSFT_PhysicalDisk</value>
+  </data>
+</root>

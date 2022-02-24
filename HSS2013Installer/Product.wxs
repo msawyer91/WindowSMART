@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--
+      Configuring this file for deployment:
+      
+      Do NOT change the Product ID or Upgrade Codes. You MUST leave these alone, or you will lose
+      the ability to provide updates (users will be forced to uninstall and reinstall).
+      
+      The ONLY thing you should need to change in this file is the Product Version. If you add
+      or remove assemblies, obviously you will need to add or remove File elements. Otherwise,
+      the Version is all you need to change.
+      
+      ~Jake~  
+  -->
+  <Product Id="{cba43fff-e1ba-4a92-b98e-e8d175ef1167}"
+           Name="Home Server SMART 24/7"
+           Language="1033" Version="3.6.12.27"
+           Manufacturer="Dojo North Software, LLC"
+           UpgradeCode="{1679b98e-cc95-46b4-9c78-11d422de253c}">
+
+    <Package Keywords="Installer"
+             Platform="x64"
+             Description="Home Server SMART 24/7 Installer"
+             Comments="This installer will install Home Server SMART 24/7 on your Server."
+             Manufacturer="Dojo North Software, LLC"
+             InstallerVersion="200"
+             Languages="1033"
+             Compressed="yes"
+             SummaryCodepage="1252" />
+
+    <Media Id="1"
+           Cabinet="Hss2013Deployment.cab"
+           EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder" Name="PFiles">
+        <Directory Id="DojoNorthSoftwareDir" Name="Dojo North Software">
+          <Directory Id="Hss2013InstallDir" Name="Home Server SMART 2012">
+            <Component
+              Id="Hss2013ServiceBinaries"
+              Guid="{ed2c3e33-e447-4b31-86e5-31e0f6d589b7}"
+              Win64="yes">
+              <RemoveFolder Id="DojoNorthSoftwareDir" On="uninstall" />
+              <File
+                Id="$(var.HomeServerSMART2013.Components.TargetFileName)"
+                Name="$(var.HomeServerSMART2013.Components.TargetFileName)"
+                Source="$(var.HomeServerSMART2013.Components.TargetPath)"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="$(var.HomeServerSMART2013.Components.UI.TargetFileName)"
+                Name="$(var.HomeServerSMART2013.Components.UI.TargetFileName)"
+                Source="$(var.HomeServerSMART2013.Components.UI.TargetPath)"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="Gurock.SmartInspect.dll"
+                Name="Gurock.SmartInspect.dll"
+                Source="..\ReferenceAssemblies\Gurock.SmartInspect.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="WSSControls.dll"
+                Name="WSSControls.dll"
+                Source="..\ReferenceAssemblies\WSSControls.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="BiohazardOrange128.png"
+                Name="BiohazardOrange128.png"
+                Source="..\ReferenceAssemblies\BiohazardOrange128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="BiohazardRed128.png"
+                Name="BiohazardRed128.png"
+                Source="..\ReferenceAssemblies\BiohazardRed128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="Healthy128.png"
+                Name="Healthy128.png"
+                Source="..\ReferenceAssemblies\Healthy128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="RadiationNew128.png"
+                Name="RadiationNew128.png"
+                Source="..\ReferenceAssemblies\RadiationNew128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="SkullAndCrossbones128.png"
+                Name="SkullAndCrossbones128.png"
+                Source="..\ReferenceAssemblies\SkullAndCrossbones128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="SkullAndCrossbonesRed128.png"
+                Name="SkullAndCrossbonesRed128.png"
+                Source="..\ReferenceAssemblies\SkullAndCrossbonesRed128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="DiskHeartbeat128.png"
+                Name="DiskHeartbeat128.png"
+                Source="..\ReferenceAssemblies\DiskHeartbeat128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="$(var.HomeServerSMART2013.Service.TargetFileName)"
+                Name="$(var.HomeServerSMART2013.Service.TargetFileName)"
+                Source="$(var.HomeServerSMART2013.Service.TargetPath)"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="yes" />
+              <File
+                Id="$(var.HomeServerSMART2013.TargetFileName)"
+                Name="$(var.HomeServerSMART2013.TargetFileName)"
+                Source="$(var.HomeServerSMART2013.TargetPath)"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="$(var.WindowSMARTTray.TargetFileName)"
+                Name="$(var.WindowSMARTTray.TargetFileName)"
+                Source="$(var.WindowSMARTTray.TargetPath)"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="HomeServerSMART.chm"
+                Name="HomeServerSMART.chm"
+                Source="$(var.HomeServerSMART2013.TargetDir)\HomeServerSMART.chm"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="TBM4HSSQuickHelp.rtf"
+                Name="TBM4HSSQuickHelp.rtf"
+                Source="$(var.HomeServerSMART2013.TargetDir)\TBM4HSSQuickHelp.rtf"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="Prowl.dll"
+                Name="Prowl.dll"
+                Source="..\ReferenceAssemblies\Prowl.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="NMALib.dll"
+                Name="NMALib.dll"
+                Source="..\ReferenceAssemblies\NMALib.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="Pushover.dll"
+                Name="Pushover.dll"
+                Source="..\ReferenceAssemblies\Pushover.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="Growl.Connector.dll"
+                Name="Growl.Connector.dll"
+                Source="..\ReferenceAssemblies\Growl.Connector.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="Growl.CoreLibrary.dll"
+                Name="Growl.CoreLibrary.dll"
+                Source="..\ReferenceAssemblies\Growl.CoreLibrary.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="RestSharp.dll"
+                Name="RestSharp.dll"
+                Source="..\ReferenceAssemblies\RestSharp.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="SnarlInterface.dll"
+                Name="SnarlInterface.dll"
+                Source="..\ReferenceAssemblies\SnarlInterface.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="HomeServerSMART.Utility.dll"
+                Name="HomeServerSMART.Utility.dll"
+                Source="..\BuildOutputsHss\x64\HomeServerSMART.Utility.dll"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="ChilkatDotNet4.dll"
+                Name="ChilkatDotNet4.dll"
+                Source="..\ReferenceAssemblies64\ChilkatDotNet4.dll"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="WindowSMARTPowerShell.dll"
+                Name="WindowSMARTPowerShell.dll"
+                Source="..\BuildOutputsHss\x64\WindowSMARTPowerShell.dll"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="usb.if"
+                Name="usb.if"
+                Source="..\ReferenceAssemblies\usb.if"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <ServiceInstall
+                Id="Hss2013ServiceInstaller"
+                Name="dnhsSmart"
+                DisplayName="Home Server SMART 24/7"
+                Description="Dojo North Software Home Server SMART service for monitoring and reporting disk health in Windows Server Solutions."
+                ErrorControl="normal"
+                Start="auto"
+                Type="ownProcess"
+                Vital="yes"
+                Account="LocalSystem"
+                Interactive="no">
+                <ServiceDependency Id="RpcSs" />
+                <ServiceDependency Id="winmgmt"/>
+              </ServiceInstall>
+              <ServiceControl
+                Id="Hss2013ServiceController"
+                Name="dnhsSmart"
+                Start="install"
+                Stop="both"
+                Remove="uninstall"
+                Wait="yes" />
+            </Component>
+            <Component
+            Id="RegistryEntries"
+            Guid="{276cad04-d59f-469c-9caa-50b7c357369a}">
+              <RegistryKey
+                Root="HKLM"
+                Key="SYSTEM\CurrentControlSet\Services\Eventlog\Application\TarynHss"
+                Action="createAndRemoveOnUninstall">
+                <RegistryValue Type="string" Name="EventMessageFile" Value="C:\Windows\Microsoft.NET\Framework64\v4.0.30319\EventLogMessages.dll" KeyPath="yes" />
+              </RegistryKey>
+              <RegistryKey
+                Root="HKLM"
+                Key="SYSTEM\CurrentControlSet\Services\Eventlog\Application\JoshuaHss"
+                Action="createAndRemoveOnUninstall">
+                <RegistryValue Type="string" Name="EventMessageFile" Value="C:\Windows\Microsoft.NET\Framework64\v4.0.30319\EventLogMessages.dll" KeyPath="no" />
+              </RegistryKey>
+              <RegistryKey
+                Root="HKLM"
+                Key="Software\Microsoft\Windows\CurrentVersion\Run"
+                Action="create">
+                <RegistryValue Type="string" Name="WindowSMART2012TrayApplet" Value="[Hss2013InstallDir]$(var.WindowSMARTTray.TargetFileName)" KeyPath="no" />
+              </RegistryKey>
+            </Component>
+          </Directory>
+        </Directory>
+        <Directory Id="WindowsServerDir" Name="Windows Server">
+          <Directory Id="WindowsServerBinDir" Name="Bin">
+            <Directory Id="WindowsServerAddinsDir" Name="Addins">
+              <Directory Id="WindowsServerPrimaryDir" Name="Primary">
+                <Component
+                  Id="Hss2013ServiceAddin"
+                  Guid="{c5461fde-f447-4c25-a028-d798a967a495}"
+                  Win64="yes">
+                  <File
+                    Id="DojoNorthSoftware.HomeServerSMART2013.addin"
+                    Name="DojoNorthSoftware.HomeServerSMART2013.addin"
+                    Source="$(var.HomeServerSMART2013.TargetDir)\HomeServerSMART2013.addin"
+                    DiskId="1"
+                    ProcessorArchitecture="x64"
+                    KeyPath="yes" />
+                </Component>
+              </Directory>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="Complete" Level="1">
+      <ComponentRef Id="Hss2013ServiceBinaries" />
+      <ComponentRef Id="Hss2013ServiceAddin" />
+      <ComponentRef Id="RegistryEntries"/>
+    </Feature>
+  </Product>
+</Wix>

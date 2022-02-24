@@ -1,0 +1,2 @@
+<addin name="Home Server SMART 24/7" basedir="%ProgramFiles%\Dojo North Software\Home Server SMART 2012"
+      type="DojoNorthSoftware.WindowsServerSolutions.HomeServerSMART2013.UI.HssTopLevelTab, HomeServerSMART2013" />

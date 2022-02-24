@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feature xmlns="http://schemas.microsoft.com/WindowsServerSolutions/2010/03/Health"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://schemas.microsoft.com/WindowsServerSolutions/2010/03/Health ..\..\Engine\FeatureSchema.xsd"
+         Name="HomeServerSMART2013HealthDefinitionFeature" Title="Home Server SMART 24/7 Alerts">
+</Feature>

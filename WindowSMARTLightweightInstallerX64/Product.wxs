@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--
+      Configuring this file for deployment:
+      
+      Do NOT change the Product ID or Upgrade Codes. You MUST leave these alone, or you will lose
+      the ability to provide updates (users will be forced to uninstall and reinstall).
+      
+      The ONLY thing you should need to change in this file is the Product Version. If you add
+      or remove assemblies, obviously you will need to add or remove File elements. Otherwise,
+      the Version is all you need to change.
+      
+      ~Jake~  
+  -->
+  <?define Manufacturer="Dojo North Software, LLC"?>
+  <?define ShortManufacturer="Dojo North Software"?>
+  <?define ProductName="WindowSMART 24/7 Lightweight Client"?>
+  <?define ShortProductName="WindowSMART"?>
+  <?define ProductVersion="3.6.12.27"?>
+  <?define UpgradeCode="{1679b98e-1bf7-1c3f-9c79-11d422de253c}"?>
+
+  <Product Id="*"
+           Name="$(var.ProductName)"
+           Language="1033"
+           Version="$(var.ProductVersion)"
+           Manufacturer="$(var.Manufacturer)"
+           UpgradeCode="$(var.UpgradeCode)"
+           Codepage="1252">
+
+    <Package Platform="x64"
+             Description="$(var.ProductName) Installer"
+             Comments="This installer will install $(var.ProductName) on your Server."
+             Manufacturer="$(var.Manufacturer)"
+             InstallerVersion="301"
+             Languages="1033"
+             Compressed="yes"
+             SummaryCodepage="1252"/>
+
+    <MajorUpgrade AllowDowngrades="no" AllowSameVersionUpgrades="yes"
+                  DowngradeErrorMessage="A newer version of $(var.ProductName) is already installed. To downgrade, please uninstall $(var.ProductName), then install the older version."
+                  Schedule="afterInstallValidate"/>
+
+    <Media Id="1"
+           Cabinet="WindowSMART2013Deployment.cab"
+           EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder" Name="PFiles">
+        <Directory Id="DojoNorthSoftwareDir" Name="$(var.ShortManufacturer)">
+          <Directory Id="WINDOWSMARTINSTALLDIR" Name="$(var.ShortProductName)">
+            <Merge Id="VCRedist" SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC100_CRT_x64.msm" DiskId="1" Language="0"/>
+            <Merge Id="VCRedistMfc" SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC100_MFC_x64.msm" DiskId="1" Language="0"/>
+            <Component
+              Id="Hss2013ServiceBinaries"
+              Guid="{ed2c3e33-e447-4b31-86e6-31e0f6d589b7}"
+              Win64="yes">
+              <RemoveFolder Id="DojoNorthSoftwareDir" On="uninstall" />
+              <File
+                Id="HomeServerSMART2013.Components.dll"
+                Name="HomeServerSMART2013.Components.dll"
+                Source="..\BuildOutputs\x64\HomeServerSMART2013.Components.dll"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="ChilkatDotNet4.dll"
+                Name="ChilkatDotNet4.dll"
+                Source="..\ReferenceAssemblies64\ChilkatDotNet4.dll"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="Gurock.SmartInspect.dll"
+                Name="Gurock.SmartInspect.dll"
+                Source="..\ReferenceAssemblies\Gurock.SmartInspect.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="Prowl.dll"
+                Name="Prowl.dll"
+                Source="..\ReferenceAssemblies\Prowl.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="NMALib.dll"
+                Name="NMALib.dll"
+                Source="..\ReferenceAssemblies\NMALib.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="Pushover.dll"
+                Name="Pushover.dll"
+                Source="..\ReferenceAssemblies\Pushover.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="Growl.Connector.dll"
+                Name="Growl.Connector.dll"
+                Source="..\ReferenceAssemblies\Growl.Connector.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="Growl.CoreLibrary.dll"
+                Name="Growl.CoreLibrary.dll"
+                Source="..\ReferenceAssemblies\Growl.CoreLibrary.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="RestSharp.dll"
+                Name="RestSharp.dll"
+                Source="..\ReferenceAssemblies\RestSharp.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="SnarlInterface.dll"
+                Name="SnarlInterface.dll"
+                Source="..\ReferenceAssemblies\SnarlInterface.dll"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="HomeServerSMART.Utility.dll"
+                Name="HomeServerSMART.Utility.dll"
+                Source="..\BuildOutputs\x64\HomeServerSMART.Utility.dll"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="BiohazardOrange128.png"
+                Name="BiohazardOrange128.png"
+                Source="..\ReferenceAssemblies\BiohazardOrange128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="BiohazardRed128.png"
+                Name="BiohazardRed128.png"
+                Source="..\ReferenceAssemblies\BiohazardRed128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="Healthy128.png"
+                Name="Healthy128.png"
+                Source="..\ReferenceAssemblies\Healthy128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="RadiationNew128.png"
+                Name="RadiationNew128.png"
+                Source="..\ReferenceAssemblies\RadiationNew128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="SkullAndCrossbones128.png"
+                Name="SkullAndCrossbones128.png"
+                Source="..\ReferenceAssemblies\SkullAndCrossbones128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="SkullAndCrossbonesRed128.png"
+                Name="SkullAndCrossbonesRed128.png"
+                Source="..\ReferenceAssemblies\SkullAndCrossbonesRed128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="DiskHeartbeat128.png"
+                Name="DiskHeartbeat128.png"
+                Source="..\ReferenceAssemblies\DiskHeartbeat128.png"
+                DiskId="1"
+                ProcessorArchitecture="msil"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="WindowSMARTPowerShell.dll"
+                Name="WindowSMARTPowerShell.dll"
+                Source="..\BuildOutputs\x64\WindowSMARTPowerShell.dll"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="no" />
+              <File
+                Id="HomeServerSMART2013.Service.exe"
+                Name="HomeServerSMART2013.Service.exe"
+                Source="..\BuildOutputs\x64\HomeServerSMART2013.Service.exe"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="yes"
+                KeyPath="yes" />
+              <ServiceInstall
+                Id="Hss2013ServiceInstaller"
+                Name="dnhsSmart"
+                DisplayName="$(var.ProductName)"
+                Description="$(var.Manufacturer) WindowSMART service for monitoring and reporting disk health in Windows."
+                ErrorControl="normal"
+                Start="auto"
+                Type="ownProcess"
+                Vital="yes"
+                Account="LocalSystem"
+                Interactive="no">
+                <util:ServiceConfig xmlns:util="http://schemas.microsoft.com/wix/UtilExtension" FirstFailureActionType="restart" SecondFailureActionType="restart"
+                                    ThirdFailureActionType="restart" RestartServiceDelayInSeconds="60" ResetPeriodInDays="1" />
+                <ServiceDependency Id="RpcSs" />
+                <ServiceDependency Id="winmgmt"/>
+              </ServiceInstall>
+              <ServiceControl
+                Id="Hss2013ServiceController"
+                Name="dnhsSmart"
+                Start="install"
+                Stop="both"
+                Remove="uninstall"
+                Wait="yes" />
+            </Component>
+            <Component
+              Id="Hss2013EnterpriseFeatures"
+              Guid="{6c1a9d47-ad78-4c1c-a25a-b691ac2bd492}"
+              Win64="yes">
+              <Condition>INSTALLENTERPRISEFEATURES=1</Condition>
+              <File
+                Id="WindowSMARTEnterpriseManagement.exe"
+                Name="WindowSMARTEnterpriseManagement.exe"
+                Source="..\BuildOutputs\x64\WindowSMARTEnterpriseManagement.exe"
+                DiskId="1"
+                ProcessorArchitecture="x64"
+                Vital="no"
+                KeyPath="no" />
+            </Component>
+            <Component
+            Id="RegistryEntries"
+            Guid="{276cad04-d59f-469c-9cab-50b7c357369a}">
+              <RegistryKey
+                Root="HKLM"
+                Key="SYSTEM\CurrentControlSet\Services\Eventlog\Application\WindowSMART-W"
+                Action="createAndRemoveOnUninstall">
+                <RegistryValue Type="string" Name="EventMessageFile" Value="C:\Windows\Microsoft.NET\Framework64\v4.0.30319\EventLogMessages.dll" KeyPath="yes" />
+              </RegistryKey>
+              <RegistryKey
+                Root="HKLM"
+                Key="SYSTEM\CurrentControlSet\Services\Eventlog\Application\WindowSMART-E"
+                Action="createAndRemoveOnUninstall">
+                <RegistryValue Type="string" Name="EventMessageFile" Value="C:\Windows\Microsoft.NET\Framework64\v4.0.30319\EventLogMessages.dll" KeyPath="no" />
+              </RegistryKey>
+            </Component>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <!-- UI Components / Dillon Stamper, Abel Diehl -->
+    <UIRef Id="MyWixUI_InstallDir"/>
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf"/>
+    <WixVariable Id="WixUIBannerBmp" Value="InstallBanner2.bmp"/>
+    <WixVariable Id="WixUIDialogBmp" Value="SugarplumPuddin2.bmp"/>
+    <Property Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="Thank you for installing $(var.ProductName)." />
+    <Property Id="WIXUI_INSTALLDIR" Value="WINDOWSMARTINSTALLDIR"/>
+    <Property Id="ALLUSERS" Value="1"/>
+    <Property Id="INSTALLENTERPRISEFEATURES" Value="1"/>
+
+    <Icon Id="JoshGoodLooking.ico" SourceFile="..\ReferenceAssemblies\JoshGoodLooking.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="JoshGoodLooking.ico"/>
+
+    <PropertyRef Id="NETFRAMEWORK40FULL"/>
+    <Condition Message="This application requires the Microsoft .NET Framework 4.0 Full. Please visit http://www.dojonorthsoftware.net/DotNet.html for details.">
+      <![CDATA[Installed OR NETFRAMEWORK40FULL]]>
+    </Condition>
+
+    <!-- Sequences -->
+    <InstallExecuteSequence>
+      <FindRelatedProducts Before="LaunchConditions" />
+      <!--<Custom Action="AfterCopyingFiles" After="InstallFiles">NOT Installed</Custom>
+      <Custom Action="ForUninstall" Before="RemoveFiles">REMOVE="ALL"</Custom>-->
+    </InstallExecuteSequence>
+    <InstallUISequence>
+      <FindRelatedProducts Before="LaunchConditions" />
+    </InstallUISequence>
+    <!-- End Dillon's section -->
+
+    <Feature Id="VCRedist" Title="Visual C++ 2010 Runtime" AllowAdvertise="no" Display="hidden" Level="1">
+      <MergeRef Id="VCRedist"/>
+      <MergeRef Id="VCRedistMfc"/>
+    </Feature>
+
+    <Feature Id="Complete" Level="1">
+      <ComponentRef Id="Hss2013ServiceBinaries" />
+      <ComponentRef Id="RegistryEntries"/>
+      <ComponentRef Id="Hss2013EnterpriseFeatures"/>
+    </Feature>
+  </Product>
+</Wix>

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.dojonorthsoftware.net/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.dojonorthsoftware.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.dojonorthsoftware.net/">
+      <s:element name="ReapVersion">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReapVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReapVersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReapReleaseDate">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReapReleaseDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReapReleaseDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReapDownloadLink">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReapDownloadLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReapDownloadLinkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReapInfoLink">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReapInfoLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReapInfoLinkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReapHs2Version">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReapHs2VersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReapHs2VersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReapHs2ReleaseDate">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReapHs2ReleaseDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReapHs2ReleaseDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReapHs2DownloadLink">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReapHs2DownloadLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReapHs2DownloadLinkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReapHs2InfoLink">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReapHs2InfoLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReapHs2InfoLinkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompareVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="major" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="minor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="meta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompareVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompareVersionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReapVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:ReapVersion" />
+  </wsdl:message>
+  <wsdl:message name="ReapVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:ReapVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReapReleaseDateSoapIn">
+    <wsdl:part name="parameters" element="tns:ReapReleaseDate" />
+  </wsdl:message>
+  <wsdl:message name="ReapReleaseDateSoapOut">
+    <wsdl:part name="parameters" element="tns:ReapReleaseDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReapDownloadLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:ReapDownloadLink" />
+  </wsdl:message>
+  <wsdl:message name="ReapDownloadLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:ReapDownloadLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReapInfoLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:ReapInfoLink" />
+  </wsdl:message>
+  <wsdl:message name="ReapInfoLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:ReapInfoLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReapHs2VersionSoapIn">
+    <wsdl:part name="parameters" element="tns:ReapHs2Version" />
+  </wsdl:message>
+  <wsdl:message name="ReapHs2VersionSoapOut">
+    <wsdl:part name="parameters" element="tns:ReapHs2VersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReapHs2ReleaseDateSoapIn">
+    <wsdl:part name="parameters" element="tns:ReapHs2ReleaseDate" />
+  </wsdl:message>
+  <wsdl:message name="ReapHs2ReleaseDateSoapOut">
+    <wsdl:part name="parameters" element="tns:ReapHs2ReleaseDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReapHs2DownloadLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:ReapHs2DownloadLink" />
+  </wsdl:message>
+  <wsdl:message name="ReapHs2DownloadLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:ReapHs2DownloadLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReapHs2InfoLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:ReapHs2InfoLink" />
+  </wsdl:message>
+  <wsdl:message name="ReapHs2InfoLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:ReapHs2InfoLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompareVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:CompareVersion" />
+  </wsdl:message>
+  <wsdl:message name="CompareVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:CompareVersionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HssUpdateSoap">
+    <wsdl:operation name="ReapVersion">
+      <wsdl:input message="tns:ReapVersionSoapIn" />
+      <wsdl:output message="tns:ReapVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReapReleaseDate">
+      <wsdl:input message="tns:ReapReleaseDateSoapIn" />
+      <wsdl:output message="tns:ReapReleaseDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReapDownloadLink">
+      <wsdl:input message="tns:ReapDownloadLinkSoapIn" />
+      <wsdl:output message="tns:ReapDownloadLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReapInfoLink">
+      <wsdl:input message="tns:ReapInfoLinkSoapIn" />
+      <wsdl:output message="tns:ReapInfoLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReapHs2Version">
+      <wsdl:input message="tns:ReapHs2VersionSoapIn" />
+      <wsdl:output message="tns:ReapHs2VersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReapHs2ReleaseDate">
+      <wsdl:input message="tns:ReapHs2ReleaseDateSoapIn" />
+      <wsdl:output message="tns:ReapHs2ReleaseDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReapHs2DownloadLink">
+      <wsdl:input message="tns:ReapHs2DownloadLinkSoapIn" />
+      <wsdl:output message="tns:ReapHs2DownloadLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReapHs2InfoLink">
+      <wsdl:input message="tns:ReapHs2InfoLinkSoapIn" />
+      <wsdl:output message="tns:ReapHs2InfoLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompareVersion">
+      <wsdl:input message="tns:CompareVersionSoapIn" />
+      <wsdl:output message="tns:CompareVersionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HssUpdateSoap" type="tns:HssUpdateSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReapVersion">
+      <soap:operation soapAction="http://www.dojonorthsoftware.net/ReapVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapReleaseDate">
+      <soap:operation soapAction="http://www.dojonorthsoftware.net/ReapReleaseDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapDownloadLink">
+      <soap:operation soapAction="http://www.dojonorthsoftware.net/ReapDownloadLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapInfoLink">
+      <soap:operation soapAction="http://www.dojonorthsoftware.net/ReapInfoLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapHs2Version">
+      <soap:operation soapAction="http://www.dojonorthsoftware.net/ReapHs2Version" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapHs2ReleaseDate">
+      <soap:operation soapAction="http://www.dojonorthsoftware.net/ReapHs2ReleaseDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapHs2DownloadLink">
+      <soap:operation soapAction="http://www.dojonorthsoftware.net/ReapHs2DownloadLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapHs2InfoLink">
+      <soap:operation soapAction="http://www.dojonorthsoftware.net/ReapHs2InfoLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompareVersion">
+      <soap:operation soapAction="http://www.dojonorthsoftware.net/CompareVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HssUpdateSoap12" type="tns:HssUpdateSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReapVersion">
+      <soap12:operation soapAction="http://www.dojonorthsoftware.net/ReapVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapReleaseDate">
+      <soap12:operation soapAction="http://www.dojonorthsoftware.net/ReapReleaseDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapDownloadLink">
+      <soap12:operation soapAction="http://www.dojonorthsoftware.net/ReapDownloadLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapInfoLink">
+      <soap12:operation soapAction="http://www.dojonorthsoftware.net/ReapInfoLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapHs2Version">
+      <soap12:operation soapAction="http://www.dojonorthsoftware.net/ReapHs2Version" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapHs2ReleaseDate">
+      <soap12:operation soapAction="http://www.dojonorthsoftware.net/ReapHs2ReleaseDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapHs2DownloadLink">
+      <soap12:operation soapAction="http://www.dojonorthsoftware.net/ReapHs2DownloadLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReapHs2InfoLink">
+      <soap12:operation soapAction="http://www.dojonorthsoftware.net/ReapHs2InfoLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompareVersion">
+      <soap12:operation soapAction="http://www.dojonorthsoftware.net/CompareVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HssUpdate">
+    <wsdl:port name="HssUpdateSoap" binding="tns:HssUpdateSoap">
+      <soap:address location="http://www.dojonorthsoftware.net/HssUpdateService/HssUpdateService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HssUpdateSoap12" binding="tns:HssUpdateSoap12">
+      <soap12:address location="http://www.dojonorthsoftware.net/HssUpdateService/HssUpdateService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

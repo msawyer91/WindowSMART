@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProductVersion>3.5</ProductVersion>
+    <ProjectGuid>{0f74e32e-46f2-4b2d-bdab-01bc53426f9b}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>HSS2012Installer</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Product.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HomeServerSMART2013.Components.UI\HomeServerSMART2013.Components.UI.csproj">
+      <Name>HomeServerSMART2013.Components.UI</Name>
+      <Project>{9e92e015-5bbd-4fec-8d88-f4ed392e3065}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\HomeServerSMART2013.Components\HomeServerSMART2013.Components.csproj">
+      <Name>HomeServerSMART2013.Components</Name>
+      <Project>{5a2f6a04-592d-4fd1-aaf5-e22445f7aa41}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\HomeServerSMART2013.Service\HomeServerSMART2013.Service.csproj">
+      <Name>HomeServerSMART2013.Service</Name>
+      <Project>{f5d826b5-a652-4c45-9ffd-e8446b9010da}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\HomeServerSMART2013\HomeServerSMART2013.csproj">
+      <Name>HomeServerSMART2013</Name>
+      <Project>{d2929585-3bca-4f7b-bdbd-468d09d45e3e}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowSMARTPowerShell\WindowSMARTPowerShell.csproj">
+      <Name>WindowSMARTPowerShell</Name>
+      <Project>{d766fbc6-3742-4d23-9100-3b543796bfd5}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowSMARTTray\WindowSMARTTray.csproj">
+      <Name>WindowSMARTTray</Name>
+      <Project>{6db615f2-f201-4963-9128-dd3cf551f725}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+  <UsingTask TaskName="Microsoft.Build.Tasks.XmlPoke" AssemblyName="Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <UsingTask TaskName="Microsoft.Build.Tasks.XmlPeek" AssemblyName="Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <PropertyGroup>
+    <TargetProjectName>HomeServerSMART2013</TargetProjectName>
+    <WsxFileName>Product.wxs</WsxFileName>
+    <AddInXmlProjectName>HomeServerSMART2013Wssx</AddInXmlProjectName>
+    <WxsPath>$(ProjectDir)$(WsxFileName)</WxsPath>
+    <AddInXmlPath>$(SolutionDir)$(AddInXmlProjectName)\AddIn.xml</AddInXmlPath>
+    <WxsNamespace>&lt;Namespace Prefix='wxs' Uri='http://schemas.microsoft.com/wix/2006/wi' /&gt;</WxsNamespace>
+    <AddInXmlNamespace>&lt;Namespace Prefix='wss' Uri='http://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins' /&gt;</AddInXmlNamespace>
+  </PropertyGroup>
+  <Target Name="BeforeBuild" DependsOnTargets="SetWixOutputFilename;UpdateAddInXmlFileNode" />
+  <Target Name="SetWixOutputFilename">
+    <!-- Get ProjectReference output assembly versions for project 'WssDeploymentTest' -->
+    <AssignProjectConfiguration ProjectReferences="@(ProjectReference)" Condition="'%(Name)' == '$(TargetProjectName)'" SolutionConfigurationContents="$(CurrentSolutionConfigurationContents)">
+      <Output TaskParameter="AssignedProjects" ItemName="ProjectReferenceWithBuildConfig" />
+    </AssignProjectConfiguration>
+    <Message Text="Found project reference %(ProjectReferenceWithBuildConfig.Name) with config %(ProjectReferenceWithBuildConfig.FullConfiguration)" Condition="'@(ProjectReferenceWithBuildConfig)' != ''" />
+    <MSBuild Projects="@(ProjectReferenceWithBuildConfig)" UseResultsCache="true" Targets="Build" Properties="%(ProjectReferenceWithBuildConfig.SetConfiguration);%(ProjectReferenceWithBuildConfig.SetPlatform)" ContinueOnError="false">
+      <Output TaskParameter="TargetOutputs" ItemName="ProjectReferenceOutputs" />
+    </MSBuild>
+    <Message Text="Project Outputs: @(ProjectReferenceOutputs)" />
+    <!-- Get AssemblyVersions for ProjectReference output assembly -->
+    <GetAssemblyIdentity AssemblyFiles="@(ProjectReferenceOutputs)">
+      <Output TaskParameter="Assemblies" ItemName="AssemblyVersions" />
+    </GetAssemblyIdentity>
+    <CreateProperty Value="%(AssemblyVersions.Version)">
+      <Output TaskParameter="Value" PropertyName="TargetAssemblyVersion" />
+    </CreateProperty>
+    <Message Text="Target Assembly Version: $(TargetAssemblyVersion)" />
+    <!-- Set WiX TargetName based on OutputName and AssemblyVersions -->
+    <CreateProperty Value="$(OutputName).$(TargetAssemblyVersion)">
+      <Output TaskParameter="Value" PropertyName="TargetName" />
+    </CreateProperty>
+    <CreateProperty Value="$(TargetName)$(TargetExt)">
+      <Output TaskParameter="Value" PropertyName="TargetFileName" />
+    </CreateProperty>
+    <CreateProperty Value="$(TargetDir)$(TargetFileName)">
+      <Output TaskParameter="Value" PropertyName="TargetPath" />
+    </CreateProperty>
+    <Message Text="Target File Name: $(TargetFileName)" />
+  </Target>
+  <Target Name="UpdateAddInXmlFileNode">
+    <!-- Get ProductCode from .wxs file -->
+    <XmlPeek XmlInputPath="$(WxsPath)" Query="//wxs:Wix/wxs:Product/@Id" Namespaces="$(WxsNamespace)">
+      <Output TaskParameter="Result" ItemName="ProductCode" />
+    </XmlPeek>
+    <Message Text="Product Code: @(ProductCode)" />
+    <!-- Update AddIn.xml file to use correct Name, Version and ProductCode -->
+    <XmlPoke XmlInputPath="$(AddInXmlPath)" Query="//wss:Package/wss:ServerBinary/wss:File/wss:Name" Namespaces="$(AddInXmlNamespace)" Value="$(TargetFileName)" />
+    <XmlPoke XmlInputPath="$(AddInXmlPath)" Query="//wss:Package/wss:ServerBinary/wss:File/wss:Version" Namespaces="$(AddInXmlNamespace)" Value="$(TargetAssemblyVersion)" />
+    <XmlPoke XmlInputPath="$(AddInXmlPath)" Query="//wss:Package/wss:ServerBinary/wss:File/wss:ProductCode" Namespaces="$(AddInXmlNamespace)" Value="@(ProductCode)" />
+  </Target>
+  <PropertyGroup>
+    <PreBuildEvent>%40echo Copying built x64 files.
+%40echo Utility DLL...
+%40copy "$(SolutionDir)x64\Release\HomeServerSMART.Utility.dll" "$(SolutionDir)BuildOutputsHss\x64"
+%40echo Components...
+%40copy "$(SolutionDir)HomeServerSMART2013.Components\bin\x64\Release\HomeServerSMART2013.Components.dll" "$(SolutionDir)BuildOutputsHss\x64"
+%40echo UI Componentry...
+%40copy "$(SolutionDir)HomeServerSMART2013.Components.UI\bin\x64\Release\HomeServerSMART2013.Components.UI.dll" "$(SolutionDir)BuildOutputsHss\x64"
+%40echo Service...
+%40copy "$(SolutionDir)HomeServerSMART2013.Service\bin\x64\Release\HomeServerSMART2013.Service.exe" "$(SolutionDir)BuildOutputsHss\x64"
+%40echo Enterprise features...
+%40copy "$(SolutionDir)WindowSMARTEnterpriseManagement\bin\x64\Release\WindowSMARTEnterpriseManagement.exe" "$(SolutionDir)BuildOutputsHss\x64"
+%40echo PowerShell Componentry...
+%40copy "$(SolutionDir)WindowSMARTPowerShell\bin\x64\Release\WindowSMARTPowerShell.dll" "$(SolutionDir)BuildOutputsHss\x64"
+%40echo Tray applet...
+%40copy "$(SolutionDir)HomeServerSMART2013\bin\x64\Release\HomeServerSMART2013.dll" "$(SolutionDir)BuildOutputsHss\x64"
+%40echo Done copying built x64 files.</PreBuildEvent>
+  </PropertyGroup>
+</Project>

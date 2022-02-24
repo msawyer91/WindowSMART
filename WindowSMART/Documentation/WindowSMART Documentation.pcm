@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<PROJECT_FT>
+<ProjectParameters>
+<ProjectFileVersion>2.0
+</ProjectFileVersion>
+</ProjectParameters>
+<HHP>
+<OPTION>
+<OPTIONS_TITLE>WindowSMART 2015 Help
+</OPTIONS_TITLE>
+<OPTIONS_DEFAULT_TOPIC>Welcome.html
+</OPTIONS_DEFAULT_TOPIC>
+<OPTIONS_DEFAULT_WINDOW>win
+</OPTIONS_DEFAULT_WINDOW>
+<OPTIONS_LANGUAGE>1033
+</OPTIONS_LANGUAGE>
+<OPTIONS_COMPILED_FILE>WindowSMART Documentation.chm
+</OPTIONS_COMPILED_FILE>
+<OPTIONS_ERROR_LOG_FILE>errlog.txt
+</OPTIONS_ERROR_LOG_FILE>
+<OPTIONS_CONTENTS_FILE>WindowSMART Documentation.hhc
+</OPTIONS_CONTENTS_FILE>
+<OPTIONS_INDEX_FILE>WindowSMART Documentation.hhk
+</OPTIONS_INDEX_FILE>
+<OPTIONS_DISPLAY_COMPILE_NOTES>0
+</OPTIONS_DISPLAY_COMPILE_NOTES>
+<OPTIONS_DISPLAY_COMPILE_PROGRESS>0
+</OPTIONS_DISPLAY_COMPILE_PROGRESS>
+<OPTIONS_COMPATIBILITY>1.1 or later
+</OPTIONS_COMPATIBILITY>
+<OPTIONS_FLAT>0
+</OPTIONS_FLAT>
+<OPTIONS_ENHANCED_DECOMPILATION>0
+</OPTIONS_ENHANCED_DECOMPILATION>
+<OPTIONS_FULL_TEXT_SEARCH>1
+</OPTIONS_FULL_TEXT_SEARCH>
+<OPTIONS_BINARY_INDEX>1
+</OPTIONS_BINARY_INDEX>
+<OPTIONS_BINARY_TOC>0
+</OPTIONS_BINARY_TOC>
+</OPTION>
+<WINDOWS>
+<WINDOWS_TITLE_BAR_TEXT>WindowSMART 2015 Help
+</WINDOWS_TITLE_BAR_TEXT>
+<WINDOWS_TOC_FILE>WindowSMART Documentation.hhc
+</WINDOWS_TOC_FILE>
+<WINDOWS_INDEX_FILE>WindowSMART Documentation.hhk
+</WINDOWS_INDEX_FILE>
+<WINDOWS_DEFAULT_FILE>Welcome.html
+</WINDOWS_DEFAULT_FILE>
+<WINDOWS_NAVIGATION_PANE>464160
+</WINDOWS_NAVIGATION_PANE>
+<WINDOWS_NAVIGATION_WIDTH>200
+</WINDOWS_NAVIGATION_WIDTH>
+<WINDOWS_BUTTON_TYPES>12302
+</WINDOWS_BUTTON_TYPES>
+<WINDOWS_POSITION_LEFT>50
+</WINDOWS_POSITION_LEFT>
+<WINDOWS_POSITION_RIGHT>500
+</WINDOWS_POSITION_RIGHT>
+<WINDOWS_POSITION_TOP>50
+</WINDOWS_POSITION_TOP>
+<WINDOWS_POSITION_BOTTOM>400
+</WINDOWS_POSITION_BOTTOM>
+<WINDOWS_STYLES>268435456
+</WINDOWS_STYLES>
+<WINDOWS_EXTENDED_STYLES>0
+</WINDOWS_EXTENDED_STYLES>
+<WINDOWS_NAVIGATION_PANE_CLOSED>1
+</WINDOWS_NAVIGATION_PANE_CLOSED>
+<WINDOWS_DEFAULT_TAB>0
+</WINDOWS_DEFAULT_TAB>
+<WINDOWS_TAB_POS>0
+</WINDOWS_TAB_POS>
+<WINDOWS_UNKNOWN_20>0
+</WINDOWS_UNKNOWN_20>
+</WINDOWS>
+<FILES/>
+<MAP/>
+<ALIAS/>
+<MERGE_FILES/>
+</HHP>
+<HHC ft="ft">
+<SiteProperties>
+<param name="FrameName" value="right"/>
+<param name="ImageType" value="Folder"/>
+<param name="Window Styles" value="0x800227"/>
+<param name="Foreground" value="0x80000008"/>
+<param name="Background" value="0xffffff"/>
+<param name="Font" value="MS Sans Serif,9,0"/>
+</SiteProperties>
+<SiteMap>
+<Topic ImageNumber="0" Name="WindowSMART 2015" XPosition="0"/>
+<Topic ImageNumber="10" Local="Welcome.html" Name="Welcome!" XPosition="1"/>
+<Topic ImageNumber="0" Name="Overview" XPosition="1"/>
+<Topic ImageNumber="10" Local="Overview_WS2Overview.html" Name="WindowSMART 2015 Overview" XPosition="2"/>
+<Topic ImageNumber="10" Local="Overview_WhatsNew.html" Name="What&apos;s New in WindowSMART 2015" XPosition="2"/>
+<Topic ImageNumber="10" Local="Overview_AutomaticDiskHealthMonitoring.html" Name="Automatic Disk Health Monitoring and Alerting" XPosition="2"/>
+<Topic ImageNumber="0" Name="Running WindowSMART" XPosition="1"/>
+<Topic ImageNumber="10" Local="Running_RunningWS2.html" Name="Running WindowSMART 2015" XPosition="2"/>
+<Topic ImageNumber="10" Local="Running_MainWindowTour.html" Name="Main Window Tour" XPosition="2"/>
+<Topic ImageNumber="10" Local="Running_SmartStatusWindow.html" Name="SMART Status Window" XPosition="2"/>
+<Topic ImageNumber="10" Local="Running_WS2DiskHealth.html" Name="WindowSMART Disk Health" XPosition="2"/>
+<Topic ImageNumber="10" Local="Running_Customizing.html" Name="Customizing WindowSMART 2015" XPosition="2"/>
+<Topic ImageNumber="10" Local="Running_RemoteNotification.html" Name="Remote Notification" XPosition="2"/>
+<Topic ImageNumber="10" Local="Running_IgnoringProblems.html" Name="Ignoring Problems and Disks" XPosition="2"/>
+<Topic ImageNumber="10" Local="Running_Export.html" Name="Export Results" XPosition="2"/>
+<Topic ImageNumber="10" Local="Running_SelfTest.html" Name="Disk Self-Testing" XPosition="2"/>
+<Topic ImageNumber="0" Name="Technical" XPosition="1"/>
+<Topic ImageNumber="10" Local="Technical_WhatIsSmart.html" Name="What is SMART?" XPosition="2"/>
+<Topic ImageNumber="10" Local="Technical_AllAboutBadSectors.html" Name="All About Bad Sectors" XPosition="2"/>
+<Topic ImageNumber="10" Local="Technical_3264.html" Name="32- or 64-bit?" XPosition="2"/>
+<Topic ImageNumber="0" Name="License/Legal" XPosition="1"/>
+<Topic ImageNumber="10" Local="License_LicenseLegal.html" Name="License Agreement and Legal" XPosition="2"/>
+<Topic ImageNumber="10" Local="License_Editions.html" Name="License Editions" XPosition="2"/>
+<Topic ImageNumber="0" Name="FAQ" XPosition="1"/>
+<Topic ImageNumber="10" Local="FAQ_WhatToDo.html" Name="What Do I Do When a Failure is Predicted?" XPosition="2"/>
+<Topic ImageNumber="10" Local="FAQ_FrequentlyAsked.html" Name="Frequently Asked Questions" XPosition="2"/>
+</SiteMap>
+</HHC>
+<HHK ft="ft">
+<SiteProperties>
+<param name="FrameName" value="right"/>
+<param name="WindowName" value="win"/>
+<param name="Font" value="MS Sans Serif,9,0"/>
+</SiteProperties>
+<SiteMap>
+<Topic Name="WindowSMART 2015" Type="0" XPosition="0"/>
+<Topic Local="Welcome.html" Name="Welcome!" Type="0" XPosition="1"/>
+<Topic Name="Overview" Type="0" XPosition="1"/>
+<Topic Local="Overview_WS2Overview.html" Name="WindowSMART 2015 Overview" Type="0" XPosition="2"/>
+<Topic Local="Overview_WhatsNew.html" Name="What&apos;s New in WindowSMART 2015" Type="0" XPosition="2"/>
+<Topic Local="Overview_AutomaticDiskHealthMonitoring.html" Name="Automatic Disk Health Monitoring and Alerting" Type="0" XPosition="2"/>
+<Topic Name="Running WindowSMART" Type="0" XPosition="1"/>
+<Topic Local="Running_RunningWS2.html" Name="Running WindowSMART 2015" Type="0" XPosition="2"/>
+<Topic Local="Running_MainWindowTour.html" Name="Main Window Tour" Type="0" XPosition="2"/>
+<Topic Local="Running_SmartStatusWindow.html" Name="SMART Status Window" Type="0" XPosition="2"/>
+<Topic Local="Running_WS2DiskHealth.html" Name="WindowSMART Disk Health" Type="0" XPosition="2"/>
+<Topic Local="Running_Customizing.html" Name="Customizing WindowSMART 2015" Type="0" XPosition="2"/>
+<Topic Local="Running_RemoteNotification.html" Name="Remote Notification" Type="0" XPosition="2"/>
+<Topic Local="Running_IgnoringProblems.html" Name="Ignoring Problems and Disks" Type="0" XPosition="2"/>
+<Topic Local="Running_Export.html" Name="Export Results" Type="0" XPosition="2"/>
+<Topic Local="Running_SelfTest.html" Name="Disk Self-Testing" Type="0" XPosition="2"/>
+<Topic Name="Technical" Type="0" XPosition="1"/>
+<Topic Local="Technical_WhatIsSmart.html" Name="What is SMART?" Type="0" XPosition="2"/>
+<Topic Local="Technical_AllAboutBadSectors.html" Name="All About Bad Sectors" Type="0" XPosition="2"/>
+<Topic Local="Technical_3264.html" Name="32- or 64-bit?" Type="0" XPosition="2"/>
+<Topic Name="License/Legal" Type="0" XPosition="1"/>
+<Topic Local="License_LicenseLegal.html" Name="License Agreement and Legal" Type="0" XPosition="2"/>
+<Topic Local="License_Editions.html" Name="License Editions" Type="0" XPosition="2"/>
+<Topic Name="FAQ" Type="0" XPosition="1"/>
+<Topic Local="FAQ_WhatToDo.html" Name="What Do I Do When a Failure is Predicted?" Type="0" XPosition="2"/>
+<Topic Local="FAQ_FrequentlyAsked.html" Name="Frequently Asked Questions" Type="0" XPosition="2"/>
+</SiteMap>
+</HHK>
+</PROJECT_FT>

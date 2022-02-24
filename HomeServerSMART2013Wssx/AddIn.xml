@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- See http://msdn.microsoft.com/en-us/library/gg513981.aspx for Metadata XML Schema Reference -->
+  <!--
+      Configuring this file for deployment:
+      
+      Do NOT change the Product Code! You MUST leave this alone, or you will lose the ability
+      provide updates (users will be forced to uninstall and reinstall). Product Code should
+      match the Product ID in Product.wxs.
+      
+      The original <ProductCode> value is {cba43fff-e1ba-4a92-b98e-e8d175ef1167}.
+      
+      Required changes for each deployment:
+          1. There are TWO Version fields. Update BOTH; they should always be the same value.
+          2. The installer MSI should contain the version field in the filename. This should get
+             updated by HSS2013Installer project build, and should appropriately match the
+             target version. Update it if not.
+             
+      Other items of note:
+          1. Filter element - sub-elements Language and IsLanguageFallback should be en-US and true,
+             respectively. Do NOT change these. This instructs Windows Installer to expect the
+             desired OS to be US English but if not, install anyway. Setting language fallback to
+             false will prevent international installations.
+          2. Support and Privacy Statement URLs currently point to my Facebook profile and
+             I Prevail homepage, respectively. Please change these to suitable targets. :)
+          3. If you provide a client application at a later date, you will need to add nodes
+             ClientBinary32 and ClientBinary64. They have the same structure as the ServerBinary
+             node. Check out http://msdn.microsoft.com/en-us/library/gg513982.aspx. Accordingly you
+             will need to provide respective installers for the x86 and x64 clients.
+          4. To sign the WSSX once it is built, run the following from a Visual Studio command prompt:
+          
+             "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe" sign /n "Dojo North Software, LLC" /d "Home Server SMART 24/7" /du "http://www.dojonorthsoftware.net" /t "http://timestamp.verisign.com/scripts/timstamp.dll" "D:\Users\Matt\Documents\Visual Studio 2010\Projects\WindowSMART\HomeServerSMART2013Wssx\bin\Release\HomeServerSMART2013.wssx"
+             "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe" sign /n "Dojo North Software, LLC" /d "Home Server SMART 24/7" /du "http://www.dojonorthsoftware.net" /t "http://timestamp.verisign.com/scripts/timstamp.dll" "C:\Users\Matt\Documents\Visual Studio 2010\Projects\WindowSMART\HomeServerSMART2013Wssx\bin\Release\HomeServerSMART2013.wssx"
+             
+          5. This XML file is distributed with the WSSX assembly. Since you preach that Security
+             is everyone's responsibility, remove this information before distributing. :) :) :)
+      
+      ~Jake~  
+  -->
+  <!-- ProductCode elements must match Product ID of target MSI package -->
+  <Id>{9dd5e6c1-f7d0-45bd-81e4-b7c7124936cc}</Id>
+  <Version>3.6.12.27</Version>
+  <Name>Home Server SMART 24/7</Name>
+  <Allow32BitOn64BitClients>false</Allow32BitOn64BitClients>
+  <ServerBinary>
+    <File>
+      <ProductCode>{cba43fff-e1ba-4a92-b98e-e8d175ef1167}</ProductCode>
+      <Version>3.6.12.27</Version>
+      <Name>HSS2012Installer.3.6.12.27.msi</Name>
+      <Filter>
+        <Language>en-US</Language>
+        <IsLanguageFallback>true</IsLanguageFallback>
+      </Filter>
+    </File>
+  </ServerBinary>
+  <SupportUrl>http://www.dojonorthsoftware.net/HomeServerSMART.html</SupportUrl>
+  <PrivacyStatement>http://www.dojonorthsoftware.net/HomeServerSMART.html</PrivacyStatement>
+</Package>

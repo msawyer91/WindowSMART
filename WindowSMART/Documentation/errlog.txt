@@ -1,0 +1,14 @@
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling d:\Users\Matt\Documents\Visual Studio 2010\Projects\WindowSMART\WindowSMART\Documentation\WindowSMART Documentation.chm
+
+
+Compile time: 0 minutes, 1 second
+22	Topics
+80	Local links
+9	Internet links
+16	Graphics
+
+
+Created d:\Users\Matt\Documents\Visual Studio 2010\Projects\WindowSMART\WindowSMART\Documentation\WindowSMART Documentation.chm, 1,521,417 bytes
+Compression decreased file by 93,306 bytes.

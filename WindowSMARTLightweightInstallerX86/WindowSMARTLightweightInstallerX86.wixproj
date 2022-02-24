@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.5</ProductVersion>
+    <ProjectGuid>{ffcc6ab4-c32e-4a48-8674-2fc68141016d}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>WindowSMARTLightweightInstaller</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="MyInstallDirDlg.wxs" />
+    <Compile Include="MyWixUI_InstallDir.wxs" />
+    <Compile Include="Product.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <PropertyGroup>
+    <PreBuildEvent>%40echo Copying built x86 files.
+%40echo Utility DLL...
+%40copy "$(SolutionDir)Win32\Release\HomeServerSMART.Utility.dll" "$(SolutionDir)BuildOutputs\x86"
+%40echo Components...
+%40copy "$(SolutionDir)HomeServerSMART2013.Components\bin\x86\Release\HomeServerSMART2013.Components.dll" "$(SolutionDir)BuildOutputs\x86"
+%40echo Service...
+%40copy "$(SolutionDir)HomeServerSMART2013.Service\bin\x86\Release\HomeServerSMART2013.Service.exe" "$(SolutionDir)BuildOutputs\x86"
+%40echo Enterprise features...
+%40copy "$(SolutionDir)WindowSMARTEnterpriseManagement\bin\x86\Release\WindowSMARTEnterpriseManagement.exe" "$(SolutionDir)BuildOutputs\x86"
+%40echo PowerShell module...
+%40copy "$(SolutionDir)WindowSMARTPowerShell\bin\x86\Release\WindowSMARTPowerShell.dll" "$(SolutionDir)BuildOutputs\x86"
+%40echo Tray applet...
+%40copy "$(SolutionDir)WindowSMARTTray\bin\x86\Release\WindowSMARTTray.exe" "$(SolutionDir)BuildOutputs\x86"
+%40echo Done copying built x86 files</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>%40echo Herbie Hancocking...
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe" sign /v /n "Dojo North Software, LLC" /d "WindowSMART 24/7 Lightweight Client (32-bit)" /du "http://www.dojonorthsoftware.net" /t "http://timestamp.verisign.com/scripts/timstamp.dll" "$(TargetPath)"
+%40echo Copying autographed file to OBJ dir...
+copy "$(TargetPath)" "$(ProjectDir)\obj\Release"</PostBuildEvent>
+  </PropertyGroup>
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

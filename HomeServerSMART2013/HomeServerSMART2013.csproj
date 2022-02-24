@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D2929585-3BCA-4F7B-BDBD-468D09D45E3E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DojoNorthSoftware.WindowsServerSolutions.HomeServerSMART2013.UI</RootNamespace>
+    <AssemblyName>HomeServerSMART2013</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>HomeServerSMART2013.Key.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\HomeServerSMART2013.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\HomeServerSMART2013.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gurock.SmartInspect, Version=3.6.12.2702, Culture=neutral, PublicKeyToken=a78b0a9303ab7a7c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferenceAssemblies\Gurock.SmartInspect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsServerSolutions.Administration.ObjectModel">
+      <HintPath>..\ReferenceAssemblies\Microsoft.WindowsServerSolutions.Administration.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ProviderFramework, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\ProviderFramework\v4.0_6.1.0.0__31bf3856ad364e35\ProviderFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WSSControls">
+      <HintPath>..\ReferenceAssemblies\WSSControls.dll</HintPath>
+    </Reference>
+    <Reference Include="WssgCommon, Version=10.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferenceAssemblies\WssgCommon.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.dojonorthsoftware.net/HssUpdateService/HssUpdateService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\HssUpdate\</RelPath>
+      <UpdateFromURL>http://www.dojonorthsoftware.net/HssUpdateService/HssUpdateService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>HomeServerConsoleTab_HomeServerSMART_HssUpdate_HssUpdate</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitLockerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BitLockerControl.Designer.cs">
+      <DependentUpon>BitLockerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\AddPassphraseDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\AddPassphraseDialogue.Designer.cs">
+      <DependentUpon>AddPassphraseDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\BitLockerThreadParameters.cs" />
+    <Compile Include="BitLocker\CertificatePinDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\CertificatePinDialogue.Designer.cs">
+      <DependentUpon>CertificatePinDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\Certs.cs" />
+    <Compile Include="BitLocker\ChangeTpmKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\ChangeTpmKey.Designer.cs">
+      <DependentUpon>ChangeTpmKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\DataVolumeEncryptionRequest.cs" />
+    <Compile Include="BitLocker\DecryptVolumeDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\DecryptVolumeDialogue.Designer.cs">
+      <DependentUpon>DecryptVolumeDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\DiskNotFoundException.cs" />
+    <Compile Include="BitLocker\DomainInfo.cs" />
+    <Compile Include="BitLocker\EncryptableVolume.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BitLocker\EncryptDataVolumeWin7Dialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\EncryptDataVolumeWin7Dialogue.Designer.cs">
+      <DependentUpon>EncryptDataVolumeWin7Dialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\EncryptionDetails.cs" />
+    <Compile Include="BitLocker\EncryptSystemVolumeDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\EncryptSystemVolumeDialogue.Designer.cs">
+      <DependentUpon>EncryptSystemVolumeDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\Enums.cs" />
+    <Compile Include="BitLocker\ErrorInfo.cs" />
+    <Compile Include="BitLocker\GPConfig.cs" />
+    <Compile Include="BitLocker\GroupPolicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\GroupPolicy.Designer.cs">
+      <DependentUpon>GroupPolicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\HardDisk.cs" />
+    <Compile Include="BitLocker\KeyGandererDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\KeyGandererDialogue.Designer.cs">
+      <DependentUpon>KeyGandererDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\KeyProtectorDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\KeyProtectorDialogue.Designer.cs">
+      <DependentUpon>KeyProtectorDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\KeyProtectorInfo.cs" />
+    <Compile Include="BitLocker\NumericPasswordDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\NumericPasswordDialogue.Designer.cs">
+      <DependentUpon>NumericPasswordDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\ProcessingDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\ProcessingDialogue.Designer.cs">
+      <DependentUpon>ProcessingDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\ResultWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\ResultWindow.Designer.cs">
+      <DependentUpon>ResultWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\RichTextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BitLocker\SoftCertManagement.cs" />
+    <Compile Include="BitLocker\SystemVolumeEncryptionRequest.cs" />
+    <Compile Include="BitLocker\UnlockVolumeDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\UnlockVolumeDialogue.Designer.cs">
+      <DependentUpon>UnlockVolumeDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\UpgradeVolumeDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\UpgradeVolumeDialogue.Designer.cs">
+      <DependentUpon>UpgradeVolumeDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\UsbDiskChooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\UsbDiskChooser.Designer.cs">
+      <DependentUpon>UsbDiskChooser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\UtilityMethods.cs" />
+    <Compile Include="BitLocker\VolumeLabelChanger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\VolumeLabelChanger.Designer.cs">
+      <DependentUpon>VolumeLabelChanger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitLocker\VolumePasswordDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitLocker\VolumePasswordDialogue.Designer.cs">
+      <DependentUpon>VolumePasswordDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiskPoolAutoUnlock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiskPoolAutoUnlock.Designer.cs">
+      <DependentUpon>DiskPoolAutoUnlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoBitLockerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NoBitLockerControl.Designer.cs">
+      <DependentUpon>NoBitLockerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HssBitLockerTabPage.cs" />
+    <Compile Include="ObfuscationSettings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="HssTopLevelTab.cs" />
+    <Compile Include="HssMainUiSubTabPage.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SettingsControl.Designer.cs">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\HssUpdate\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MyHealthFeature\Definition.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Resources\LightningThumb.png" />
+    <None Include="Resources\CrackedGlassThumb.png" />
+    <None Include="Resources\MetalGrate.png" />
+    <None Include="Resources\Green Gradient.png" />
+    <None Include="Resources\Blue Gradient.png" />
+    <None Include="Resources\Prowl32.png" />
+    <None Include="Resources\NotifyMyAndroid32.png" />
+    <None Include="Resources\Email32.png" />
+    <None Include="Resources\Stopwatch with Arrows.png" />
+    <None Include="Resources\status_warning_16.png" />
+    <None Include="Resources\ShieldYellow24.png" />
+    <None Include="Resources\ShieldRed24.png" />
+    <None Include="Resources\ShieldQuestion24.png" />
+    <None Include="Resources\ShieldMulti24.png" />
+    <None Include="Resources\ShieldGreen24.png" />
+    <None Include="Resources\SetupApi.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\PolicyWithToolbox.png" />
+    <None Include="Resources\Keyboard48.png" />
+    <None Include="Resources\Keyboard32.png" />
+    <None Include="Resources\Information16.png" />
+    <None Include="Resources\FlashDrive48.png" />
+    <None Include="Resources\Exclamation48.png" />
+    <None Include="Resources\BitLocker48.png" />
+    <None Include="Resources\ShutDown16.png" />
+    <None Include="Resources\Unlock24.png" />
+    <None Include="Resources\Unlock16.png" />
+    <None Include="Resources\Subtract.png" />
+    <None Include="Resources\Starbux.png" />
+    <None Include="Resources\DiskHeartBeat48x48.ico" />
+    <None Include="Resources\Warning16.png" />
+    <None Include="Resources\Updates16.png" />
+    <None Include="Resources\ShieldYellow16.png" />
+    <None Include="Resources\ShieldRed16.png" />
+    <None Include="Resources\ShieldQuestion16.png" />
+    <None Include="Resources\ShieldMulti16.png" />
+    <None Include="Resources\ShieldGreen16.png" />
+    <None Include="Resources\server_backup_16.png" />
+    <None Include="Resources\Keyboard16.png" />
+    <None Include="Resources\IgnoreProblem48.png" />
+    <None Include="Resources\Ignore16.png" />
+    <None Include="Resources\Help48.png" />
+    <None Include="Resources\Help16.png" />
+    <None Include="Resources\Healthy16.png" />
+    <None Include="Resources\hard_drive_repair_16.png" />
+    <None Include="Resources\DriveBender16.png" />
+    <None Include="Resources\Cert16.png" />
+    <None Include="Resources\bar_icon_delete_red.png" />
+    <None Include="Resources\Resume.png" />
+    <None Include="Resources\RefreshDisk24.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Reboot16.png" />
+    <None Include="Resources\Policy.png" />
+    <None Include="Resources\Pause.png" />
+    <None Include="Resources\Lock24.png" />
+    <None Include="Resources\HunkaHunkaMcBabyMcOrneryMcSlabMcHandsomeMcBabyMcGoodLookingMcSlabMcFlawlessMcSlabMcBaby.jpg" />
+    <None Include="Resources\Encrypt48.png" />
+    <None Include="Resources\Decrypt48.png" />
+    <None Include="Resources\Critical16.png" />
+    <None Include="Resources\Change.png" />
+    <None Include="Resources\Add.png" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\HssUpdate\HssUpdateService.disco" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="HomeServerSMART2013.Key.pfx" />
+    <Content Include="HomeServerSMART2013.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web References\HssUpdate\HssUpdateService.wsdl" />
+    <None Include="Web References\HssUpdate\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BitLockerControl.resx">
+      <DependentUpon>BitLockerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\AddPassphraseDialogue.resx">
+      <DependentUpon>AddPassphraseDialogue.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\CertificatePinDialogue.resx">
+      <DependentUpon>CertificatePinDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\ChangeTpmKey.resx">
+      <DependentUpon>ChangeTpmKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\DecryptVolumeDialogue.resx">
+      <DependentUpon>DecryptVolumeDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\EncryptDataVolumeWin7Dialogue.resx">
+      <DependentUpon>EncryptDataVolumeWin7Dialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\EncryptSystemVolumeDialogue.resx">
+      <DependentUpon>EncryptSystemVolumeDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\GroupPolicy.resx">
+      <DependentUpon>GroupPolicy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\KeyGandererDialogue.resx">
+      <DependentUpon>KeyGandererDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\KeyProtectorDialogue.resx">
+      <DependentUpon>KeyProtectorDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\NumericPasswordDialogue.resx">
+      <DependentUpon>NumericPasswordDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\ResultWindow.resx">
+      <DependentUpon>ResultWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\UnlockVolumeDialogue.resx">
+      <DependentUpon>UnlockVolumeDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\UpgradeVolumeDialogue.resx">
+      <DependentUpon>UpgradeVolumeDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\UsbDiskChooser.resx">
+      <DependentUpon>UsbDiskChooser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\VolumeLabelChanger.resx">
+      <DependentUpon>VolumeLabelChanger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitLocker\VolumePasswordDialogue.resx">
+      <DependentUpon>VolumePasswordDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiskPoolAutoUnlock.resx">
+      <DependentUpon>DiskPoolAutoUnlock.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoBitLockerControl.resx">
+      <DependentUpon>NoBitLockerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsControl.resx">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HomeServerSMART2013.Components.UI\HomeServerSMART2013.Components.UI.csproj">
+      <Project>{9E92E015-5BBD-4FEC-8D88-F4ED392E3065}</Project>
+      <Name>HomeServerSMART2013.Components.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HomeServerSMART2013.Components\HomeServerSMART2013.Components.csproj">
+      <Project>{5A2F6A04-592D-4FD1-AAF5-E22445F7AA41}</Project>
+      <Name>HomeServerSMART2013.Components</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>@echo Securing...
+if /I "$(ConfigurationName)" == "Release" Eazfuscator.NET.exe "$(TargetPath)" --msbuild-project-path "$(ProjectPath)" --msbuild-project-configuration "$(ConfigurationName)" -n --newline-flush
+@echo Herbie Hancocking...
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe" sign /v /n "Dojo North Software, LLC" /d "Home Server SMART UI" /du "http://www.dojonorthsoftware.net" /t "http://timestamp.verisign.com/scripts/timstamp.dll" "$(TargetPath)"
+@echo Copying autographed file to OBJ dir...
+copy "$(TargetPath)" "$(ProjectDir)\obj\Release"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

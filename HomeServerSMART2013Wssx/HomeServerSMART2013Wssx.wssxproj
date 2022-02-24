@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Pack" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{f9f3a991-396b-4aee-8955-66c7b9717ef4}</ProjectGuid>
+    <Name>HomeServerSMART2013Wssx</Name>
+    <RootNamespace>HomeServerSMART2013Wssx</RootNamespace>
+    <OutputType>Package</OutputType>
+    <PackageName>HomeServerSMART2013.wssx</PackageName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <SignAssembly>False</SignAssembly>
+    <CertificateFile>
+    </CertificateFile>
+    <TimeStampServer>http://timestamp.verisign.com/scripts/timstamp.dll</TimeStampServer>
+    <AdditionalArguments>
+    </AdditionalArguments>
+    <VerifySignature>True</VerifySignature>
+    <AdditionalVerifyArguments>
+    </AdditionalVerifyArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <SignAssembly>False</SignAssembly>
+    <CertificateFile>
+    </CertificateFile>
+    <TimeStampServer>http://timestamp.verisign.com/scripts/timstamp.dll</TimeStampServer>
+    <AdditionalArguments>
+    </AdditionalArguments>
+    <VerifySignature>True</VerifySignature>
+    <AdditionalVerifyArguments>
+    </AdditionalVerifyArguments>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="AddIn.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Eula.rtf">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <PropertyGroup>
+    <ExcludeExtensions>*.snk;*.pfx;*.svn</ExcludeExtensions>
+    <CabFile>$(OutputPath)$(PackageName)</CabFile>
+    <CabReportFile>$(OutputPath)$(PackageName).rpt</CabReportFile>
+    <CabInfFile>$(OutputPath)$(PackageName).inf</CabInfFile>
+    <CabDefinitionFile>$(IntermediateOutputPath)$(PackageName).ddf</CabDefinitionFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <CabDefinition Include=".Set SourceDir=$(OutputPath)" />
+    <CabDefinition Include=".Set DiskDirectory1=$(OutputPath)" />
+    <CabDefinition Include=".Set CabinetName1=$(PackageName)" />
+    <CabDefinition Include=".Set UniqueFiles=OFF" />
+    <CabDefinition Include=".Set Compress=ON" />
+    <CabDefinition Include=".Set CompressionType=LZX" />
+    <CabDefinition Include=".Set CompressionMemory=21" />
+    <CabDefinition Include=".Set MaxDiskSize=0" />
+    <CabDefinition Include=".Set Cabinet=ON" />
+    <CabDefinition Include=".Set MaxCabinetSize=0" />
+    <CabDefinition Include=".Set InfFileName=$(CabInfFile)" />
+    <CabDefinition Include=".Set RptFileName=$(CabReportFile)" />
+  </ItemGroup>
+  <ItemGroup>
+    <SignToolArgument Include="sign" />
+    <SignToolArgument Include="/v" />
+    <SignToolArgument Include="/f &quot;$(CertificateFile)&quot;" Condition="'$(CertificateFile)' != ''" />
+    <SignToolArgument Include="/t &quot;$(TimeStampServer)&quot;" Condition="'$(TimeStampServer)' != ''" />
+    <SignToolArgument Include="$(AdditionalArguments)" Condition="'$(AdditionalArguments)' != ''" />
+  </ItemGroup>
+  <ItemGroup>
+    <SignToolVerifyArgument Include="verify" />
+    <SignToolVerifyArgument Include="/v" />
+    <SignToolVerifyArgument Include="/pa" />
+    <SignToolVerifyArgument Include="$(AdditionalVerifyArguments)" Condition="'$(AdditionalVerifyArguments)' != ''" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HSS2013Installer\HSS2013Installer.wixproj">
+      <Name>HSS2013Installer</Name>
+      <Project>{0f74e32e-46f2-4b2d-bdab-01bc53426f9b}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <PackDependsOn>
+      BeforePack;
+      CorePack;
+      SignPack;
+      AfterPack
+    </PackDependsOn>
+  </PropertyGroup>
+  <Target Name="CreateManifestResourceNames" />
+  <Target Name="Pack" DependsOnTargets="$(PackDependsOn)" />
+  <Target Name="BeforePack" />
+  <Target Name="CorePack">
+    <Message Text="Starting CorePack" />
+    <!-- Build excluded file filer -->
+    <ItemGroup>
+      <ExcludeExtensionsFilter Include="$(ExcludeExtensions.Split(';'))" />
+    </ItemGroup>
+    <CreateProperty Value="@(ExcludeExtensionsFilter->'**\%(Identity)')">
+      <Output TaskParameter="Value" PropertyName="ExcludeExtensionsFilterPathed" />
+    </CreateProperty>
+    <!-- Identify "Content" items that pass filter -->
+    <CreateItem Include="@(Content)" Exclude="$(ExcludeExtensionsFilterPathed)">
+      <Output TaskParameter="Include" ItemName="ContentToPack" />
+    </CreateItem>
+    <Message Text="Found content %(Content.Identity)" />
+    <Message Text="Excluding $(ExcludeExtensions) from package" />
+    <Message Text="Including %(ContentToPack.Identity) in package" />
+    <!-- Identify ProjectReference output assemblies -->
+    <AssignProjectConfiguration ProjectReferences="@(ProjectReference)" SolutionConfigurationContents="$(CurrentSolutionConfigurationContents)">
+      <Output TaskParameter="AssignedProjects" ItemName="ProjectReferenceWithCurrentBuildConfiguration" />
+    </AssignProjectConfiguration>
+    <Message Text="Found project reference %(ProjectReferenceWithCurrentBuildConfiguration.Name) with config %(ProjectReferenceWithCurrentBuildConfiguration.FullConfiguration)" Condition="'@(ProjectReferenceWithCurrentBuildConfiguration)' != ''" />
+    <MSBuild Projects="@(ProjectReferenceWithCurrentBuildConfiguration)" UseResultsCache="true" Targets="Build" Properties="%(ProjectReferenceWithCurrentBuildConfiguration.SetConfiguration);%(ProjectReferenceWithCurrentBuildConfiguration.SetPlatform)" ContinueOnError="false">
+      <Output TaskParameter="TargetOutputs" ItemName="ProjectReferenceOutputs" />
+    </MSBuild>
+    <!-- Copy content files to output, preserving directory structure -->
+    <Copy SourceFiles="@(ContentToPack)" DestinationFiles="@(ContentToPack->'$(OutputPath)%(Identity)')">
+      <Output TaskParameter="CopiedFiles" ItemName="PackageFiles" />
+    </Copy>
+    <!-- Copy ProjectReference output to output -->
+    <Copy SourceFiles="@(ProjectReferenceOutputs)" DestinationFiles="@(ProjectReferenceOutputs->'$(OutputPath)%(Filename)%(Extension)')">
+      <Output TaskParameter="CopiedFiles" ItemName="PackageFiles" />
+    </Copy>
+    <Message Text="Copied to output: %(PackageFiles.Identity)" />
+    <!-- Build .ddf file -->
+    <WriteLinesToFile File="$(CabDefinitionFile)" Overwrite="true" Lines="@(CabDefinition);@(ContentToPack-> '%(Identity) %(Identity)');@(ProjectReferenceOutputs->'%(Filename)%(Extension)')" />
+    <!-- Exec makecab -->
+    <Exec Command="makecab.exe /F $(CabDefinitionFile)" />
+    <!-- Set MainAssembly -->
+    <CreateItem Include="$(CabFile)">
+      <Output TaskParameter="Include" ItemName="MainAssembly" />
+    </CreateItem>
+    <Message Importance="High" Text="$(MSBuildProjectName) -&gt; @(MainAssembly->'%(FullPath)')" />
+    <!-- Add output files to clean list -->
+    <ItemGroup>
+      <FileWrites Include="$(CabFile);@(PackageFiles);$(CabDefinitionFile);$(CabInfFile);$(CabReportFile)" />
+    </ItemGroup>
+    <!-- Persist clean list as as CleanFile -->
+    <WriteLinesToFile File="$(IntermediateOutputPath)$(CleanFile)" Lines="@(FileWrites)" Overwrite="true" />
+    <Message Text="Finished CorePack" />
+  </Target>
+  <Target Name="SignPack" Condition="'$(SignAssembly)' == 'true'">
+    <GetFrameworkSdkPath>
+      <Output TaskParameter="Path" PropertyName="FrameworkSdkPath" />
+    </GetFrameworkSdkPath>
+    <CreateProperty Value="$(FrameworkSdkPath)bin\signtool.exe">
+      <Output TaskParameter="Value" PropertyName="SignToolPath" />
+    </CreateProperty>
+    <Exec Command="&quot;$(SignToolPath)&quot; @(SignToolArgument, ' ') &quot;@(MainAssembly->'%(FullPath)')&quot;" />
+    <Exec Command="&quot;$(SignToolPath)&quot; @(SignToolVerifyArgument, ' ') &quot;@(MainAssembly->'%(FullPath)')&quot;" ContinueOnError="true" Condition="'$(VerifySignature)' == 'True'" />
+  </Target>
+  <Target Name="AfterPack" />
+  <Target Name="AfterClean">
+    <Message Text="Starting AfterClean" />
+    <!--Build list of content directories with OutputPath as base-->
+    <CreateItem Include="@(Content->'$(OutputPath)%(RelativeDir)')" Condition="%(RelativeDir) != ''" ContinueOnError="true">
+      <Output ItemName="DirectoriesToDelete" TaskParameter="Include" />
+    </CreateItem>
+    <!--Remove any remaining content directories after "Clean"-->
+    <RemoveDir Directories="@(DirectoriesToDelete)" Condition="Exists('%(DirectoriesToDelete.FullPath)')" ContinueOnError="true" />
+    <Message Text="Finished AfterClean" />
+  </Target>
+  <!-- 
+  
+  To modify your build process, add your task inside one of the targets below and uncomment it. 
+  
+  <Target Name="BeforePack">
+  </Target>
+  <Target Name="AfterPack">
+  </Target>
+  
+  -->
+  <UsingTask TaskName="Microsoft.Build.Tasks.XmlPoke" AssemblyName="Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <UsingTask TaskName="Microsoft.Build.Tasks.XmlPeek" AssemblyName="Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <UsingTask TaskName="GetHighestVersionNumber" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+    <ParameterGroup>
+      <VersionList Required="True" ParameterType="System.String[]" />
+      <Result ParameterType="System.String" Output="True" />
+    </ParameterGroup>
+    <Task>
+      <Reference Include="mscorlib" />
+      <Using Namespace="System" />
+      <Using Namespace="System.Linq" />
+      <Code Type="Fragment" Language="cs"><![CDATA[
+          Result = VersionList.Select(v => Version.Parse(v)).OrderByDescending(v => v).FirstOrDefault().ToString();
+        ]]></Code>
+    </Task>
+  </UsingTask>
+  <UsingTask TaskName="IncrementVersionNumber" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+    <ParameterGroup>
+      <VersionString Required="True" ParameterType="System.String" />
+      <Result ParameterType="System.String" Output="True" />
+    </ParameterGroup>
+    <Task>
+      <Reference Include="mscorlib" />
+      <Using Namespace="System" />
+      <Using Namespace="System.Linq" />
+      <Code Type="Fragment" Language="cs"><![CDATA[
+            Version current = Version.Parse(VersionString);
+            Result = new Version(current.Major, current.Minor, current.Build + 1, current.Revision).ToString();
+        ]]></Code>
+    </Task>
+  </UsingTask>
+  <PropertyGroup>
+    <AddInXmlPath>$(ProjectDir)AddIn.xml</AddInXmlPath>
+    <WxsNamespace>&lt;Namespace Prefix='wxs' Uri='http://schemas.microsoft.com/wix/2006/wi' /&gt;</WxsNamespace>
+    <AddInXmlNamespace>&lt;Namespace Prefix='wss' Uri='http://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins' /&gt;</AddInXmlNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <SignAssembly>False</SignAssembly>
+    <CertificateFile />
+    <TimeStampServer>http://timestamp.verisign.com/scripts/timstamp.dll</TimeStampServer>
+    <AdditionalArguments />
+    <VerifySignature>True</VerifySignature>
+    <AdditionalVerifyArguments />
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <!--<Target Name="BeforePack" DependsOnTargets="GetPackageVersions;ReplaceAddInXmlPackageVersion;IncrementAddInXmlPackageVersion" />-->
+  <Target Name="BeforePack" DependsOnTargets="GetPackageVersions" />
+  <Target Name="GetPackageVersions">
+    <!-- Get current Package Version from AddIn.Xml -->
+    <XmlPeek XmlInputPath="$(AddInXmlPath)" Query="//wss:Package/wss:Version/text()" Namespaces="$(AddInXmlNamespace)">
+      <Output TaskParameter="Result" PropertyName="PackageVersion" />
+    </XmlPeek>
+    <Message Text="Package Version: $(PackageVersion)" />
+    <!-- Get current ServerBinary version from AddIn.xml -->
+    <XmlPeek XmlInputPath="$(AddInXmlPath)" Query="//wss:Package/wss:ServerBinary/wss:File/wss:Version/text()" Namespaces="$(AddInXmlNamespace)">
+      <Output TaskParameter="Result" ItemName="FileVersion" />
+    </XmlPeek>
+    <!-- Get current ClientBinary32 version from AddIn.xml -->
+    <XmlPeek XmlInputPath="$(AddInXmlPath)" Query="//wss:Package/wss:ClientBinary32/wss:File/wss:Version/text()" Namespaces="$(AddInXmlNamespace)">
+      <Output TaskParameter="Result" ItemName="FileVersion" />
+    </XmlPeek>
+    <!-- Get current ClientBinary64 version from AddIn.xml -->
+    <XmlPeek XmlInputPath="$(AddInXmlPath)" Query="//wss:Package/wss:ClientBinary64/wss:File/wss:Version/text()" Namespaces="$(AddInXmlNamespace)">
+      <Output TaskParameter="Result" ItemName="FileVersion" />
+    </XmlPeek>
+    <!-- Get the current highest file version -->
+    <GetHighestVersionNumber VersionList="@(FileVersion)">
+      <Output PropertyName="HighestFileVersion" TaskParameter="Result" />
+    </GetHighestVersionNumber>
+    <Message Text="Highest File Version: $(HighestFileVersion)" />
+    <!-- Compare Package version with our version (we Version.Parse() to perform the correct comparison) -->
+    <CreateProperty Value="$([System.Version]::Parse($(HighestFileVersion)).CompareTo($([System.Version]::Parse($(PackageVersion)))))">
+      <Output TaskParameter="Value" PropertyName="VersionCompareResult" />
+    </CreateProperty>
+  </Target>
+  <!--<Target Name="ReplaceAddInXmlPackageVersion" Condition="$(VersionCompareResult) == 1">
+     Replace Package Version if highest file version is greater than
+    <XmlPoke XmlInputPath="$(AddInXmlPath)" Query="//wss:Package/wss:Version" Namespaces="$(AddInXmlNamespace)" Value="$(HighestFileVersion)" />
+    <Message Text="Package Version Updated: $(HighestFileVersion)" />
+  </Target>
+  <Target Name="IncrementAddInXmlPackageVersion" Condition="$(VersionCompareResult) &lt;= 0">
+     Increment current Package Version if highest file version is less than or equal
+    <IncrementVersionNumber VersionString="$(PackageVersion)">
+      <Output PropertyName="IncrementedVersion" TaskParameter="Result" />
+    </IncrementVersionNumber>
+    <XmlPoke XmlInputPath="$(AddInXmlPath)" Query="//wss:Package/wss:Version" Namespaces="$(AddInXmlNamespace)" Value="$(IncrementedVersion)" />
+    <Message Text="Package Version Updated: $(IncrementedVersion)" />
+  </Target>-->
+</Project>

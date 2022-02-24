@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<title>Ignoring Problems and Disks</title>
+</head>
+
+<body>
+<p class="PageTitle">Ignoring Problems and Disks</p>
+<p class="BodyText">There may be occasions where you want to ignore a problem on a disk, or an entire disk. This section explains the differences between each, and why you may want to ignore a problem or a disk. You should use these features carefully so you don't inadvertently hide a serious problem.</p>
+<p class="SubTitle">Ignoring Individual Problems</p>
+<p class="BodyText">When certain disk health issues are detected, WindowSMART will generate alerts, change the disk's health status and flag the problem in the UI. However, not all users want to replace a disk immediately, especially if the disk is out of warranty and they don't want to incur the expense of replacing a disk. If Threshold Exceeds Condition (TEC) hasn't occurred, some users may opt to employ the concept of <em>watchful waiting</em> to see if the problem was just a one-time fluke, or it's more serious and continues to worsen.</p>
+<p class="BodyText">If you want to take the watchful waiting approach, you can select the disk in question, and then select the problem noted in the alert, such as Reallocated Sector Count. The Ignore Problem button will be enabled. Click the button, and you will be presented with a warning confirmation. The warning reminds you of the risks of ignoring a problem. If you confirm the ignoring of a the problem, your decision will be noted in the Registry. The next time the WindowSMART service polls the disks, the health alert will be cleared and, if that was the only problem on the disk, the disk's health status will be returned to healthy.</p>
+<p class="BodyText">If the problem remains constant (doesn't worsen), then you will receive no further alerts for it. However, if the problem worsens, you will be alerted again. It is possible to ignore the problem again (there is no limit to how many times you ignore a problem), but this is <strong>highly discouraged</strong>. If the problem worsens, that is usually a strong sign the disk is failing.</p>
+<p class="BodyText">TEC cannot be ignored. If TEC occurs on a disk, the disk is considered to be in a catastrophic failure state and will remain in a permanent critical state. For attributes that can fail and subsequently un-fail (temperature, airflow temperature being two examples), the critical state will clear if and when the value climbs back above the threshold.</p>
+<p class="SubTitle">Ignoring Disks</p>
+<p class="BodyText">There may be occasions where you want to exclude an entire disk from monitoring. You should never exclude a hard disk or SSD that is reporting valid data. The ignore disk feature is intended to hide items that would never possess SMART data, including items such as flash drives, media card readers and mobile devices that present a drive letter to the OS. If you have a lot of these items showing the blue question mark icon (unknown) cluttering up the UI, you can choose to ignore them, and they will be removed from the UI entirely. Furthermore, the service will not attempt to collect SMART data from them.</p>
+<p class="BodyText">Ignoring an HDD or SSD that is reporting valid data will hide any problems that occur on the disk. If problems occur, they will NOT be reported as long as the disk is ignored.</p>
+<p class="SubTitle">Un-Ignoring Problems and Disks</p>
+<p class="BodyText">If you change your mind about an ignored problem or disk, you can un-ignore the problem or disk. In the WindowSMART Settings, on the Ignored Items tab, you are presented with two sections: Ignored Problems and Ignored Disks. In each section, you are presented with a list of problems and disks, respectively, that you've chosen to ignore.</p>
+<p class="BodyText">Each section also has a Resume Seelcted and Resume All button.</p>
+<p class="BodyText">To resume an individual ignored problem, select the problem and then click Resume Selected. A green check will appear next to the problem. To resume an individual disk, select the disk and then click Resume Selected. A green check will appear next to the disk. This change is immediate; you do not need to click the Save or Apply button to save the change.</p>
+<p class="BodyText">To resume all ignored problems or all ignored disks, click the Resume All in the Ignored Problems or Ignored Disks, respectively. You will be asked to confirm the choice. Click Yes to confirm, and you will receive a confirmation that indicates a reset was performed against all configured disks (this action visits all disks to refresh), and the items listed in the box are removed.</p>
