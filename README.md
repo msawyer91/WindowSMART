@@ -26,3 +26,6 @@ In the HomeServerSMART2013.Components module you will find some classes that rel
 Anyhow, I leave the code here for you to do what you want. Your feedback is welcome.
 
 Have fun!
+
+## What About Home Server SMART Classic?
+It's coming. I had to tweak this code prior to releasing to GitHub. I'll need to do the same to HSS Classic, and it'll be posted here on GitHub as well.
